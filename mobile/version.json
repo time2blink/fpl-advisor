@@ -1,0 +1,25 @@
+{
+ "version": "1.3",
+ "code": 10300,
+ "date": "2026-10-25",
+ "title": "Обновления прямо из приложения",
+ "items": [
+  {
+   "type": "new",
+   "title": "Доступно обновление",
+   "text": "Приложение само проверяет, вышла ли новая версия, и показывает, что в ней изменилось, с кнопкой «Скачать»."
+  },
+  {
+   "type": "new",
+   "title": "Проверить обновления",
+   "text": "В Настройках есть кнопка ручной проверки."
+  },
+  {
+   "type": "improve",
+   "title": "Что нового работает в установленном приложении",
+   "text": "История версий теперь входит в APK."
+  }
+ ],
+ "apk_url": "https://github.com/time2blink/fpl-advisor-data/releases/latest/download/fpl-advisor.apk",
+ "page_url": "https://github.com/time2blink/fpl-advisor-data/releases/latest"
+}

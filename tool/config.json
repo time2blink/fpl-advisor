@@ -1,0 +1,45 @@
+{
+  "season": "2026/27",
+  "league_id": 1234567,
+  "entries": {
+    "me": 1000001,
+    "roma": 1000002,
+    "stas": 1000003
+  },
+  "names": {
+    "me": "Я",
+    "roma": "Друг 1",
+    "stas": "Друг 2"
+  },
+  "pool": {
+    "GK": 10,
+    "DEF": 50,
+    "MID": 50,
+    "FWD": 20
+  },
+  "top_managers": 50,
+  "horizon": 5,
+  "max_free_transfers": 5,
+  "free_transfers_override": null,
+  "bank_override": null,
+  "hit_cost": 4,
+  "min_minutes_frac": 0.25,
+  "wide_min_minutes": 90,
+  "prior_k": 4,
+  "serve_port": 8765,
+  "design": 2,
+  "rule_no_duplicates": true,
+  "notes": "Замените entries/names/league_id на свои (проще в ⚙ дашборда при запуске через run.bat). pending — ваш состав на ближайший тур до дедлайна: {\"me\": {\"gw\": N, \"squad\": [15 игроков], \"captain\": \"\", \"vice\": \"\", \"bank\": 5, \"ft\": 1}}. Подробно — README.md в корне репозитория.",
+  "pending": {},
+  "blacklist": [],
+  "retention_days": 90,
+  "planner_horizon": 8,
+  "chip_halves": true,
+  "chip_reset_gw": 20,
+  "watchlist": [],
+  "max_hits_per_gw": 1,
+  "deny_weight": 0.3,
+  "chip_expiry_gw": 19,
+  "chip_expiry_deadline": "2027-01-02T13:30:00Z",
+  "weak_include_bench": false
+}

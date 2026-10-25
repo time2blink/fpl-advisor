@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FPL Advisor</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzRmNmJmMCIvPjxzdG9wIG9mZnNldD0iLjU1IiBzdG9wLWNvbG9yPSIjN2E2ZmU2Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYTM4NGVlIi8+PC9saW5lYXJHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9ImdsIiBjeD0iLjc4IiBjeT0iLjIiIHI9Ii43Ij48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iLjM4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz48L3JhZGlhbEdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0ibG4iIHgxPSIwIiB5MT0iMSIgeDI9IjEiIHkyPSIwIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iLjc4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9ImdvbGQiIGN4PSIuNCIgY3k9Ii4zNSIgcj0iLjgiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZjJiOCIvPjxzdG9wIG9mZnNldD0iLjU1IiBzdG9wLWNvbG9yPSIjZmZkMTY2Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZjRhOTNiIi8+PC9yYWRpYWxHcmFkaWVudD48ZmlsdGVyIGlkPSJzaCIgeD0iLTIwJSIgeT0iLTIwJSIgd2lkdGg9IjE0MCUiIGhlaWdodD0iMTUwJSI+PGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjEwIiBzdGREZXZpYXRpb249IjEwIiBmbG9vZC1jb2xvcj0iIzJhMmY3YSIgZmxvb2Qtb3BhY2l0eT0iLjM1Ii8+PC9maWx0ZXI+PGNsaXBQYXRoIGlkPSJzcSI+PHJlY3QgeD0iMTYiIHk9IjE2IiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjQ4MCIgcng9IjExNiIvPjwvY2xpcFBhdGg+PC9kZWZzPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjQ4MCIgaGVpZ2h0PSI0ODAiIHJ4PSIxMTYiIGZpbGw9InVybCgjYmcpIi8+PGcgY2xpcC1wYXRoPSJ1cmwoI3NxKSI+PHJlY3QgeD0iMTYiIHk9IjE2IiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjQ4MCIgZmlsbD0idXJsKCNnbCkiLz48IS0tINGA0LDQt9C80LXRgtC60LAg0L/QvtC70Y8gLS0+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjIiIHN0cm9rZS13aWR0aD0iNyI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjY4IiByPSIxNTAiLz48bGluZSB4MT0iMTYiIHkxPSIyNjgiIHgyPSI0OTYiIHkyPSIyNjgiLz48cGF0aCBkPSJNOTYgNDk2VjQzMGgzMjB2NjYiLz48L2c+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjY4IiByPSI5IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii4yOCIvPjwvZz48IS0tINC70LjQvdC40Y8g0YDQvtGB0YLQsCB4UCAtLT48ZyBmaWx0ZXI9InVybCgjc2gpIj48cG9seWxpbmUgcG9pbnRzPSIxMDQsMzcwIDE5MiwzMDAgMjYyLDMzNiAzNjYsMjA2IiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjbG4pIiBzdHJva2Utd2lkdGg9IjMwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48ZyBmaWxsPSIjZmZmIj48Y2lyY2xlIGN4PSIxMDQiIGN5PSIzNzAiIHI9IjE5Ii8+PGNpcmNsZSBjeD0iMTkyIiBjeT0iMzAwIiByPSIxOSIvPjxjaXJjbGUgY3g9IjI2MiIgY3k9IjMzNiIgcj0iMTkiLz48L2c+PGNpcmNsZSBjeD0iMzY2IiBjeT0iMjA2IiByPSI0MCIgZmlsbD0idXJsKCNnb2xkKSIvPjxwYXRoIGQ9Ik0zNjYgMTgybDYuOCAxNC42IDE2IDItMTEuOCAxMSAzIDE1LjhMMzY2IDIxNy42MDBsLTE0IDcuODAwIDMtMTUuODAwLTExLjgwMC0xMSAxNi0yeiIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuOTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTEuNTAwKSIvPjwvZz48L3N2Zz4K">
+<style>
+/* ===== Дизайн 2 (светлый) — по макетам mockups/light-v3. Логика общая: dashboard_core.js ===== */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#FAFAFC;color:#17181F;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;background:linear-gradient(180deg,#F3F1FD 0%,#FAFAFC 420px) no-repeat,#FAFAFC;padding-bottom:96px}
+a{color:#6B5CE7;text-decoration:none}a:hover{color:#4F3FD1}
+button{font:inherit}
+/* масштаб 110% и рабочая область ровно 1400 px на экране (1400/1.1 CSS px) — на компьютере; на телефоне без увеличения */
+@media (min-width:900px){html{zoom:1.1}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.demo{background:#E8A23B;color:#fff;text-align:center;padding:6px;font-weight:600;font-size:12.5px}
+/* навигация */
+.nav{position:sticky;top:0;z-index:20;background:rgba(250,250,252,.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.nav-in{max-width:calc(1400px / 1.1);margin:0 auto;padding:18px 32px;display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;letter-spacing:-.01em}
+.brand i{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#8B7CF6,#6B5CE7);display:block}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs button{border:0;background:transparent;padding:6px 12px;border-radius:999px;white-space:nowrap;color:#7A7C8A;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:6px}
+.tabs button:hover{color:#17181F}
+.tabs button.on{color:#17181F;font-weight:600;background:#FFFFFF;box-shadow:0 1px 2px rgba(23,24,31,.06)}
+.dot5{width:5px;height:5px;border-radius:50%;background:#E8A23B}
+.upd{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:12px;color:#7A7C8A}
+.upd i{width:6px;height:6px;border-radius:50%;background:#2EB67D;animation:pulse 2s infinite}
+/* страница */
+.wrap{max-width:calc(1400px / 1.1);margin:0 auto;padding:40px 32px 0;display:flex;flex-direction:column;gap:48px}
+.wrap.over{padding-top:48px;gap:56px}.wrap.squad{gap:28px}.wrap.scout{gap:36px}.wrap.players{gap:24px}
+.ht{font-weight:600;font-size:clamp(36px,4.5vw,48px);line-height:1;letter-spacing:-.045em}.ht span{color:#A6A8B4;font-weight:500}
+.hd{display:flex;flex-direction:column;gap:14px}
+.hdr{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.facts{display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:14px;color:#7A7C8A}.facts b{color:#17181F;font-weight:600}.facts .sp{width:1px;height:14px;background:#DDDCE6}
+.desc{font-size:14px;color:#7A7C8A;line-height:1.6;max-width:760px;text-wrap:pretty}
+.sec{display:flex;flex-direction:column;gap:20px}
+.sh{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:0 4px}.sh .t{font-weight:600;font-size:20px;letter-spacing:-.025em}.sh .s{font-size:13px;color:#7A7C8A}
+.card{background:#FFFFFF;border-radius:28px;box-shadow:0 1px 2px rgba(23,24,31,.04)}
+.card.gl{box-shadow:0 1px 2px rgba(23,24,31,.04),0 24px 60px -40px rgba(107,92,231,.25)}
+.card.pd{padding:28px 32px;display:flex;flex-direction:column;gap:24px}
+.card.tb{padding:16px 24px;overflow-x:auto}
+.card.r24{border-radius:24px}
+.lbl{font-size:12px;color:#7A7C8A}
+.ch{display:flex;justify-content:space-between;align-items:center;padding:8px 8px 12px}.ch b{font-size:15px;font-weight:600;letter-spacing:-.01em}.ch span{font-size:12px;color:#A6A8B4}
+.g{display:grid;gap:12px;align-items:center;padding:8px;border-radius:14px;border-top:1px solid #F4F4F8}
+.g.th{font-size:12px;color:#A6A8B4;border:0;padding:8px 8px 12px}
+.g.hv{cursor:pointer}.g.hv:hover{background:#FAFAFC}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start}
+/* игрок: фото + эмблема клуба (как в дизайне 1), иконки */
+.av{--s:44px;position:relative;display:inline-block;width:var(--s);height:var(--s);flex:none;vertical-align:middle}
+.avp{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:linear-gradient(145deg,hsl(var(--h,220) 70% 92%),hsl(var(--h,220) 60% 80%));display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6)}
+.avp img{position:absolute;left:50%;bottom:-6%;height:112%;transform:translateX(-50%);object-fit:cover}
+.avp .shirt{position:absolute;left:50%;top:52%;width:78%;transform:translate(-50%,-50%);opacity:.95}
+.avp b{position:relative;z-index:1;color:#fff;text-shadow:0 1px 3px rgba(30,30,80,.45);font-size:calc(var(--s)*.3);font-weight:700;letter-spacing:-.02em}
+.avp.has b,.avp.has .shirt{display:none}
+.avb{position:absolute;right:-5px;bottom:-4px;width:calc(var(--s)*.42);height:calc(var(--s)*.42);object-fit:contain;background:#fff;border-radius:50%;padding:2px;box-shadow:0 2px 6px rgba(30,40,80,.25)}
+.avd{border:2px solid #fff}
+.av[data-id]{cursor:pointer}
+.ico{display:inline-flex;width:var(--s);height:var(--s);flex:none;vertical-align:middle;filter:drop-shadow(0 3px 6px rgba(40,50,100,.18))}.ico svg{display:block}
+.brand-ic{width:28px;height:28px;border-radius:8px;display:block}
+.ca{border-radius:50%;color:#FFFFFF;display:grid;place-items:center;font-weight:600;flex-shrink:0;overflow:hidden}
+.ca[data-id]{cursor:pointer}
+.who{display:flex;align-items:center;gap:10px;min-width:0}.who>div:last-child{min-width:0}
+.nm{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nm.mut{font-weight:500;color:#7A7C8A}
+.cl{font-size:11px;color:#A6A8B4}
+.row6{display:flex;align-items:center;gap:6px;min-width:0}
+.plk{cursor:pointer}.plk:hover{color:#6B5CE7}
+.tag{font-size:10px;font-weight:600;border-radius:999px;padding:2px 7px;white-space:nowrap}
+.pl{font-size:11px;font-weight:600;border-radius:999px;padding:3px 9px;white-space:nowrap;display:inline-block}
+.t-me{background:#F6F4FF;color:#6B5CE7}.t-sc{background:#FDEBD3;color:#9A5B12}.t-bl{background:#FBDCDD;color:#B13036}.t-gr{background:#EEEEF3;color:#5C5E6B}.t-ok{background:#D7F3E4;color:#1D7A4F}.t-mu{background:#F1F1F6;color:#7A7C8A}
+.fxr{display:flex;gap:3px}.fxr span{flex:1;min-width:0;text-align:center;font-size:9px;font-weight:600;padding:4px 0;border-radius:999px;white-space:nowrap;overflow:hidden}
+.d1{background:#D7F3E4;color:#1D7A4F}.d2{background:#EEEEF3;color:#5C5E6B}.d3{background:#FDEBD3;color:#9A5B12}.d4{background:#FBDCDD;color:#B13036}.d0{background:#F1F1F6;color:#A6A8B4}
+.b4{height:4px;border-radius:2px;background:#F1F1F6;overflow:hidden}.b4 i{display:block;height:100%;border-radius:2px;background:#6B5CE7}
+.seg{display:flex;gap:4px;background:#EFEDF8;border-radius:999px;padding:4px}
+.seg button{border:0;padding:8px 18px;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;background:transparent;color:#7A7C8A;display:flex;align-items:center;gap:8px}
+.seg button.on{background:#FFFFFF;color:#17181F;box-shadow:0 1px 2px rgba(23,24,31,.08)}
+.seg.sm button{padding:7px 14px;font-size:13px}.seg.md button{padding:8px 16px}
+.gdot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,#8B7CF6,#6B5CE7)}
+.sw2{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px;color:#4A4C5A;border:0;background:none;padding:0}
+.sw2 span{width:34px;height:20px;border-radius:999px;background:#D9D9E3;position:relative;transition:background .15s}
+.sw2 span i{position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#FFFFFF;box-shadow:0 1px 2px rgba(0,0,0,.15);transition:left .15s}
+.sw2.on span{background:#6B5CE7}.sw2.on span i{left:16px}
+.stat .k{font-size:12px;color:#7A7C8A}.stat .v{font-size:30px;font-weight:600;letter-spacing:-.035em;margin-top:6px}.stat .s{font-size:12px;color:#A6A8B4;margin-top:2px}
+.tile{background:#FAFAFC;border-radius:12px;padding:8px 6px;text-align:center}.tile b{display:block;font-size:15px;font-weight:600;letter-spacing:-.02em}.tile span{display:block;font-size:10px;color:#A6A8B4;margin-top:1px}.tile.ac{background:#F6F4FF}.tile.ac b{color:#6B5CE7}
+.cap{width:18px;height:18px;border-radius:50%;background:#17181F;color:#FFFFFF;display:grid;place-items:center;font-size:10px;font-weight:700;flex-shrink:0}
+.empty{padding:24px 8px 16px;text-align:center;font-size:13px;color:#A6A8B4}
+.inp{border:0;outline:none;background:#FAFAFC;border-radius:12px;padding:12px 16px;font-size:14px;color:#17181F;font-family:inherit}
+.btn{border:0;background:#6B5CE7;color:#FFFFFF;border-radius:12px;padding:12px 20px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap}.btn:hover{background:#5B4CD9}
+.btn.g{background:#F1F1F6;color:#17181F}.btn.g:hover{background:#EAE9F2}.btn.r{background:#FBDCDD;color:#B13036}.btn.sm{padding:8px 14px;font-size:13px;border-radius:10px}
+.hov:hover{box-shadow:0 1px 2px rgba(23,24,31,.04),0 24px 48px -28px rgba(107,92,231,.35)}
+/* состав: поле */
+.pitch{border-radius:20px;background:repeating-linear-gradient(180deg,#EEF7F1 0 64px,#E7F3EB 64px 128px);padding:28px 18px;display:flex;flex-direction:column;gap:22px;position:relative;overflow:hidden}
+.pitch:before{content:"";position:absolute;left:50%;top:50%;width:150px;height:150px;border:2px solid rgba(255,255,255,.7);border-radius:50%;transform:translate(-50%,-50%)}
+.pitch:after{content:"";position:absolute;left:18px;right:18px;top:50%;height:2px;background:rgba(255,255,255,.7)}
+.pline{display:flex;justify-content:center;gap:12px;flex-wrap:nowrap;position:relative;z-index:1}
+.pcard{background:#FFFFFF;border-radius:18px;padding:12px 13px;flex:0 0 auto;min-width:0;display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;cursor:pointer;position:relative;box-shadow:0 1px 2px rgba(23,24,31,.06),0 10px 30px -18px rgba(23,24,31,.25);transition:transform .15s,box-shadow .15s}
+.pcard:hover{transform:translateY(-2px);box-shadow:0 1px 2px rgba(23,24,31,.06),0 18px 40px -20px rgba(107,92,231,.45)}
+.pbadge{position:absolute;top:-8px;right:-8px;width:26px;height:26px;border-radius:50%;color:#FFFFFF;display:grid;place-items:center;font-size:12px;font-weight:700;box-shadow:0 0 0 3px #FFFFFF}
+.ndot{width:6px;height:6px;border-radius:50%;background:#6B5CE7;flex-shrink:0}
+.fdots{display:flex;gap:3px;justify-content:center;width:100%}.fdots span{flex:1;max-width:22px;height:5px;border-radius:3px}
+.bench{background:#FAFAFC;border-radius:16px;padding:12px 14px;display:flex;flex-direction:column;gap:9px;cursor:pointer;position:relative}.bench:hover{background:#F6F4FF}
+/* drawer */
+.drawer{position:fixed;top:12px;right:12px;bottom:12px;width:min(470px,calc(100% - 24px));background:#F6F6FA;border-radius:28px;box-shadow:0 30px 90px -20px rgba(23,24,31,.35);transform:translateX(115%);transition:transform .25s;z-index:40;padding:18px 18px 28px;overflow:auto;display:flex;flex-direction:column;gap:24px}
+.drawer.open{transform:none}
+.dhead{background:#FFFFFF;border-radius:24px;padding:24px;position:relative;box-shadow:0 1px 2px rgba(23,24,31,.04),0 12px 40px -24px rgba(107,92,231,.25);flex-shrink:0}
+.dx{position:absolute;top:22px;right:22px;width:36px;height:36px;border-radius:50%;border:0;background:#EFEFF6;color:#17181F;font-size:20px;line-height:1;cursor:pointer}.dx:hover{background:#E6E5EE}
+.dsec2{display:flex;flex-direction:column;gap:12px;flex-shrink:0}.dh{font-size:17px;font-weight:700;letter-spacing:-.01em;padding:0 2px}.dd{font-size:14px;color:#7A7C8A;line-height:1.6;padding:0 2px}.dd b{color:#17181F}
+.dcard{background:#FFFFFF;border-radius:22px;padding:18px 16px;box-shadow:0 1px 2px rgba(23,24,31,.04)}
+.dbars{display:flex;gap:8px;align-items:flex-end}.dbar{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}.dbar b{font-size:13px;font-weight:700;margin-bottom:8px}.dbar i{display:block;width:100%;background:#6B5CE7;border-radius:6px 6px 3px 3px}
+.dbar .gw{font-size:11px;color:#A6A8B4}.dbar .op,.dbar .mn{font-size:10px;font-weight:600;border-radius:999px;padding:3px 0;width:100%;text-align:center;white-space:nowrap;overflow:hidden}.dmin{background:#E8F1FC;color:#2F6CC9}
+.dkv{display:grid;grid-template-columns:1fr 1fr;gap:10px;flex-shrink:0}.dkv div{background:#FFFFFF;border-radius:18px;padding:16px 18px;box-shadow:0 1px 2px rgba(23,24,31,.04)}.dkv b{display:block;font-size:18px;font-weight:700;letter-spacing:-.02em}.dkv span{display:block;font-size:13px;color:#7A7C8A;margin-top:4px}
+.dtab{width:100%;border-collapse:collapse;font-size:14px}.dtab th{font-size:11px;color:#A6A8B4;font-weight:500;text-transform:uppercase;letter-spacing:.04em;text-align:left;padding:10px 0;border-bottom:1px solid #F1F1F6}.dtab td{padding:12px 0;border-bottom:1px solid #F1F1F6}.dtab tr:last-child td{border:0}.dtab .g{color:#7A7C8A}.dtab td.xc{text-align:right;font-weight:700}.dtab th.xc{text-align:right}
+.dnum{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;font-size:12px;font-weight:700;margin-right:6px}
+.dmine{background:#F1EFFC;border-radius:24px;padding:22px 24px;display:flex;flex-direction:column;gap:14px;flex-shrink:0}.dmine>b{font-size:15px}.dmine .dt{font-size:14px;color:#4A4C5A;line-height:1.6}
+.drow{display:flex;gap:8px;flex-wrap:wrap}.drow select,.drow input[type=text]{border:0;outline:none;background:#FFFFFF;border-radius:14px;padding:11px 14px;font:inherit;font-size:14px;color:#17181F}.drow input[type=text]{flex:1;min-width:120px}
+.dwb{border:0;background:#FFFFFF;border-radius:14px;padding:11px 16px;font:inherit;font-size:14px;font-weight:700;color:#17181F;cursor:pointer;white-space:nowrap}.dwb:hover{background:#FAFAFC}
+.dbl{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;border-top:1px solid #E3DEFF;font-size:13px;color:#7A7C8A}
+.x{position:absolute;top:18px;right:18px;border:0;background:#F1F1F6;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:15px;color:#7A7C8A}.x:hover{color:#17181F}
+/* настройки */
+.modal-bg{position:fixed;inset:0;background:rgba(23,24,31,.32);backdrop-filter:blur(4px);z-index:60;display:none;align-items:flex-start;justify-content:center;padding:6vh 16px;overflow:auto}.modal-bg.open{display:flex}
+.modal{background:#FFFFFF;color:#17181F;border-radius:28px;box-shadow:0 30px 90px -20px rgba(23,24,31,.35);width:min(560px,100%);padding:30px 32px 26px;position:relative}
+.modal h2{margin:0 0 6px;font-size:26px;font-weight:600;letter-spacing:-.03em}.modal .sub{font-size:13px;color:#7A7C8A;line-height:1.55}
+.modal label.f{display:block;font-size:12px;color:#7A7C8A;margin:18px 0 8px}
+.srow{display:flex;gap:8px;align-items:center;margin-bottom:8px}.srow input{min-width:0}.srow .sid{flex:0 0 130px}.srow .snm{flex:1}
+.modal input[type=text]{border:0;outline:none;border-radius:12px;padding:11px 14px;font:inherit;font-size:14px;background:#FAFAFC;width:100%;color:#17181F}
+.modal input:focus{box-shadow:0 0 0 2px #6B5CE7}
+.modal input[readonly]{color:#7A7C8A}
+.schk{font-size:12px;min-height:16px;margin:-4px 0 6px 2px;color:#7A7C8A}.schk.ok{color:#1D7A4F}.schk.bad{color:#B13036}
+.sact{display:flex;gap:10px;justify-content:flex-end;align-items:center;margin-top:22px;flex-wrap:wrap}.sact .sub{margin-right:auto}
+.smsg{font-size:13px;margin-top:12px;white-space:pre-wrap}.smsg.bad{color:#B13036}.smsg.ok{color:#1D7A4F}
+.sro{background:#FDEBD3;color:#9A5B12;border-radius:16px;padding:14px 16px;font-size:13px;margin-top:16px;line-height:1.55}.sro .sub{color:#9A5B12}
+.ibtn{border:0;background:#F1F1F6;border-radius:10px;width:38px;height:40px;cursor:pointer;font-size:14px;color:#7A7C8A;flex:none}.ibtn:hover{color:#17181F}
+.dsw{display:grid;grid-template-columns:1fr 1fr;gap:8px}.dsw button{border:0;background:#FAFAFC;border-radius:16px;padding:12px 14px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:2px;box-shadow:inset 0 0 0 1px #F1F1F6}
+.dsw button b{font-size:14px;font-weight:600}.dsw button span{font-size:12px;color:#A6A8B4}.dsw button.on{background:#F6F4FF;box-shadow:inset 0 0 0 2px #6B5CE7}.dsw button.on b{color:#6B5CE7}
+.srvbar{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#B13036;color:#FFFFFF;border-radius:16px;padding:10px 16px;z-index:55;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.2);max-width:min(680px,92vw)}
+.srvbar .btn{padding:6px 12px;font-size:12px;margin-left:8px;background:#FFFFFF;color:#B13036}
+.wltoast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:#17181F;color:#FFFFFF;padding:11px 18px;border-radius:14px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:90;max-width:92vw}
+.wltoast.on{opacity:1;transform:translateX(-50%)}.wltoast.bad{background:#B13036}
+#tt{position:fixed;display:none;z-index:1000;max-width:320px;padding:10px 13px;border-radius:12px;background:rgba(23,24,31,.94);color:#FFFFFF;font-size:12.5px;line-height:1.45;box-shadow:0 10px 30px rgba(0,0,0,.28);pointer-events:none}
+textarea{width:100%;font:12px/1.4 ui-monospace,Consolas,monospace;padding:10px;border-radius:12px;border:0;background:#FAFAFC;color:#17181F;min-height:90px}
+details.fd>summary{list-style:none;cursor:pointer}details.fd>summary::-webkit-details-marker{display:none}
+@media(max-width:700px){.nav-in{padding:14px 16px;gap:14px}.wrap{padding:28px 16px 0}.hero2{grid-template-columns:1fr!important}.card.pd{padding:24px 20px}.card.tb{padding:12px 14px}}
+</style>
+</head>
+<body>
+<div id="demo" class="demo" style="display:none">ДЕМО-ДАННЫЕ (офлайн-режим). Для реальных данных запусти без --offline</div>
+<div class="nav"><div class="nav-in">
+  <div class="brand"><img class="brand-ic" alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzRmNmJmMCIvPjxzdG9wIG9mZnNldD0iLjU1IiBzdG9wLWNvbG9yPSIjN2E2ZmU2Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYTM4NGVlIi8+PC9saW5lYXJHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9ImdsIiBjeD0iLjc4IiBjeT0iLjIiIHI9Ii43Ij48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iLjM4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz48L3JhZGlhbEdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0ibG4iIHgxPSIwIiB5MT0iMSIgeDI9IjEiIHkyPSIwIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iLjc4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9ImdvbGQiIGN4PSIuNCIgY3k9Ii4zNSIgcj0iLjgiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZjJiOCIvPjxzdG9wIG9mZnNldD0iLjU1IiBzdG9wLWNvbG9yPSIjZmZkMTY2Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZjRhOTNiIi8+PC9yYWRpYWxHcmFkaWVudD48ZmlsdGVyIGlkPSJzaCIgeD0iLTIwJSIgeT0iLTIwJSIgd2lkdGg9IjE0MCUiIGhlaWdodD0iMTUwJSI+PGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjEwIiBzdGREZXZpYXRpb249IjEwIiBmbG9vZC1jb2xvcj0iIzJhMmY3YSIgZmxvb2Qtb3BhY2l0eT0iLjM1Ii8+PC9maWx0ZXI+PGNsaXBQYXRoIGlkPSJzcSI+PHJlY3QgeD0iMTYiIHk9IjE2IiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjQ4MCIgcng9IjExNiIvPjwvY2xpcFBhdGg+PC9kZWZzPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjQ4MCIgaGVpZ2h0PSI0ODAiIHJ4PSIxMTYiIGZpbGw9InVybCgjYmcpIi8+PGcgY2xpcC1wYXRoPSJ1cmwoI3NxKSI+PHJlY3QgeD0iMTYiIHk9IjE2IiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjQ4MCIgZmlsbD0idXJsKCNnbCkiLz48IS0tINGA0LDQt9C80LXRgtC60LAg0L/QvtC70Y8gLS0+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjIiIHN0cm9rZS13aWR0aD0iNyI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjY4IiByPSIxNTAiLz48bGluZSB4MT0iMTYiIHkxPSIyNjgiIHgyPSI0OTYiIHkyPSIyNjgiLz48cGF0aCBkPSJNOTYgNDk2VjQzMGgzMjB2NjYiLz48L2c+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjY4IiByPSI5IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii4yOCIvPjwvZz48IS0tINC70LjQvdC40Y8g0YDQvtGB0YLQsCB4UCAtLT48ZyBmaWx0ZXI9InVybCgjc2gpIj48cG9seWxpbmUgcG9pbnRzPSIxMDQsMzcwIDE5MiwzMDAgMjYyLDMzNiAzNjYsMjA2IiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjbG4pIiBzdHJva2Utd2lkdGg9IjMwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48ZyBmaWxsPSIjZmZmIj48Y2lyY2xlIGN4PSIxMDQiIGN5PSIzNzAiIHI9IjE5Ii8+PGNpcmNsZSBjeD0iMTkyIiBjeT0iMzAwIiByPSIxOSIvPjxjaXJjbGUgY3g9IjI2MiIgY3k9IjMzNiIgcj0iMTkiLz48L2c+PGNpcmNsZSBjeD0iMzY2IiBjeT0iMjA2IiByPSI0MCIgZmlsbD0idXJsKCNnb2xkKSIvPjxwYXRoIGQ9Ik0zNjYgMTgybDYuOCAxNC42IDE2IDItMTEuOCAxMSAzIDE1LjhMMzY2IDIxNy42MDBsLTE0IDcuODAwIDMtMTUuODAwLTExLjgwMC0xMSAxNi0yeiIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuOTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTEuNTAwKSIvPjwvZz48L3N2Zz4K">FPL Advisor</div>
+  <div class="tabs" id="tabs"></div>
+  <div class="upd" id="upd"></div>
+</div></div>
+<div class="wrap" id="app"></div>
+<div class="drawer" id="drawer"></div>
+
+<script>
+const DESIGN = 2;
+const D = /*__DATA__*/null;
+/*__CORE__*/
+
+/* ===================== Дизайн 2: общие кусочки ===================== */
+const CLUB={MCI:'#6FB4E0',LIV:'#D0313F',ARS:'#DE3A36',CHE:'#2F5EA8',MUN:'#D03A3C',BHA:'#2F6CC9',NFO:'#CF3535',EVE:'#2F4FA6',TOT:'#2B3A68',NEW:'#3A3A3E',AVL:'#86325C',FUL:'#3A3A3A',BOU:'#C53B3E',BRE:'#D93238',WOL:'#DBA52B',CRY:'#355FAE',SUN:'#DB3A44',LEE:'#CDAB1A',HUL:'#E3942F',COV:'#4FA8DC',IPS:'#4A73B0',BUR:'#7A2F54',SOU:'#D71920',WHU:'#7A263A',LEI:'#1F4FA8'};
+const clubC = t => CLUB[t] || '#9A9CB0';
+const abN = n => String(n||'?').replace(/^[A-ZА-Я]\./,'').replace('Ø','O').slice(0,2).toUpperCase();
+const AVF = s => s>=60?18:s>=48?13:s>=40?12:s>=36?11:s>=30?10:s>=26?9:8;
+/* аватар: кружок цвета клуба с двумя буквами (как в макете); клик — карточка игрока */
+function cav(id,s,op){ // фото игрока с эмблемой клуба; нет фото — футболка цвета клуба с буквами
+  const h=av(id,s); return op?`<span style="display:inline-flex;flex:none;opacity:${op}">${h}</span>`:h; }
+const DF = f => f<=2?1:f===3?2:f===4?3:4;            // сложность FPL 1–5 → 4 цвета макета
+const DOT = {1:'#5CCB93',2:'#C9CAD6',3:'#F0B45C',4:'#E9777B'};
+const fxo = f => f.opp+(f.h?'':' ·');
+const fxPills = (p,n) => `<div class="fxr">${(p.fix||[]).slice(0,n||5).map(f=>`<span class="d${DF(f.fdr)}" title="GW${f.gw}">${fxo(f)}</span>`).join('')||'<span class="d0">—</span>'}</div>`;
+const fxDots = p => `<div class="fdots">${(p.fix||[]).slice(0,5).map(f=>`<span title="GW${f.gw} ${fxo(f)}" style="background:${DOT[DF(f.fdr)]}"></span>`).join('')}</div>`;
+const sgn = (v,d) => (v>0?'+':v<0?'−':'')+Math.abs(v).toFixed(d==null?1:d);
+const fmtN = n => (n>0?'+':n<0?'−':'')+Math.abs(Math.round(n)).toLocaleString('ru-RU');
+const pad2 = x => String(x).padStart(2,'0');
+const fmtDT = iso => { const d=new Date(iso); return pad2(d.getDate())+'.'+pad2(d.getMonth()+1)+', '+pad2(d.getHours())+':'+pad2(d.getMinutes()); };
+const fmtT = iso => { const d=new Date(iso); return pad2(d.getHours())+':'+pad2(d.getMinutes()); };
+const SP = '<span class="sp"></span>';
+const genR = n => /[аa]$/i.test(n)?n.slice(0,-1)+'ы':/я$/.test(n)?n.slice(0,-1)+'и':/[бвгджзклмнпрстфхцчшщ]$/i.test(n)?n+'а':n;  // Рома→Ромы, Стас→Стаса
+const POS1 = {GK:'Вратарь',DEF:'Защитник',MID:'Полузащитник',FWD:'Нападающий'};
+const CHA = {wildcard:'WC',freehit:'FH',bboost:'BB','3xc':'TC'};
+const CHN = {wildcard:'Wildcard',freehit:'Free Hit',bboost:'Bench Boost','3xc':'Triple Captain'};
+const CHC = {WC:['#EDEAFF','#6B5CE7'],FH:['#FDEBD3','#9A5B12'],BB:['#D7F3E4','#1D7A4F'],TC:['#FBDCDD','#B13036']};
+const CHS = {WC:'#C44FD6',FH:'#E8A23B',BB:'#2EB67D',TC:'#6B5CE7'};
+const CHKEY = n => ({'wildcard':'WC','free hit':'FH','freehit':'FH','bench boost':'BB','bboost':'BB','triple captain':'TC','3xc':'TC'})[String(n).toLowerCase()]||'WC';
+const CSHORT={wildcard:'Пересборка состава',bboost:'Скамейка тоже играет',freehit:'Один идеальный тур','3xc':'Капитан ×3'};
+const CTIP={wildcard:'Прирост xP за 6 туров после розыгрыша сверх обычного плана, без хитов.',bboost:'Сумма xP четырёх игроков скамейки; важно, чтобы они реально играли. Штраф за матчи «свои против своих».',freehit:'Идеальный состав на один тур; лучше всего работает на пустых или двойных турах.','3xc':'Капитан приносит тройные очки.'};
+const tagCls = {'мой':'t-me','скаут':'t-sc','в ЧС':'t-bl'};
+const ownerName = id => { const p=P[id]; if(p&&p.taken_by&&p.taken_by!=='чёрный список') return p.taken_by; return null; };
+/* метка игрока: соперник — его имя серым; «в ЧС» — только ручной чёрный список */
+function tagA(p){ if(!p) return ''; if(p.mine) return '<span class="tag t-me">мой</span>'; const o=ownerName(p.id); if(o) return `<span class="tag t-gr">${esc(o)}</span>`;
+  if(isBlocked(p.id)) return '<span class="tag t-bl">в ЧС</span>'; if(wlGet(p.id)) return '<span class="tag t-sc">скаут</span>'; if(p.wide) return '<span class="tag t-mu" title="вне топ-списков: в рекомендациях не участвует">вне списков</span>'; return ''; }
+function tagB(id){ const p=P[id]; if(!p) return ''; if(p.mine) return '<span class="tag t-me">мой</span>'; const o=ownerName(id); if(o) return `<span class="tag t-gr">${esc(o)}</span>`; if(isBlocked(id)) return '<span class="tag t-bl">в ЧС</span>'; if(wlGet(id)) return '<span class="tag t-sc">скаут</span>'; return ''; }
+function availPill(id){ const p=P[id]; if(!p) return ''; if(p.mine) return '<span class="pl t-me">мой</span>'; const o=ownerName(id);
+  if(o) return `<span class="pl t-sc">занят: ${esc(o)}</span>`; if(isBlocked(id)) return '<span class="pl t-bl">в ЧС</span>'; return '<span class="pl t-ok">свободен</span>'; }
+const flagC = p => !p||p.status==='a'?'':(p.status==='d'?'#E8A23B':'#E5484D');
+const flag = p => flagC(p)?`<span title="${esc(p.news||'')}" style="width:7px;height:7px;border-radius:50%;background:${flagC(p)};flex-shrink:0;display:inline-block"></span>`:'';
+/* строка «игрок»: аватар + имя (+метка) + подпись */
+function whoRow(id,s,sub,o){ o=o||{}; const p=P[id];
+  return `<div class="who" style="gap:${o.gap||10}px">${cav(id,s,o.op)}<div><div class="row6"><span class="nm${o.mut?' mut':''}" style="${o.fs?'font-size:'+o.fs+'px':''}">${pnk(id)}</span>${o.tag||''}</div><div class="cl">${sub!=null?sub:(p?p.tname:pt(id))}</div></div></div>`; }
+function btCard(){
+  const B=D.backtest; if(!B||!B.ok) return `<div class="card pd" style="gap:8px"><div class="lbl">Точность прогноза</div><div class="empty">${esc((B&&B.note)||'нет данных')}</div></div>`;
+  const rs=B.retro_summary||{}, fs=B.forward_summary||{};
+  const row=(lab,v,tip)=>v?`<div style="display:grid;grid-template-columns:minmax(0,1.6fr) repeat(4,minmax(0,1fr));gap:8px;font-size:13px;padding:7px 0;border-top:1px solid #F4F4F8"><span title="${tip||''}">${lab}</span><b>${v.mae.toFixed(2)}</b><b>${(v.pearson||0).toFixed(2)}</b><b>${(v.spearman||0).toFixed(2)}</b><b>${(v.top10_actual||0).toFixed(2)}</b></div>`:'';
+  const head='<div style="display:grid;grid-template-columns:minmax(0,1.6fr) repeat(4,minmax(0,1fr));gap:8px;font-size:11px;color:#A6A8B4;padding-bottom:4px"><span></span><span title="Средняя ошибка в очках, меньше — лучше">MAE</span><span title="Корреляция прогноза с фактом">Корр.</span><span title="Корреляция порядка игроков">Порядок</span><span title="Сколько очков в среднем набрали топ-10 по позиции, выбранные моделью">Топ-10</span></div>';
+  const n=Object.keys(B.retro||{}).length, nf=Object.keys(B.forward||{}).length;
+  return `<div class="card pd" style="gap:6px"><div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px"><span class="lbl">Точность прогноза очков</span><span style="font-size:12px;color:#A6A8B4">ретро: ${n} тур.</span></div>${head}
+    ${row('Среднее очков',rs.naive)}${row('Среднее × минуты',rs.mins)}${row('<b>Наша xP</b>',rs.xp)}
+    ${nf?`<div style="font-size:12px;color:#7A7C8A;margin-top:8px">Журнал (прогнозы до дедлайна), туров: ${nf}</div>${row('Наша xP',fs.xp)}${row('ep_next FPL',fs.ep)}`:`<div style="font-size:12px;color:#7A7C8A;margin-top:8px">Журнал честных прогнозов копится (записано туров: ${B.logged_gws||0}). Сравнение с ep_next FPL появится после первого сыгранного тура.</div>`}
+    <div style="font-size:12px;color:#A6A8B4;margin-top:6px">${esc(B.note||'')}</div></div>`;
+}
+function sec(t,s,body,sCls){ return `<div class="sec"><div class="sh"><div class="t">${t}</div>${s?`<div class="s"${sCls?` style="${sCls}"`:''}>${s}</div>`:''}</div>${body}</div>`; }
+const CL0 = () => { const CL=D.claude_lineup; return CL&&!CL.errors.length&&!CL.stale?CL:null; };
+/* аватар менеджера: эмблема любимого клуба из FPL (как в карточке команды), не загрузилась — буква */
+function mgrAv(k,name,sz,bg,fg){
+  const ft=((D.league||{})[k]||{}).fav_team, ini=esc((name||'?')[0]);
+  const mono=`<div style="width:${sz}px;height:${sz}px;border-radius:50%;background:${bg};color:${fg};display:grid;place-items:center;font-weight:600;font-size:${Math.round(sz*.34)}px;flex-shrink:0">${ini}</div>`;
+  if(!ft) return mono;
+  return `<div title="${esc(name)} · болеет за ${esc(ft.name)}" style="width:${sz}px;height:${sz}px;border-radius:50%;background:${bg==='#17181F'?'#F1F1F6':bg};display:grid;place-items:center;flex-shrink:0;box-shadow:inset 0 0 0 1.5px ${bg==='#17181F'?'#17181F':'transparent'}"><img alt="" src="https://resources.premierleague.com/premierleague/badges/100/t${ft.code}.png" style="width:${Math.round(sz*.66)}px;height:${Math.round(sz*.66)}px;object-fit:contain" onerror="this.parentNode.outerHTML=this.parentNode.dataset.m" ></div>`.replace('<div title', `<div data-m="${esc(mono)}" title`);
+}
+const leagueKeyByEntry = e => Object.keys(D.league||{}).find(k=>(D.league[k]||{}).entry===e);
+const nameOfKey = k => (D.league_names||{})[k] || k;
+function myPlace(){ const lt=D.league_table||[], me=lt.find(r=>r.entry===D.me.entry); return {lt, me, n:lt.length, lead:lt[0]}; }
+
+/* ===================== v1.19: шансы по данным FPL (CS %, DC %, голы/ассисты, стандарты, xG команд, ротация, владение, live) ===================== */
+const TABS2 = (()=>{ const t=TABS.slice(), i=t.findIndex(x=>x[0]==='players'); t.splice(i+1,0,['fix','Матчи']); return t; })();
+const TCODE = {}; D.players.forEach(p=>{ if(p.tcode) TCODE[p.team]=p.tcode; });
+const teamBadge = (t,s) => TCODE[t]?`<img alt="" src="https://resources.premierleague.com/premierleague/badges/70/t${TCODE[t]}.png" style="width:${s}px;height:${s}px;object-fit:contain;flex-shrink:0">`:`<span style="width:${s}px;height:${s}px;border-radius:50%;background:#EEEEF3;flex-shrink:0;display:inline-block"></span>`;
+const TN = t => (D.teams||{})[t] || '?';
+const hexRgb = h => [parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];
+/* плашка с процентом: чем выше — тем насыщеннее цвет */
+function pchip(v,col,maxv){ if(v==null) return '<span style="color:#C9CAD6">—</span>'; const [r,g,b]=hexRgb(col), a=Math.min(.5,.05+v/(maxv||100)*.5);
+  return `<span style="display:inline-block;min-width:44px;text-align:center;font-size:13px;font-weight:600;border-radius:999px;padding:4px 8px;background:rgba(${r},${g},${b},${a.toFixed(2)});color:${v/(maxv||100)>.45?'#17181F':'#4A4C5A'}">${v}%</span>`; }
+const PCOL = {cs:'#2EB67D',dc:'#E8A23B',g:'#6B5CE7',g2:'#6B5CE7',a:'#2F6CC9',ga:'#6B5CE7'};
+const SPN = {pen:'Пенальти',fk:'Штрафные',cor:'Угловые'};
+const spPills = p => Object.entries(p.sp||{}).sort((a,b)=>a[1]-b[1]).map(([k,v])=>`<span class="pl ${v===1?'t-sc':'t-gr'}" style="font-size:12px;padding:4px 10px" title="${SPN[k]}: ${v}-й в очереди">${SPN[k]} №${v}</span>`).join('');
+const spShort = p => Object.entries(p.sp||{}).filter(([k,v])=>v<=2).sort((a,b)=>a[1]-b[1]).map(([k,v])=>`<span class="tag ${v===1?'t-sc':'t-gr'}" title="${SPN[k]}: ${v}-й в очереди">${{pen:'П',fk:'Ш',cor:'У'}[k]}${v}</span>`).join(' ');
+// ключи сортировки «шансов» на ближайший тур
+D.players.forEach(p=>{ const q=(p.pr||[])[0]||{}; p._cs=q.cs??-1; p._dc=q.dc??-1; p._g=q.g??-1; p._g2=q.g2??-1; p._a=q.a??-1; p._ga=q.ga??-1; p._sp=Object.values(p.sp||{}).length?(10-Math.min(...Object.values(p.sp))):0; });
+
+/* ---------- Вкладка «Матчи» ---------- */
+let FXM='cs', FXH=5;
+function fdrOf(t,g,o){ for(const p of D.players){ if(p.team!==+t) continue; const f=(p.fix||[]).find(x=>x.gw===g&&x.opp===TN(o)); if(f) return f.fdr; } return 3; }
+function vFix(){
+  const tm=D.teams_model; if(!tm||!tm.fix) return `<div class="hd"><div class="ht">Матчи</div></div><div class="card pd"><div class="empty">Модель команд не посчитана — запусти инструмент заново.</div></div>`;
+  const g0=D.meta.gw_next, gws=[...Array(FXH)].map((_,i)=>g0+i);
+  const mineT={}; D.me.squad.forEach(x=>{const p=P[x.id]; if(p) mineT[p.team]=(mineT[p.team]||0)+1;});
+  const M={cs:{lab:'CS %',col:'#2EB67D',desc:'шанс «сухого» матча',better:1},xg:{lab:'xG',col:'#6B5CE7',desc:'ожидаемые голы команды',better:1},xga:{lab:'xGA',col:'#E5484D',desc:'ожидаемые пропущенные',better:-1},fdr:{lab:'Сложность FPL',col:'',desc:'официальная сложность FPL',better:-1}}[FXM];
+  const cellVal=(t,fs)=>{ if(!fs.length) return null; if(FXM==='cs') return 1-fs.reduce((q,f)=>q*(1-f.cs),1); if(FXM==='xg') return fs.reduce((s,f)=>s+f.xg,0); if(FXM==='xga') return fs.reduce((s,f)=>s+f.xga,0); return fs.reduce((s,f)=>s+fdrOf(t,f.gw,f.opp),0)/fs.length; };
+  const rows=Object.keys(tm.fix).map(t=>{ const cells=gws.map(g=>{const fs=tm.fix[t].filter(f=>f.gw===g);return {fs,v:cellVal(t,fs)};});
+    const vs=cells.map(c=>c.v==null?(FXM==='cs'||FXM==='xg'?0:(FXM==='fdr'?5:0)):c.v); const avg=vs.reduce((a,b)=>a+b,0)/vs.length; return {t,cells,avg}; });
+  rows.sort((a,b)=>(b.avg-a.avg)*M.better);
+  const fmtv=v=>FXM==='cs'?Math.round(v*100)+'%':FXM==='fdr'?v.toFixed(v%1?1:0):v.toFixed(2);
+  // 5 ступеней (как сложность в макете): лучше всего → хуже всего. Границы — по распределению видимых клеток,
+  // чтобы цвета расходились при любом показателе; «Сложность FPL» — по официальной шкале.
+  const TIER=[{bg:'#2EB67D',fg:'#FFFFFF',sub:'rgba(255,255,255,.88)',t:'лучше всего'},{bg:'#C4EDD6',fg:'#14613F',sub:'#1D7A4F',t:'хорошо'},{bg:'#EEEEF3',fg:'#17181F',sub:'#7A7C8A',t:'средне'},{bg:'#FDE1BD',fg:'#7A4A0E',sub:'#9A5B12',t:'сложно'},{bg:'#F8C9CB',fg:'#8E2328',sub:'#B13036',t:'хуже всего'}];
+  const allv=rows.flatMap(r=>r.cells.filter(c=>c.v!=null).map(c=>c.v*M.better)).sort((a,b)=>a-b);
+  const qv=q=>allv.length?allv[Math.min(allv.length-1,Math.floor(q*allv.length))]:0, q85=qv(.85), q60=qv(.60), q35=qv(.35), q12=qv(.12);
+  const tierOf=v=>{ if(FXM==='fdr'){ const f=Math.round(v); return TIER[f<=2?0:f===3?2:f===4?3:4]; } const x=v*M.better; return TIER[x>=q85?0:x>=q60?1:x>=q35?2:x>=q12?3:4]; };
+  const CC=`minmax(150px,1.1fr) repeat(${FXH},minmax(62px,1fr)) 64px`;
+  const table=`<div class="card tb"><div style="min-width:${FXH>5?980:640}px">
+    <div style="display:grid;grid-template-columns:${CC};gap:6px;padding:8px 8px 12px;font-size:12px;color:#A6A8B4"><div>Клуб</div>${gws.map(g=>`<div style="text-align:center">GW${g}</div>`).join('')}<div style="text-align:right">${FXM==='fdr'?'ср.':'ср./тур'}</div></div>
+    ${rows.map(r=>`<div class="g" style="grid-template-columns:${CC};gap:6px;padding:6px 8px"><div style="display:flex;align-items:center;gap:10px;min-width:0">${teamBadge(r.t,26)}<b style="font-size:14px;font-weight:600">${TN(r.t)}</b>${mineT[r.t]?`<span class="tag t-me" title="моих игроков из этого клуба">у меня ${mineT[r.t]}</span>`:''}</div>
+      ${r.cells.map(c=>c.v==null?`<div style="border-radius:12px;padding:6px 4px;text-align:center;background:#F7F7FA;color:#C9CAD6;font-size:12px">нет матча</div>`
+        :(()=>{const T=tierOf(c.v);return `<div style="border-radius:12px;padding:6px 4px;text-align:center;background:${T.bg}" title="${T.t} · ${c.fs.map(f=>(f.h?'дома ':'в гостях ')+TN(f.opp)+' · CS '+Math.round(f.cs*100)+'% · xG '+f.xg+' · xGA '+f.xga).join('\n')}"><b style="display:block;font-size:13px;font-weight:600;color:${T.fg}">${fmtv(c.v)}</b><span style="display:block;font-size:10px;color:${T.sub};margin-top:1px">${c.fs.map(f=>TN(f.opp)+(f.h?'':' ·')).join(' + ')}</span></div>`})()).join('')}
+      <div style="text-align:right;font-size:14px;font-weight:600;letter-spacing:-.02em">${fmtv(r.avg)}</div></div>`).join('')}</div></div>`;
+  // лучшие «сухие» и голы тура
+  const ev=Object.keys(tm.fix).flatMap(t=>tm.fix[t].filter(f=>f.gw===g0).map(f=>({t,...f})));
+  const chg=(t,k)=>{const c=((tm.chg||{})[t]||{})[g0]; if(!c) return '<span style="color:#C9CAD6">–</span>'; const v=c[k]; return v?`<span style="color:${v>0?'#2EB67D':'#E5484D'}">${v>0?'+':'−'}${Math.abs(v)}${k==='cs'?'':''}</span>`:'<span style="color:#A6A8B4">±0</span>';};
+  const lst=(arr,key,col,fmt)=>arr.map(f=>`<div class="g" style="grid-template-columns:minmax(0,1fr) 90px 56px 52px;padding:8px"><div style="display:flex;align-items:center;gap:10px;min-width:0">${teamBadge(f.t,28)}<div style="min-width:0"><div style="font-size:14px;font-weight:600">${TN(f.t)}</div><div class="cl">${f.h?'дома':'в гостях'} · ${TN(f.opp)}</div></div></div><div class="b4"><i style="background:${col};width:${Math.min(100,(key==='cs'?f.cs/0.6:f.xg/2.6)*100)}%"></i></div><div style="text-align:right;font-size:14px;font-weight:600">${fmt(f)}</div><div style="text-align:right;font-size:12px;font-weight:600">${chg(f.t,key)}</div></div>`).join('');
+  const csTop=ev.slice().sort((a,b)=>b.cs-a.cs).slice(0,10), xgTop=ev.slice().sort((a,b)=>b.xg-a.xg).slice(0,10);
+  // стандарты по клубам
+  const byT=tm.sp||{};
+  const spCards=Object.keys(tm.fix).sort((a,b)=>TN(a).localeCompare(TN(b))).map(t=>{const d=byT[t]||{pen:[],fk:[],cor:[]};
+    return `<div class="card r24" style="padding:18px 20px;display:flex;flex-direction:column;gap:12px"><div style="display:flex;align-items:center;gap:10px">${teamBadge(t,28)}<b style="font-size:15px;font-weight:600">${TN(t)}</b></div>
+      ${['pen','fk','cor'].map(k=>{const l=(d[k]||[]).slice(0,2);return `<div style="display:grid;grid-template-columns:76px 1fr;gap:8px;align-items:center;padding-top:10px;border-top:1px solid #F4F4F8"><span style="font-size:12px;color:#7A7C8A">${SPN[k]}</span><div style="display:flex;flex-direction:column;gap:6px">${l.map(([n,id,nm,pc],j)=>`<div style="display:flex;align-items:center;gap:8px;min-width:0">${P[id]?cav(id,22):`<span style="width:22px;height:22px;border-radius:50%;background:#EEEEF3;flex-shrink:0;display:inline-block;overflow:hidden;position:relative">${pc?`<img alt="" src="${IMG.p(pc)}" loading="lazy" style="position:absolute;left:50%;bottom:-6%;height:112%;transform:translateX(-50%)" onerror="this.remove()">`:''}</span>`}<span style="font-size:13px;font-weight:${j===0?600:500};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${P[id]?pnk(id):esc(nm)}</span><span style="margin-left:auto;font-size:11px;color:#A6A8B4">№${n}</span></div>`).join('')||'<span style="font-size:12px;color:#C9CAD6">нет данных</span>'}</div></div>`}).join('')}</div>`}).join('');
+  const sb=(k,cur)=>k===cur?'on':'';
+  return `<div class="hdr"><div class="hd"><div class="ht">Матчи <span>шансы команд и стандарты</span></div>
+      <div class="facts"><span>модель <b>${tm.src==='xg'?'по xG сезона':'по силе команд FPL'}</b></span>${SP}<span>в среднем <b>${(+tm.avg).toFixed(2)}</b> xG за матч</span>${SP}<span>изменения ${tm.chg_ts?'с <b>'+fmtDT(tm.chg_ts+'Z')+'</b>':'появятся со следующего снимка'}</span>${SP}<span>ориентир, не гарантия</span></div></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><div class="seg sm">${[['cs','CS %'],['xg','xG'],['xga','xGA'],['fdr','Сложность FPL']].map(([k,l])=>`<button class="${sb(k,FXM)}" onclick="FXM='${k}';render()">${l}</button>`).join('')}</div><div class="seg sm">${[[5,'5 туров'],[10,'10 туров']].map(([k,l])=>`<button class="${FXH===k?'on':''}" onclick="FXH=${k};render()">${l}</button>`).join('')}</div></div></div>
+  ${sec('Календарь команд',`${M.desc} · сортировка по среднему за ${FXH} туров · наведи на клетку — детали матча`,
+    `<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:0 4px;font-size:12px;color:#7A7C8A">${TIER.map(T=>`<span style="display:inline-flex;align-items:center;gap:6px"><span style="width:22px;height:12px;border-radius:4px;background:${T.bg}"></span>${T.t}</span>`).join('')}<span style="margin-left:6px;color:#A6A8B4">${FXM==='fdr'?'по официальной шкале FPL 2–5':FXM==='xga'?'меньше пропускает — зеленее':'больше — зеленее'} · ступени — по всем клеткам таблицы</span></div>`+table)}
+  ${sec(`Тур GW${g0}`,'шанс «сухого» матча и ожидаемые голы · справа — изменение с прошлого снимка',`<div class="grid3"><div class="card tb"><div class="ch"><b style="color:#1D7A4F">Сухой матч</b><span>CS % · Δ п.п.</span></div>${lst(csTop,'cs','#2EB67D',f=>Math.round(f.cs*100)+'%')}</div><div class="card tb"><div class="ch"><b style="color:#4F3FD1">Голы команд</b><span>xG · Δ</span></div>${lst(xgTop,'xg','#6B5CE7',f=>f.xg.toFixed(2))}</div></div>`)}
+  ${sec('Стандарты','кто бьёт пенальти, штрафные и угловые — по данным FPL, первый номер выделен',`<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px">${spCards}</div>`)}`;
+}
+
+/* ---------- «Игроки»: вид «Шансы на тур» ---------- */
+let PV='main';
+function vPlayersProb(rows){
+  const g0=D.meta.gw_next, shown=rows.slice(0,150);
+  const COLS=[['price','Цена'],['_cs','CS %'],['_dc','DC %'],['_g','Гол %'],['_g2','2+ %'],['_a','Ассист %'],['_ga','Г/А %'],['xp1','xP1']];
+  const GC='minmax(170px,1.3fr) 50px 88px 64px 64px 64px 58px 72px 64px 52px minmax(84px,.6fr)';
+  const hd=`<div style="display:grid;grid-template-columns:${GC};gap:10px;padding:6px 8px 12px;font-size:12px;color:#A6A8B4;align-items:center"><div>Игрок</div><div class="srt" data-s="price" style="text-align:right;cursor:pointer;color:${state.sort==='price'?'#17181F':'#A6A8B4'}">Цена${state.sort==='price'?(state.dir<0?' ↓':' ↑'):''}</div><div style="text-align:center">GW${g0}</div>${COLS.slice(1).map(([k,l])=>`<div class="srt" data-s="${k}" style="text-align:center;cursor:pointer;white-space:nowrap;color:${state.sort===k?'#17181F':'#A6A8B4'};font-weight:${state.sort===k?600:400}">${l}${state.sort===k?(state.dir<0?' ↓':' ↑'):''}</div>`).join('')}<div class="srt" data-s="_sp" style="cursor:pointer;color:${state.sort==='_sp'?'#17181F':'#A6A8B4'}" title="П — пенальти, Ш — штрафные, У — угловые; цифра — номер в очереди">Стандарты</div></div>`;
+  const body=shown.map(p=>{const q=(p.pr||[])[0]||{}, f=(p.fix||[]).filter(x=>x.gw===g0), taken=!!ownerName(p.id);
+    return `<div class="g hv" style="grid-template-columns:${GC};gap:10px;padding:8px;${taken?'opacity:.55':''}" data-id="${p.id}">
+    <div class="who">${cav(p.id,32)}<div style="min-width:0"><div class="row6"><span class="nm">${esc(p.name)}</span>${flag(p)}${tagA(p)}</div><div class="cl">${p.tname} · ${p.pos}</div></div></div>
+    <div style="text-align:right;font-size:14px;font-weight:500">${money(p.price)}</div>
+    <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap">${f.length?f.map(x=>`<span class="d${DF(x.fdr)}" style="font-size:10px;font-weight:600;padding:4px 7px;border-radius:999px">${fxo(x)}</span>`).join(''):'<span class="d0" style="font-size:10px;font-weight:600;padding:4px 7px;border-radius:999px">—</span>'}</div>
+    <div style="text-align:center">${pchip(q.cs,PCOL.cs,50)}</div><div style="text-align:center">${pchip(q.dc,PCOL.dc,80)}</div><div style="text-align:center">${pchip(q.g,PCOL.g,60)}</div><div style="text-align:center">${pchip(q.g2,PCOL.g2,25)}</div><div style="text-align:center">${pchip(q.a,PCOL.a,40)}</div><div style="text-align:center">${pchip(q.ga,PCOL.ga,70)}</div>
+    <div style="text-align:center;font-size:14px;font-weight:600;color:#6B5CE7">${p.xp1.toFixed(1)}</div>
+    <div style="display:flex;gap:3px;flex-wrap:wrap">${spShort(p)||'<span style="color:#C9CAD6;font-size:12px">—</span>'}</div></div>`}).join('');
+  return `<div class="card tb"><div style="min-width:990px">${hd}${body||'<div class="empty">никого не нашлось</div>'}</div></div>
+  <div style="font-size:12px;color:#A6A8B4;padding:0 4px;line-height:1.6">Шансы на ближайший тур по xG/xA сезона, минутам за последние 5 матчей, здоровью и силе соперника. CS % — «сухой» матч с учётом шанса отыграть 60+ минут; DC % — бонус +2 за защитные действия (защитник 10, остальные 12); ассисты откалиброваны по тому, как их засчитывает FPL. Двойной тур — шанс «хотя бы раз».</div>`;
+}
+
+/* ---------- Карточка игрока: шансы по турам ---------- */
+function chancesHtml(p){
+  const pr=p.pr; if(!pr||!pr.length) return '';
+  const cols=p.pos==='GK'?[['cs','CS']]:p.pos==='DEF'?[['cs','CS'],['dc','DC'],['g','Гол'],['a','Ассист']]:p.pos==='MID'?[['cs','CS'],['dc','DC'],['g','Гол'],['a','Ассист'],['ga','Г/А']]:[['g','Гол'],['g2','2+'],['a','Ассист'],['ga','Г/А']];
+  const mx={cs:50,dc:80,g:60,g2:25,a:40,ga:70};
+  return `<div class="dsec2"><div class="dh">Шансы по турам</div><div class="dd">По xG/xA сезона, минутам и силе соперника. CS — «сухой» матч (60+ минут), DC — бонус за защитные действия.</div><div class="dcard" style="padding:8px 16px;overflow-x:auto"><table class="dtab"><thead><tr><th>Тур</th><th>Соперник</th>${cols.map(([k,l])=>`<th style="text-align:center">${l}</th>`).join('')}</tr></thead><tbody>
+    ${pr.map(q=>{const fs=(p.fix||[]).filter(x=>x.gw===q.gw);return q.blank?`<tr><td class="g">GW${q.gw}</td><td colspan="${cols.length+1}" style="color:#A6A8B4">нет матча</td></tr>`
+      :`<tr><td class="g">GW${q.gw}</td><td><b>${fs.map(x=>x.opp).join(' + ')||'—'}</b> <span style="color:#7A7C8A">${fs.map(x=>x.h?'д':'в').join('/')}</span></td>${cols.map(([k])=>`<td style="text-align:center">${pchip(q[k],PCOL[k],mx[k])}</td>`).join('')}</tr>`}).join('')}</tbody></table></div></div>`;
+}
+
+/* ---------- «Трансферы»: пары для ротации ---------- */
+let ROT={pos:'GK',h:5,cap:50,mine:1};
+function rotSec(){
+  const g0=D.meta.gw_next, H=ROT.h, cap=ROT.cap*1;
+  const sum=(p)=>(p.xpg||[]).slice(0,H).reduce((a,b)=>a+b,0);
+  let cand=D.players.filter(p=>p.pos===ROT.pos&&(p.xpg||[]).length>=H&&(p.mine?ROT.mine:(!isBlocked(p.id)&&(cap>=999||p.price<=cap)&&p.mfrac>=0.45&&!['i','s','u'].includes(p.status))));
+  cand=cand.sort((a,b)=>sum(b)-sum(a)).slice(0,32);
+  const pairs=[];
+  for(let i=0;i<cand.length;i++) for(let j=i+1;j<cand.length;j++){ const a=cand[i],b=cand[j]; if(!ROT.mine&&(a.mine||b.mine)) continue;
+    const xa=a.xpg.slice(0,H), xb=b.xpg.slice(0,H); const tot=xa.reduce((s,v,k)=>s+Math.max(v,xb[k]),0), best=Math.max(sum(a),sum(b));
+    pairs.push({a,b,xa,xb,tot,gain:tot-best,pct:best?((tot-best)/best*100):0,cost:a.price+b.price}); }
+  pairs.sort((x,y)=>y.tot-x.tot);
+  const myGK=ROT.pos==='GK'?D.me.squad.map(x=>P[x.id]).filter(p=>p&&p.pos==='GK'):[];
+  let mine=null; if(myGK.length===2){ const [a,b]=myGK, xa=(a.xpg||[]).slice(0,H), xb=(b.xpg||[]).slice(0,H), tot=xa.reduce((s,v,k)=>s+Math.max(v,xb[k]||0),0), best=Math.max(sum(a),sum(b)); mine={a,b,xa,xb,tot,gain:tot-best,pct:best?(tot-best)/best*100:0,cost:a.price+b.price,me:1}; }
+  // ротация имеет смысл, только если играют оба (выгода > 0); один игрок — не больше чем в двух парах
+  const cnt={}, top=[];
+  for(const x of pairs){ if(top.length>=6) break; if(x.gain<0.1) continue; if(mine&&((x.a===mine.a&&x.b===mine.b)||(x.a===mine.b&&x.b===mine.a))) continue;
+    if((cnt[x.a.id]||0)>=2||(cnt[x.b.id]||0)>=2) continue; cnt[x.a.id]=(cnt[x.a.id]||0)+1; cnt[x.b.id]=(cnt[x.b.id]||0)+1; top.push(x); }
+  const card=(x,i)=>`<div class="card r24 hov" style="padding:18px 20px;display:flex;flex-direction:column;gap:14px;${x.me?'box-shadow:inset 0 0 0 2px #E3DEFF':''}">
+    <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;color:#A6A8B4;font-weight:500">${x.me?'Твоя пара':'№'+(i+1)}</span><span style="font-size:22px;font-weight:600;letter-spacing:-.03em;color:#6B5CE7">${x.tot.toFixed(1)} <span style="font-size:12px;color:#A6A8B4;font-weight:500;letter-spacing:0">xP</span></span></div>
+    <div style="display:flex;flex-direction:column;gap:8px">${[x.a,x.b].map(p=>`<div style="display:flex;align-items:center;gap:10px">${cav(p.id,30)}<div style="min-width:0;flex:1"><div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${pnk(p.id)} ${p.mine?'<span class="tag t-me">мой</span>':''}</div><div class="cl">${p.tname} · £${money(p.price)}</div></div></div>`).join('')}</div>
+    <div style="display:grid;grid-template-columns:44px repeat(${H},1fr);gap:4px;font-size:11px;align-items:center"><span></span>${[...Array(H)].map((_,k)=>`<span style="text-align:center;color:#A6A8B4">GW${g0+k}</span>`).join('')}
+      ${[[x.a,x.xa,x.xb],[x.b,x.xb,x.xa]].map(([p,mx,ot])=>`<span style="color:#7A7C8A;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(p.name.slice(0,7))}</span>${mx.map((v,k)=>`<span style="text-align:center;border-radius:8px;padding:4px 0;font-weight:600;${v>=(ot[k]||0)?'background:#F6F4FF;color:#6B5CE7':'color:#C9CAD6'}">${v.toFixed(1)}</span>`).join('')}`).join('')}</div>
+    <div style="display:flex;justify-content:space-between;font-size:12px;color:#A6A8B4;padding-top:12px;border-top:1px solid #F1F1F6"><span>выгода ротации <b style="color:${x.gain>0.05?'#2EB67D':'#7A7C8A'};font-weight:600">+${x.gain.toFixed(1)} xP (${x.pct.toFixed(0)}%)</b></span><span>вместе <b style="color:#17181F;font-weight:600">£${money(x.cost)}</b></span></div></div>`;
+  const ctl=`<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+    <div class="seg sm">${[['GK','Вратари'],['DEF','Защитники']].map(([k,l])=>`<button class="${ROT.pos===k?'on':''}" onclick="ROT.pos='${k}';render()">${l}</button>`).join('')}</div>
+    <div class="seg sm">${[3,5,8].map(k=>`<button class="${ROT.h===k?'on':''}" onclick="ROT.h=${k};render()">${k} туров</button>`).join('')}</div>
+    <div class="seg sm">${[[45,'≤ £4.5'],[50,'≤ £5.0'],[55,'≤ £5.5'],[999,'любая цена']].map(([k,l])=>`<button class="${ROT.cap===k?'on':''}" onclick="ROT.cap=${k};render()">${l}</button>`).join('')}</div>
+    <button class="sw2 ${ROT.mine?'on':''}" onclick="ROT.mine=ROT.mine?0:1;render()"><span><i></i></span>С моими игроками</button></div>`;
+  return sec('Пары для ротации',`2 игрока на одно место: каждый тур играет тот, у кого выше xP · без занятых у соперников и ЧС · цена — за каждого`,
+    ctl+`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">${(mine?[mine]:[]).concat(top).map((x,i)=>card(x,mine?i-1:i)).join('')||'<div class="card pd"><div class="empty">нет подходящих пар — ослабь фильтр цены</div></div>'}</div>`);
+}
+
+/* ---------- «Рынок»: изменение владения ---------- */
+let OWNP=null;
+function ownSec(){
+  const used=D.own_used||{}, keys=['1','3','7'].filter(k=>used[k]);
+  const L={'1':'24 ч','3':'3 дня','7':'7 дней'};
+  if(!keys.length) return sec('Владение: кто набирает','изменение доли менеджеров FPL, у которых игрок в составе',`<div class="card pd"><div class="empty">Нужен снимок хотя бы суточной давности — запускай инструмент каждый день, и здесь появятся изменения за 24 ч, 3 дня и неделю.</div></div>`);
+  if(!OWNP||!used[OWNP]) OWNP=keys[0];
+  const arr=D.players.filter(p=>p.own_d&&p.own_d[OWNP]!=null&&!p.wide);
+  const up=arr.filter(p=>p.own_d[OWNP]>0).sort((a,b)=>b.own_d[OWNP]-a.own_d[OWNP]).slice(0,12), dn=arr.filter(p=>p.own_d[OWNP]<0).sort((a,b)=>a.own_d[OWNP]-b.own_d[OWNP]).slice(0,12);
+  const mx=Math.max(0.1,...up.map(p=>p.own_d[OWNP]),...dn.map(p=>-p.own_d[OWNP]));
+  const row=(p,col,rtl)=>`<div class="g hv" style="grid-template-columns:minmax(0,1fr) 80px 70px;padding:8px" data-id="${p.id}">${whoRow(p.id,32,`${p.tname} · влад. ${p.own.toFixed(1)}%`,{tag:tagB(p.id)})}<div class="b4"${rtl?' style="direction:rtl"':''}><i style="background:${col};width:${Math.round(Math.abs(p.own_d[OWNP])/mx*100)}%"></i></div><div style="text-align:right;font-size:13px;font-weight:600;color:${col};white-space:nowrap">${p.own_d[OWNP]>0?'+':'−'}${Math.abs(p.own_d[OWNP]).toFixed(1)} п.п.</div></div>`;
+  return `<div class="sec"><div class="sh"><div class="t">Владение: кто набирает</div><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="s">с ${fmtDT(used[OWNP]+'Z')}</span><div class="seg sm">${['1','3','7'].map(k=>`<button class="${OWNP===k?'on':''}" ${used[k]?`onclick="OWNP='${k}';render()"`:'disabled style="opacity:.45;cursor:not-allowed" title="нет снимка такой давности — копится с ежедневными запусками"'}>${L[k]}</button>`).join('')}</div></div></div>
+    <div class="grid3"><div class="card tb"><div class="ch"><b style="color:#1D7A4F">Набирают</b><span>п.п. владения</span></div>${up.map(p=>row(p,'#2EB67D')).join('')||'<div class="empty">нет</div>'}</div><div class="card tb"><div class="ch"><b style="color:#B13036">Теряют</b><span>п.п. владения</span></div>${dn.map(p=>row(p,'#E5484D',1)).join('')||'<div class="empty">нет</div>'}</div></div></div>`;
+}
+
+/* ---------- «Соперники»: тур вживую и владение в нашей лиге ---------- */
+function liveSec(){
+  const L=D.live||{}, keys=['me',...Object.keys(D.league||{}).filter(k=>k!=='me')];
+  if(L.state==='live'||L.state==='provisional'){
+    const M=L.managers||{}, ord=keys.filter(k=>M[k]).sort((a,b)=>M[b].pts-M[a].pts), top=ord.length?M[ord[0]].pts:0;
+    const cards=ord.map((k,i)=>{const m=M[k], cap=(m.picks||[]).find(x=>x.cap), sum=m.played+m.playing+m.to_play||1;
+      return `<div class="card" style="padding:22px 24px;display:flex;flex-direction:column;gap:14px;border:1px solid ${k==='me'?'#E3DEFF':'transparent'}">
+        <div style="display:flex;align-items:center;gap:12px">${mgrAv(k,nameOfKey(k),40,k==='me'?'#EDEAFF':'#F1F1F6',k==='me'?'#6B5CE7':'#7A7C8A')}<div style="flex:1;min-width:0"><div style="font-size:16px;font-weight:600">${esc(nameOfKey(k))} ${k==='me'?'<span style="font-size:12px;color:#A6A8B4;font-weight:500">ты</span>':''}</div><div class="cl">${i===0?'лидирует в туре':'−'+(top-m.pts)+' от лидера тура'}${m.chip?' · '+esc(CHN[m.chip]||m.chip):''}${m.hit?' · хит −'+m.hit:''}</div></div><div style="font-size:34px;font-weight:600;letter-spacing:-.04em">${m.pts}</div></div>
+        <div style="display:flex;height:8px;border-radius:4px;overflow:hidden;background:#F1F1F6"><i style="width:${m.played/sum*100}%;background:#6B5CE7"></i><i style="width:${m.playing/sum*100}%;background:#E8A23B"></i></div>
+        <div style="display:flex;gap:14px;font-size:12px;color:#7A7C8A;flex-wrap:wrap"><span><b style="color:#6B5CE7">${m.played}</b> сыграли</span><span><b style="color:#E8A23B">${m.playing}</b> играют</span><span><b style="color:#17181F">${m.to_play}</b> ещё сыграют</span>${cap?`<span style="margin-left:auto">C ${pnk(cap.id)} · <b style="color:#17181F">${cap.pts*cap.mult}</b></span>`:''}</div></div>`;}).join('');
+    const fx=(L.fixtures||[]).map(f=>`<span class="pl ${f.finished?'t-gr':f.started?'t-sc':'t-mu'}" style="font-size:12px;padding:5px 10px">${TN(f.h)} ${f.started?(f.hs??0)+':'+(f.as??0):'–'} ${TN(f.a)}${f.started&&!f.finished?' · '+f.min+'′':''}</span>`).join(' ');
+    return sec(`Тур GW${L.gw} вживую`,L.state==='live'?'очки по ходу тура с капитанами и хитами · обновляются при каждом запуске (данные FPL — с задержкой)':'тур сыгран, бонусы ещё могут поменяться',`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px">${cards}</div><div style="display:flex;gap:6px;flex-wrap:wrap">${fx}</div>`);
+  }
+  const dl=D.meta.deadline?new Date(D.meta.deadline):null;
+  const last=keys.map(k=>{const g=((D.league[k]||{}).gw_points||[]).slice(-1)[0];return g?`<span style="display:inline-flex;align-items:center;gap:8px">${mgrAv(k,nameOfKey(k),26,k==='me'?'#EDEAFF':'#F1F1F6',k==='me'?'#6B5CE7':'#7A7C8A')}<b style="font-weight:600">${esc(nameOfKey(k))}</b> ${g.pts}</span>`:'';}).join('<span style="color:#DDDCE6">·</span>');
+  return `<div class="card" style="padding:18px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">${ic('mid',36)}<div style="flex:1;min-width:240px"><div style="font-size:15px;font-weight:600">Тур вживую — с началом GW${D.meta.gw_next}</div><div style="font-size:13px;color:#7A7C8A;margin-top:2px">${dl?'Дедлайн '+dl.toLocaleString('ru-RU',{weekday:'short',day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'})+'. ':''}Во время тура здесь будут очки каждого с капитаном, кто уже сыграл и кто ещё выйдет — запускай run.bat в дни матчей.</div></div><div style="display:flex;gap:12px;align-items:center;font-size:13px;color:#7A7C8A;flex-wrap:wrap">GW${D.meta.gw_cur}: ${last}</div></div>`;
+}
+let EOALL=false;
+function eoSec(){
+  const keys=['me',...Object.keys(D.league||{}).filter(k=>k!=='me')], N=keys.length, own={};
+  keys.forEach(k=>((D.league[k]||{}).squad||[]).forEach(s=>{ (own[s.id]=own[s.id]||[]).push({k,cap:s.captain}); }));
+  const g0=D.meta.gw_next;
+  let rows=Object.entries(own).map(([id,l])=>({id:+id,l,p:P[+id]})).filter(r=>r.p).sort((a,b)=>b.p.xp1-a.p.xp1);
+  const lab=r=>{const me=r.l.some(x=>x.k==='me'); if(D.conflicts.includes(r.id)) return '<span class="pl t-bl">дубль</span>'; if(!me&&r.p.xp1>=4.5) return '<span class="pl t-sc" title="сильный игрок у соперника на ближайший тур">опасный</span>'; return '';};
+  const shown=EOALL?rows:rows.slice(0,15);
+  const EC='minmax(0,1.2fr) 90px 56px minmax(150px,1fr) 64px 120px';
+  return sec('Владение в нашей лиге',`кто у кого в составе · по правилу лиги повторов нет, поэтому каждый игрок — у одного · сортировка по xP на GW${g0}`,`<div class="card tb"><div style="min-width:680px"><div class="g th" style="grid-template-columns:${EC};padding:6px 8px 12px"><div>Игрок</div><div style="text-align:center">GW${g0}</div><div style="text-align:right">xP1</div><div>У кого</div><div style="text-align:right">в лиге</div><div></div></div>
+    ${shown.map(r=>{const f=(r.p.fix||[]).filter(x=>x.gw===g0);return `<div class="g hv" style="grid-template-columns:${EC};padding:8px" data-id="${r.id}">${whoRow(r.id,30,r.p.tname+' · '+r.p.pos)}<div style="display:flex;gap:3px;justify-content:center">${f.map(x=>`<span class="d${DF(x.fdr)}" style="font-size:10px;font-weight:600;padding:4px 7px;border-radius:999px">${fxo(x)}</span>`).join('')||'<span class="d0" style="font-size:10px;padding:4px 7px;border-radius:999px">—</span>'}</div>
+      <div style="text-align:right;font-size:14px;font-weight:600;color:#6B5CE7">${r.p.xp1.toFixed(1)}</div><div style="display:flex;gap:6px;flex-wrap:wrap">${r.l.map(x=>`<span class="pl ${x.k==='me'?'t-me':'t-gr'}">${esc(nameOfKey(x.k))}${x.cap?' · C':''}</span>`).join('')}</div>
+      <div style="text-align:right;font-size:13px;color:#7A7C8A">${r.l.length}/${N}</div><div style="text-align:right">${lab(r)}</div></div>`}).join('')}
+    ${rows.length>15?`<button onclick="EOALL=!EOALL;render()" style="border:0;background:none;padding:12px 8px 4px;font-size:13px;font-weight:600;color:#6B5CE7;cursor:pointer">${EOALL?'свернуть':'показать всех · '+rows.length}</button>`:''}</div></div>`);
+}
+
+/* ===================== Навигация ===================== */
+function renderTabs(){
+  $('#tabs').innerHTML = TABS2.map(([k,l])=>`<button class="${k===tab?'on':''}" data-k="${k}">${l}${k==='scout'&&wlList().length?'<span class="dot5"></span>':''}</button>`).join('');
+  $('#tabs').querySelectorAll('button').forEach(b=>b.onclick=()=>{tab=b.dataset.k;location.hash=tab;render();scrollTo(0,0)});
+}
+function render(){
+  renderTabs();
+  $('#upd').innerHTML = `<i></i>обновлено ${fmtDT(D.meta.generated)}`;
+  if(D.meta.offline) $('#demo').style.display='block';
+  const v = {scout:vScout,threat:vThreat,over:vOver,squad:vSquad,moves:vMoves,players:vPlayers,fix:vFix,market:vMarket,top:vTop,chg:vChg}[tab]||vOver;
+  const app=$('#app'); app.className='wrap '+(v===vOver?'over':tab); app.innerHTML = v();
+  bind(); applyTerms(); countdown();
+}
+
+/* ===================== Обзор ===================== */
+function verdict(){
+  const me=D.me, s=D.sugg, ft=s.ft, st=(D.plan&&D.plan.steps||[]).find(x=>x.gw===D.meta.gw_next), mvs=(st&&st.moves)||[];
+  const sick=me.squad.filter(x=>{const p=P[x.id];return p&&(['i','s','u'].includes(p.status)||(p.chance!=null&&p.chance<=50&&p.status!=='a'));});
+  const mv=mvs.slice(0,2).map(m=>`${pnk(m[0])} → ${pnk(m[1])}`).join(' · ');
+  const top=(s.single||[]).filter(m=>!isBlocked(m.inn))[0];
+  if(ft<=0) return ['#E5484D','Бесплатных трансферов нет', sick.length?`Проблемы в составе есть (${sick.map(x=>pnk(x.id)).join(', ')}). Только хит −4 — и лишь если это явный апгрейд.`:'Каждый ход стоит −4 очка. Без явного апгрейда стартёра оставляй состав и копи трансфер на следующий тур.','danger'];
+  if(sick.length) return ['#2EB67D','Срочно делай трансферы',`Проблема в составе: ${sick.map(x=>pnk(x.id)).join(', ')}.`+(mv?' План: '+mv+'.':''),'injury'];
+  if(mvs.length) return ['#2EB67D','Пора делать трансферы','План на этот тур: '+mv+(st.hit?` (хит −${st.hit})`:' без хита')+'.','ok'];
+  if(top&&top.gain>=8) return ['#E8A23B','Можно сделать трансфер',`Лучший ход: ${pnk(top.out)} → ${pnk(top.inn)} (+${top.gain.toFixed(1)} xP). Выгода умеренная — решай по новостям.`,'mid'];
+  return ['#A6A8B4','Ничего не делай — копи трансфер','Выгодных ходов на этот тур нет. Свободный трансфер сохранится и пригодится позже (максимум накопления — 5).','hold'];
+}
+let SUMALL=false;
+function summaryItems(){
+  const me=D.me, out=[], t=fmtT(D.meta.generated);
+  const ICT={'Перехват':'target','Цена ↑':'up','Цена ↓':'down','Травма':'injury','Под вопросом':'warn','Дубль':'danger','Освободился':'star','Соперник':'swap','Цена':'money','Данные':'tools'};
+  const add=(tag,cls,title,text)=>out.push({tag,cls,title,text,icon:ICT[tag]||'info'});
+  releasedList().filter(e=>P[e.id]).forEach(e=>add('Освободился','t-ok',`${pnk(e.id)} снова свободен`,`${esc(OWN[e.owner]||'Соперник')} больше его не держит — можно убрать из чёрного списка.`));
+  me.squad.forEach(x=>{const p=P[x.id]; if(p&&(p.status!=='a'||p.news)) add(p.status==='d'||p.status==='a'?'Под вопросом':'Травма',p.status==='d'||p.status==='a'?'t-sc':'t-bl',`${pnk(x.id)} · ${p.tname}`,esc(p.news||'статус '+p.status));});
+  D.conflicts.forEach(id=>add('Дубль','t-bl',`${pnk(id)} у тебя и у соперника`,'Нарушение правила лиги: игроки не должны повторяться между составами.'));
+  ((D.threats||{}).intercept||[]).filter(x=>x.risk>=0.15&&!isBlocked(x.id)&&P[x.id]).slice(0,3).forEach(x=>{
+    const w=Object.entries(x.who).sort((a,b)=>b[1]-a[1]);
+    if(w.length===1||w[0][1]>=x.risk*0.9) add('Перехват','t-bl',`${esc(OWN[w[0][0]]||w[0][0])} целится в ${pnk(x.id)}`,`Вероятность ${Math.round(x.risk*100)}%. Для тебя это +${x.gain} xP за 5 туров — брать раньше, чем он.`);
+    else add('Перехват','t-bl',`${pnk(x.id)} под риском`,`${w.map(([k,v])=>esc(OWN[k]||k)+' '+Math.round(v*100)+'%').join(', ')}. Твой прирост +${x.gain} xP — не тяни с покупкой.`);
+  });
+  const mk=D.market||{}, planIn={}; (D.plan&&D.plan.steps||[]).forEach(s=>s.moves.forEach(([o,c])=>{ if(planIn[c]==null) planIn[c]=s.gw; }));
+  (mk.targets_up||[]).slice(0,2).forEach(x=>add('Цена ↑','t-sc',`${pnk(x.id)} подорожает ночью`,`Давление ${fmtN(x.net)}. `+(planIn[x.id]!=null?`Запланирован на GW${planIn[x.id]} — брать сегодня.`:'Если он в плане — купить сегодня.')));
+  (mk.my_risk||[]).slice(0,2).forEach(x=>add('Цена ↓','t-gr',`${pnk(x.id)} может подешеветь`,'Учитывай при продаже: потеряешь £0.1 стоимости.'));
+  Object.entries(D.friend_moves||{}).forEach(([k,v])=>{ if(v.sold.length||v.bought.length) add('Соперник','t-gr',`${esc(OWN[k]||k)} сделал трансферы`,`продал ${v.sold.map(i=>pnk(i)).join(', ')||'—'}; купил ${v.bought.map(i=>pnk(i)).join(', ')||'—'}`); });
+  D.changes.price.filter(c=>me.squad.some(x=>x.id===c.id)).forEach(c=>add('Цена','t-gr',`${pnk(c.id)}: £${money(c.from)} → £${money(c.to)}`,'Изменение цены игрока из твоего состава.'));
+  (D.warnings||[]).slice(0,3).forEach(w=>add('Данные','t-mu','Техническое предупреждение',esc(w)));
+  return out.map(a=>({...a,time:t}));
+}
+function vOver(){
+  const me=D.me, s=D.sugg, lu=s.lineup, CL=CL0();
+  const cap=CL&&CL.captain?CL.captain:lu.captain, vice=CL&&CL.vice?CL.vice:lu.vice;
+  const [vc,vt1,vt2,vi]=verdict();
+  const val=me.squad.reduce((a,x)=>a+(x.sell||x.now||0),0)||me.value||0, dlt=me.squad.reduce((a,x)=>a+((x.now||0)-(x.buy||x.now||0)),0);
+  const gp=me.gw_points||[], lastg=gp[gp.length-1], best=gp.length?gp.reduce((a,c)=>c.pts>a.pts?c:a):null, l3=gp.slice(-3), avg3=l3.length?(l3.reduce((a,c)=>a+c.pts,0)/l3.length).toFixed(1):'–';
+  const fmtRank=r=>r==null?'–':r>=1e6?(r/1e6).toFixed(2)+'M':r>=1e3?Math.round(r/1e3)+'K':r;
+  const tn=me.team||'Моя команда', tini=(tn.split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join('')||'FP').toUpperCase();
+  const {lt,me:mr,n,lead}=myPlace();
+  let gapTxt='';
+  if(mr&&lead){ if(mr.rank>1) gapTxt=`−${lead.total-mr.total} до ${esc(nameOfKey(leagueKeyByEntry(lead.entry))||lead.manager)}`; else if(lt[1]) gapTxt=`+${mr.total-lt[1].total} к ${esc(nameOfKey(leagueKeyByEntry(lt[1].entry))||lt[1].manager)}`; }
+  const hero=`<div class="hero2" style="display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr);gap:48px;align-items:start">
+  <div style="display:flex;flex-direction:column;gap:36px">
+    <div>
+      <div style="font-size:13px;color:#6B5CE7;font-weight:600;letter-spacing:.02em">Ближайший тур · GW${D.meta.gw_cur} сыгран</div>
+      <div style="font-weight:600;font-size:clamp(44px,6vw,72px);line-height:1;letter-spacing:-.045em;margin-top:14px">Gameweek ${D.meta.gw_next}</div>
+      <div style="font-size:17px;color:#7A7C8A;margin-top:16px">До дедлайна <span class="cdl" style="color:#17181F;font-weight:600"></span></div>
+    </div>
+    <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 24px;background:#FFFFFF;border-radius:20px;box-shadow:0 1px 2px rgba(23,24,31,.04),0 12px 40px -24px rgba(107,92,231,.25)">
+      <div style="flex-shrink:0">${ic(vi,40)}</div>
+      <div><div style="font-weight:600;font-size:16px;letter-spacing:-.01em">${vt1}</div><div style="font-size:14px;color:#7A7C8A;margin-top:4px;line-height:1.6;text-wrap:pretty">${vt2}</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:32px">
+      <div class="stat"><div class="k">Банк</div><div class="v">£${money(s.bank)}</div><div class="s">${s.bank>=20?'есть запас на апгрейд':s.bank<=3?'почти пусто':'нормально'}</div></div>
+      <div class="stat"><div class="k">Свободные трансферы</div><div class="v" style="${s.ft>0?'':'color:#E5484D'}">${s.ft}</div><div class="s">${s.ft>0?(s.ft>1?'можно '+s.ft+' без хита':'1 без хита'):'без хита нельзя'}</div></div>
+      <div class="stat"><div class="k">Стоимость команды</div><div class="v">£${money(val)}</div><div class="s" style="${dlt<0?'color:#E5484D':dlt>0?'color:#2EB67D':''}">${dlt?sgn(dlt/10):'±0.0'} с покупок</div></div>
+      <div class="stat"><div class="k">Капитан · ${CL?'Claude':'расчёт'}</div><div class="v">${cap?pnk(cap):'–'}</div><div class="s">вице — ${vice?pnk(vice):'–'}</div></div>
+    </div>
+  </div>
+  <div style="background:#FFFFFF;border-radius:28px;padding:32px;display:flex;flex-direction:column;gap:28px;box-shadow:0 1px 2px rgba(23,24,31,.04),0 24px 60px -32px rgba(107,92,231,.3)">
+    <div style="display:flex;align-items:center;gap:14px">
+      ${me.fav_team?`<img alt="${esc(me.fav_team.name)}" src="https://resources.premierleague.com/premierleague/badges/100/t${me.fav_team.code}.png" style="width:52px;height:52px;border-radius:50%;object-fit:contain;background:#F6F4FF;padding:7px;flex-shrink:0" onerror="this.replaceWith(Object.assign(document.createElement('div'),{textContent:'${esc(tini)}',style:'width:52px;height:52px;border-radius:50%;background:#EDEAFF;color:#6B5CE7;display:grid;place-items:center;font-weight:600;font-size:15px'}))">`:`<div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#EDEAFF,#DCD6FF);color:#6B5CE7;display:grid;place-items:center;font-weight:600;font-size:15px">${esc(tini)}</div>`}
+      <div style="flex:1;min-width:0"><div style="font-weight:600;font-size:19px;letter-spacing:-.02em">${esc(tn)}</div><div style="font-size:13px;color:#7A7C8A;margin-top:2px">${esc(me.manager||'')}${me.region?' · '+esc(me.region):''}</div></div>
+      <button onclick="openSettings()" title="Настройки: мой ID, соперники, мини-лига, дизайн" aria-label="Настройки" style="border:0;background:none;color:#A6A8B4;font-size:16px;cursor:pointer;padding:4px" onmouseover="this.style.color='#17181F'" onmouseout="this.style.color='#A6A8B4'">⚙</button>
+    </div>
+    <div><div class="lbl">Место в лиге</div><div style="display:flex;align-items:baseline;gap:8px;margin-top:4px"><span style="font-size:56px;font-weight:600;letter-spacing:-.05em;line-height:1">${mr?mr.rank:'–'}</span><span style="font-size:18px;color:#A6A8B4">из ${n||'–'}</span><span style="margin-left:auto;font-size:13px;color:#7A7C8A">${gapTxt}</span></div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 24px;padding-top:24px;border-top:1px solid #EFEFF4">
+      <div><div class="lbl">Всего очков</div><div style="font-size:22px;font-weight:600;letter-spacing:-.03em;margin-top:4px">${me.overall_pts??'–'}</div></div>
+      <div><div class="lbl">Мировой ранг</div><div style="font-size:22px;font-weight:600;letter-spacing:-.03em;margin-top:4px">${fmtRank(me.overall_rank)}</div></div>
+      <div><div class="lbl">Последний тур</div><div style="font-size:22px;font-weight:600;letter-spacing:-.03em;margin-top:4px">${lastg?lastg.pts:'–'} ${lastg&&best&&lastg.gw===best.gw?'<span style="font-size:12px;color:#2EB67D;font-weight:600;letter-spacing:0">лучший</span>':''}</div></div>
+      <div><div class="lbl">Среднее за 3 тура</div><div style="font-size:22px;font-weight:600;letter-spacing:-.03em;margin-top:4px">${avg3}</div></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:20px;border-top:1px solid #EFEFF4;flex-wrap:wrap"><span class="lbl">Вид дашборда</span>
+      <div class="seg sm"><button class="on" title="текущий вид">Светлый</button><button onclick="setDesign(1)" title="Дизайн 1 — прежний вид">Классический</button></div></div>
+  </div></div>`;
+  const C3='background:#FFFFFF;border-radius:28px;padding:28px 32px;display:flex;flex-direction:column;gap:24px;box-shadow:0 1px 2px rgba(23,24,31,.04),0 24px 60px -40px rgba(107,92,231,.25)';
+  // шанс выиграть лигу
+  const rc=D.race||{}, rp=Object.entries(rc.players||{}).sort((a,b)=>b[1].p_win-a[1].p_win);
+  let oi=0; const RCOL=['#17181F','#A6A8B4','#C9CAD6','#DDDCE6','#E6E5EE'];
+  const rv=rp.map(([k,v])=>{const me_=k==='me', col=me_?'#6B5CE7':RCOL[Math.min(oi++,4)]; return {k,v,me_,col,bg:me_?'#EDEAFF':col==='#17181F'?'#17181F':'#F1F1F6',fg:me_?'#6B5CE7':col==='#17181F'?'#FFFFFF':'#7A7C8A',pct:Math.round(v.p_win*100)};});
+  const C4='background:#FFFFFF;border-radius:28px;padding:32px 34px;display:flex;flex-direction:column;gap:22px;box-shadow:0 1px 2px rgba(23,24,31,.04),0 24px 60px -40px rgba(107,92,231,.25)';
+  const winCard=`<div style="${C4}"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:13px;color:#7A7C8A">Шанс выиграть лигу</span>${rc.sims?`<span style="font-size:13px;color:#A6A8B4">симуляция ${rc.sims.toLocaleString('ru-RU')} сезонов</span>`:''}</div>
+    ${rv.length?`<div style="display:flex;flex-direction:column;gap:18px">${rv.map(r=>`<div style="display:flex;align-items:center;gap:16px">${mgrAv(r.k,r.v.name,44,r.bg,r.fg)}
+      <div style="flex:1;min-width:0"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><span style="font-size:16px;font-weight:600;letter-spacing:-.01em;white-space:nowrap">${esc(r.v.name)}${r.me_?' <span style="font-size:13px;color:#A6A8B4;font-weight:500">ты</span>':''}</span><span style="font-size:13px;color:#7A7C8A;white-space:nowrap">${r.v.total} очк. · ${r.v.mean}/тур</span></div>
+      <div style="height:8px;border-radius:4px;background:#F1F1F6;overflow:hidden;margin-top:8px"><div style="height:100%;border-radius:4px;background:${r.col};width:${r.pct}%"></div></div></div>
+      <div style="width:64px;text-align:right;font-size:26px;font-weight:600;letter-spacing:-.04em;color:${r.col};flex-shrink:0">${r.pct}%</div></div>`).join('')}</div>
+    <div style="font-size:14px;color:#7A7C8A;line-height:1.6;padding-top:18px;border-top:1px solid #EFEFF4;text-wrap:pretty">${esc(rc.text||'')}</div>`:'<div class="empty">нет данных о гонке</div>'}</div>`;
+  // чипы
+  const chd=D.chips||{}, ex=chd.expiry||{}, chs=(chd.schedule||[]).length?chd.schedule.slice().sort((a,b)=>a.gw-b.gw):(chd.recommend||[]).slice().sort((a,b)=>a.gw-b.gw);
+  const chipCard=`<div style="${C4}"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font-size:13px;color:#7A7C8A">Чипы · <b style="color:#17181F;font-weight:600">${(chd.available||[]).length}</b> не сыграны</span>${ex.active?`<span style="font-size:13px;color:#E8A23B;font-weight:600">сгорают после GW${ex.gw} · ${ex.gws_left} туров</span>`:''}</div>
+    ${chs.length?`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">${chs.map(c=>{const a=CHA[c.chip]||'WC',cc=CHC[a];return `<div style="background:#FAFAFC;border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:4px" title="${esc(CTIP[c.chip]||'')}">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">${chipIc(c.chip,40)}<span style="background:#FFFFFF;color:#7A7C8A;font-size:13px;font-weight:600;border-radius:999px;padding:4px 10px">GW${c.gw}</span></div>
+      <div style="font-size:15px;font-weight:600;letter-spacing:-.01em">${CHN[c.chip]||c.chip}</div><div style="font-size:13px;color:#7A7C8A">${CSHORT[c.chip]||''}</div>
+      <div style="margin-top:10px"><span style="font-size:22px;font-weight:600;letter-spacing:-.03em;color:#2EB67D">+${c.gain}</span> <span style="font-size:12px;color:#A6A8B4">xP</span></div></div>`}).join('')}</div>`:'<div class="empty">все чипы сыграны</div>'}</div>`;
+  // сводка — лентой
+  const al=summaryItems(), DOTC={'t-bl':'#B13036','t-sc':'#9A5B12','t-gr':'#5C5E6B','t-ok':'#1D7A4F','t-mu':'#A6A8B4'};
+  const sumCard=`<div style="${C4}"><div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:13px;color:#7A7C8A">Сводка</span><span style="font-size:13px;color:#A6A8B4">сегодня, ${fmtT(D.meta.generated)}</span></div>
+    ${al.length?`<div style="position:relative;padding-left:44px;display:flex;flex-direction:column;gap:26px"><div style="position:absolute;left:13px;top:24px;bottom:24px;width:2px;background:#EFEFF4"></div>
+      ${al.slice(0,SUMALL?99:5).map(a=>`<div style="position:relative;display:flex;flex-direction:column;gap:6px"><span style="position:absolute;left:-44px;top:50%;transform:translateY(-50%);background:#FFFFFF;border-radius:8px;line-height:0;box-shadow:0 0 0 4px #FFFFFF">${ic(a.icon,28)}</span>
+        <div style="display:flex;align-items:center;gap:10px"><span class="${a.cls}" style="font-size:12px;font-weight:600;border-radius:999px;padding:3px 9px">${a.tag}</span><span style="font-size:12px;color:#A6A8B4">${a.time}</span></div>
+        <div style="font-size:16px;font-weight:600;letter-spacing:-.01em">${a.title}</div><div style="font-size:14px;line-height:1.55;color:#7A7C8A;text-wrap:pretty">${a.text}</div></div>`).join('')}</div>
+      ${al.length>5?`<button onclick="SUMALL=!SUMALL;render()" style="border:0;background:none;padding:0 0 0 44px;text-align:left;font-size:13px;font-weight:600;color:#6B5CE7;cursor:pointer">${SUMALL?'свернуть':'показать все · '+al.length}</button>`:''}`:'<div class="empty">всё спокойно</div>'}</div>`;
+  // план
+  const pl=D.plan||{}, steps=(pl.steps||[]).slice(0,5);
+  const planCard=steps.length?`<div style="${C3}"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap"><span class="lbl">План ходов</span><span style="font-size:13px;color:#7A7C8A"><b style="color:#2EB67D;font-weight:600">+${pl.gain} xP</b> за ${pl.horizon} туров · без учёта свежих новостей</span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">${steps.map(st=>{const nx=st.gw===D.meta.gw_next, bd=nx?'#E3DEFF':'#F1F1F6';
+      const mv=st.moves.length?st.moves.map(([o,c])=>`<div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:6px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;min-width:0">${cav(o,48,.45)}<div style="min-width:0;width:100%"><div style="font-size:10px;color:#A6A8B4;letter-spacing:.04em;text-transform:uppercase">продать</div><div style="font-size:13px;font-weight:500;color:#7A7C8A;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px">${pnk(o)}</div></div></div>
+        <div style="color:#C9CAD6;font-size:16px;padding-top:14px">→</div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;min-width:0">${cav(c,48)}<div style="min-width:0;width:100%"><div style="font-size:10px;color:#A6A8B4;letter-spacing:.04em;text-transform:uppercase">купить</div><div style="font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px">${pnk(c)}</div></div></div></div>`).join(''):'<div style="font-size:13px;color:#A6A8B4;text-align:center;padding:18px 0">без ходов — копим трансфер</div>';
+      return `<div style="background:${nx?'#F6F4FF':'#FAFAFC'};border:1px solid ${bd};border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:16px" class="hov">
+        <div style="display:flex;align-items:center;gap:8px"><span style="font-weight:600;font-size:16px;letter-spacing:-.02em;color:${nx?'#6B5CE7':'#17181F'}">GW${st.gw}</span><span style="font-size:12px;color:#A6A8B4">FT ${st.ft_before}</span>${st.hit?`<span style="font-size:11px;color:#E5484D;font-weight:600;background:#FBDCDD;border-radius:999px;padding:2px 8px;margin-left:auto">хит −${st.hit}</span>`:''}</div>
+        ${mv}
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:#7A7C8A;padding-top:12px;border-top:1px solid ${bd};margin-top:auto"><span class="cap">C</span><b style="color:#17181F;font-weight:600">${st.captain?pnk(st.captain):'–'}</b></div></div>`}).join('')}</div></div>`:'';
+  // лучшие ходы
+  const bm=diverse(s.single.filter(m=>!isBlocked(m.inn)),2).slice(0,6), bmx=Math.max(1,...bm.map(m=>m.gain));
+  const hits=new Set(bm.map(m=>m.hit||0)), hitTxt=hits.size===1?([...hits][0]?`все с хитом −${[...hits][0]}`:'все без хита'):'хит — у каждого хода свой';
+  const COLS='32px minmax(200px,1.2fr) minmax(200px,1.2fr) minmax(170px,1fr) minmax(200px,1fr) 90px';
+  const bestSec=bm.length?sec('Лучшие ходы',`${hitTxt} · нажми на игрока — его карточка`,`<div class="card" style="padding:16px 24px;overflow-x:auto"><div style="min-width:760px">
+    <div class="g th" style="grid-template-columns:${COLS}"><div>#</div><div>Продать</div><div>Купить</div><div>Прирост xP5</div><div>Календарь новичка</div><div style="text-align:right">Банк после</div></div>
+    ${bm.map((m,i)=>{const po=P[m.out],pi=P[m.inn];return `<div class="g hv" style="grid-template-columns:${COLS};padding:12px 8px;border-radius:16px">
+      <div style="font-size:14px;font-weight:600;color:#A6A8B4">${i+1}</div>
+      ${whoRow(m.out,36,`${pt(m.out)} · £${money(po?po.price:0)}`,{op:.4,mut:1,gap:12})}
+      ${whoRow(m.inn,36,`${pt(m.inn)} · £${money(pi?pi.price:0)}`,{gap:12})}
+      <div style="display:flex;align-items:center;gap:12px"><span style="font-size:16px;font-weight:600;letter-spacing:-.02em;color:#6B5CE7;min-width:52px">+${m.gain.toFixed(1)}</span><div class="b4" style="flex:1"><i style="width:${Math.round(m.gain/bmx*100)}%"></i></div></div>
+      <div style="display:flex;gap:4px;flex-wrap:wrap">${pi?(pi.fix||[]).slice(0,5).map(f=>`<span class="d${DF(f.fdr)}" style="font-size:10px;font-weight:600;padding:4px 7px;border-radius:999px">${fxo(f)}</span>`).join(''):''}</div>
+      <div style="text-align:right"><div style="font-size:14px;font-weight:600;letter-spacing:-.01em">£${money(m.bank_after)}</div><div style="font-size:12px;color:#A6A8B4">Δ ${sgn(m.delta/10)}</div></div></div>`}).join('')}</div></div>`):'';
+  // календарь моей команды
+  const rows=D.me.squad.map(x=>P[x.id]).filter(Boolean).sort((a,b)=>b.xp5-a.xp5), g0=D.meta.gw_next, gws=[g0,g0+1,g0+2,g0+3,g0+4];
+  const CC='minmax(180px,1.4fr) repeat(5,minmax(70px,1fr)) 64px';
+  const legend=[['#D7F3E4','лёгкий'],['#EEEEF3','средний'],['#FDEBD3','сложный'],['#FBDCDD','тяжёлый']].map(([c,t])=>`<span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:${c}"></span>${t}</span>`).join('');
+  const calSec=`<div class="sec"><div class="sh"><div class="t">Календарь моей команды</div><div style="display:flex;gap:14px;font-size:12px;color:#7A7C8A;align-items:center;flex-wrap:wrap">${legend}</div></div>
+    <div class="card tb"><div style="min-width:640px"><div style="display:grid;grid-template-columns:${CC};gap:8px;padding:8px 8px 12px;font-size:12px;color:#A6A8B4"><div>Игрок</div>${gws.map(g=>`<div style="text-align:center">GW${g}</div>`).join('')}<div style="text-align:right">xP5</div></div>
+    ${rows.map(p=>`<div class="g hv" style="grid-template-columns:${CC};gap:8px;padding:8px" data-id="${p.id}"><div style="display:flex;align-items:center;gap:12px;min-width:0">${cav(p.id,30)}<span style="font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(p.name)}</span><span style="font-size:12px;color:#A6A8B4">${p.tname}</span></div>
+      ${gws.map(g=>{const fs=(p.fix||[]).filter(f=>f.gw===g);return `<div style="text-align:center;display:flex;gap:3px;justify-content:center;flex-wrap:wrap">${fs.length?fs.map(f=>`<span class="d${DF(f.fdr)}" style="display:inline-block;min-width:54px;font-size:11px;font-weight:600;padding:6px 8px;border-radius:999px">${fxo(f)}</span>`).join(''):'<span class="d0" style="display:inline-block;min-width:54px;font-size:11px;font-weight:600;padding:6px 8px;border-radius:999px">—</span>'}</div>`}).join('')}
+      <div style="text-align:right;font-weight:600;font-size:14px;letter-spacing:-.02em">${p.xp5.toFixed(1)}</div></div>`).join('')}</div></div></div>`;
+  const xpSec=`<div class="card" style="padding:28px 32px;display:grid;grid-template-columns:minmax(120px,auto) minmax(0,1fr);gap:32px;align-items:start"><div><div class="lbl">Справка</div><div style="font-size:30px;font-weight:600;letter-spacing:-.04em;margin-top:6px;color:#6B5CE7">xP</div></div><div style="font-size:15px;line-height:1.7;color:#4A4C5A;text-wrap:pretty;max-width:720px"><b style="color:#17181F;font-weight:600">Expected points, ожидаемые очки.</b> Прогноз, сколько очков FPL игрок в среднем принесёт за матч или тур. Считается по средним очкам за игру и форме, сложности соперника, шансу выйти на поле и здоровью. xP1 — на ближайший тур, xP5 — сумма за 5 туров. Новостей (ротация, свежие травмы, составы) xP не знает: их проверяет Claude.</div></div>`;
+  return hero+`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;align-items:start"><div style="display:flex;flex-direction:column;gap:24px;min-width:0">${winCard}${chipCard}</div>${sumCard}</div>`+planCard+bestSec+calSec+xpSec;
+}
+
+/* ===================== Состав ===================== */
+let SQV='claude';
+function setSQV(v){SQV=v;render();}
+function vSquad(){
+  const lu=D.sugg.lineup, cl=D.claude_lineup, useCl=SQV==='claude'&&cl;
+  const xi=useCl?cl.xi:lu.xi, bench=useCl?cl.bench:lu.bench, cap=useCl?cl.captain:lu.captain, vice=useCl?cl.vice:lu.vice, notes=(cl&&cl.notes)||{};
+  const fm=(useCl?cl.formation:lu.formation)||'', xiP=xi.map(i=>P[i]).filter(Boolean), sum=a=>a.reduce((s,p)=>s+p.xp1,0).toFixed(1);
+  const by={GK:[],DEF:[],MID:[],FWD:[]}; xiP.forEach(p=>by[p.pos].push(p));
+  const lines=[by.FWD,by.MID,by.DEF,by.GK].filter(l=>l.length), m=Math.max(...lines.map(l=>l.length));
+  const cw=`min(150px, calc((100% - ${(m-1)*12}px) / ${m}))`;
+  const card=p=>{const b=p.id===cap?['C','#6B5CE7']:p.id===vice?['V','#A6A8B4']:null, nt=notes[p.id];
+    return `<div class="pcard" data-id="${p.id}" style="width:${cw}">${b?`<div class="pbadge" style="background:${b[1]}">${b[0]}</div>`:''}
+      ${cav(p.id,40)}<div style="min-width:0;width:100%"><div style="font-size:13px;font-weight:600;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;justify-content:center;gap:4px">${flag(p)}${esc(p.name)}${nt?'<span class="ndot" title="есть заметка Claude"></span>':''}</div><div style="font-size:11px;color:#A6A8B4;margin-top:1px;white-space:nowrap">${p.tname} · xP1 <b style="color:#6B5CE7;font-weight:600">${p.xp1.toFixed(1)}</b></div></div>${fxDots(p)}</div>`;};
+  const benchP=bench.map(i=>P[i]).filter(Boolean);
+  const benchHtml=benchP.map((p,i)=>{const sq=D.me.squad.find(x=>x.id===p.id)||{};return `<div class="bench" data-id="${p.id}"><div style="position:absolute;top:12px;right:14px;font-size:11px;color:#A6A8B4;font-weight:600">${i===0&&p.pos==='GK'?'GK':String(i)}</div>
+    <div style="display:flex;align-items:center;gap:9px">${cav(p.id,38)}<div style="min-width:0"><div style="font-size:14px;font-weight:600;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(p.name)}</div><div style="font-size:12px;color:#A6A8B4;margin-top:1px">${p.tname} · £${money(p.price)} · xP1 <b style="color:#6B5CE7;font-weight:600">${p.xp1.toFixed(1)}</b></div></div></div>${fxPills(p)}</div>`}).join('');
+  // панель справа
+  const short=s=>{const m=/^(новости проверены[^:]*)/i.exec(s||'');return m?m[1]:'';};
+  let pTitle,pSub,pIcon,pNote,warn='';
+  if(SQV==='claude'){
+    if(!cl){ pTitle='Вердикт Claude'; pSub='рекомендации пока нет'; pIcon='claude'; pNote='Claude ещё не дал рекомендацию. Попроси: «дай состав на тур» — он заполнит claude_picks.json, и состав появится здесь. Пока на поле — расчёт программы по xP.'; }
+    else { pTitle='Вердикт Claude'; pSub=short(cl.status)||('обновлено '+(cl.updated||'')); pIcon='claude'; pNote=cl.summary||'';
+      if(cl.stale) warn=`Рекомендация составлена на GW${cl.gw}, а ближайший тур — GW${D.meta.gw_next}. Попроси Claude обновить её после новостей.`;
+      if(cl.errors.length) warn+=(warn?' ':'')+'Ошибки в claude_picks.json: '+cl.errors.join('; '); }
+  } else { pTitle='Новости по составу'; pSub='из прессы и API FPL'+(cl&&cl.updated?' · '+cl.updated.split('-').reverse().slice(0,2).join('.'):''); pIcon='news';
+    pNote=`Чисто математический расчёт по xP без учёта новостей: сумма ${lu.xp_total}, капитан по xP1. Ниже — свежие факты по игрокам из старта, итоговое решение смотри во вкладке Claude.`; }
+  const tags=(cl&&cl.tags)||[];
+  // чем рекомендация Claude отличается от расчёта программы (как в Дизайне 1)
+  let diffHtml='';
+  if(cl&&!cl.errors.length){ const pX=new Set(lu.xi), cX=new Set(cl.xi), dIn=cl.xi.filter(i=>!pX.has(i)), dOut=lu.xi.filter(i=>!cX.has(i)), dCap=cl.captain!==lu.captain, dVice=cl.vice!==lu.vice;
+    const nm=a=>a.map(i=>`<b style="font-weight:600">${pnk(i)}</b>`).join(', ');
+    const rows=[dIn.length?`<div>в старт: ${nm(dIn)} · на скамейку: ${nm(dOut)}</div>`:'', dCap?`<div>капитан: ${pnk(cl.captain)} вместо ${pnk(lu.captain)}</div>`:'', dVice?`<div>вице: ${pnk(cl.vice)} вместо ${pnk(lu.vice)}</div>`:''].filter(Boolean);
+    diffHtml=`<div style="border-radius:14px;background:#F6F4FF;padding:10px 12px;font-size:13px;line-height:1.6;color:#4A4C5A"><div style="font-size:11px;font-weight:600;color:#6B5CE7;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px">Отличие от расчёта программы</div>${rows.length?rows.join(''):'<div>совпадает с расчётом по xP</div>'}</div>`; }
+  const noteIds=[...xi,...bench].filter(i=>notes[i]&&P[i]&&(SQV==='claude'||xi.includes(i)));
+  const panel=`<div style="background:#FFFFFF;border-radius:28px;padding:24px;display:flex;flex-direction:column;gap:18px;box-shadow:0 1px 2px rgba(23,24,31,.04),0 24px 60px -40px rgba(107,92,231,.25);position:sticky;top:88px;flex:1 1 300px;min-width:0">
+    <div style="display:flex;align-items:center;gap:10px">${ic(pIcon,32)}<div><div style="font-size:15px;font-weight:600;letter-spacing:-.01em">${pTitle}</div><div style="font-size:12px;color:#A6A8B4">${esc(pSub)}</div></div></div>
+    ${warn?`<div class="t-sc" style="border-radius:14px;padding:10px 12px;font-size:13px;line-height:1.5">${esc(warn)}</div>`:''}
+    ${SQV==='claude'&&cl&&cl.status&&cl.status.length>short(cl.status).length+2?`<div style="font-size:12px;line-height:1.5;color:#7A7C8A">${esc(short(cl.status)?cl.status.slice(short(cl.status).length).replace(/^[:\s]+/,''):cl.status)}</div>`:''}
+    <div style="font-size:14px;line-height:1.6;color:#4A4C5A;text-wrap:pretty">${esc(pNote)}</div>
+    ${diffHtml}
+    ${tags.length?`<div style="display:flex;flex-wrap:wrap;gap:6px">${tags.map(t=>`<span style="font-size:12px;color:#6B5CE7;background:#F6F4FF;border-radius:999px;padding:4px 10px">${esc(t)}</span>`).join('')}</div>`:''}
+    ${noteIds.length?`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));column-gap:24px;border-top:1px solid #EFEFF4">${noteIds.map(i=>{const p=P[i];return `<div style="display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #F4F4F8">${cav(i,34)}<div style="min-width:0"><div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:14px;font-weight:600">${pnk(i)}</span><span style="font-size:11px;color:#A6A8B4">${p.tname} · xP1 ${p.xp1.toFixed(1)}</span></div><div style="font-size:13px;line-height:1.55;color:#4A4C5A;margin-top:3px;text-wrap:pretty">${esc(notes[i])}</div></div></div>`}).join('')}</div>`:''}
+  </div>`;
+  return `<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+    <div class="hd"><div class="ht">Состав <span>GW${D.meta.gw_next}</span></div>
+      <div class="facts"><span>Схема <b style="word-spacing:-.2em">${esc(fm.split('-').join(' / '))}</b></span>${SP}<span>xP1 <b style="color:#6B5CE7">${sum(xiP)}</b></span>${SP}
+      <span style="display:inline-flex;align-items:center;gap:6px"><span class="cap" style="background:#6B5CE7">C</span><b>${cap?pnk(cap):'–'}</b></span><span style="display:inline-flex;align-items:center;gap:6px"><span class="cap" style="background:#C9CAD6">V</span><b>${vice?pnk(vice):'–'}</b></span>${SP}<span>дедлайн через <b class="cds"></b></span></div></div>
+    <div class="seg"><button class="${SQV==='claude'?'on':''}" onclick="setSQV('claude')">${ic('claude',20)}Рекомендация Claude</button><button class="${SQV==='calc'?'on':''}" onclick="setSQV('calc')">Расчёт программы (xP)</button></div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start">
+    <div style="display:flex;flex-direction:column;gap:20px;min-width:0;flex:1 1 680px">
+      <div class="card gl" style="padding:14px"><div class="pitch">${lines.map(l=>`<div class="pline">${l.map(card).join('')}</div>`).join('')}</div></div>
+      <div class="card" style="padding:20px 24px;display:flex;flex-direction:column;gap:14px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap"><span class="lbl">Скамейка · порядок автозамен</span><span class="lbl">суммарно <b style="color:#17181F;font-weight:600">${sum(benchP)} xP</b></span></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px">${benchHtml}</div></div>
+    </div>
+    ${panel}
+  </div>`;
+}
+
+/* ===================== Трансферы и план ===================== */
+function vMoves(){
+  const s=D.sugg, pl=D.plan||{};
+  const head=`<div class="hd"><div class="ht">Трансферы и план <span>GW${D.meta.gw_next}</span></div>
+    <div class="facts"><span>Банк <b>£${money(s.bank)}</b></span>${SP}<span>свободных трансферов <b style="${s.ft>0?'':'color:#E5484D'}">${s.ft}</b></span>${SP}<span>цены продажи по правилу FPL</span>${SP}<span>исключены игроки ${esc(RIV.map(genR).join(', ')||'соперников')} и чёрного списка</span></div></div>`;
+  // слабые звенья
+  const weak=s.weak.map((id,k)=>{const p=P[id]; if(!p) return ''; const subs=(D.insurance[id]||[]).filter(i=>!isBlocked(i)&&P[i]).slice(0,3);
+    return `<div class="card r24 hov" style="padding:18px;display:flex;flex-direction:column;gap:14px;cursor:pointer;transition:box-shadow .2s" data-id="${id}">
+      <div style="display:flex;align-items:center;gap:10px">${cav(id,40)}<div style="min-width:0;flex:1"><div class="nm">${esc(p.name)}</div><div style="font-size:12px;color:#A6A8B4">${p.tname} · ${p.pos}</div></div><span style="font-size:12px;font-weight:600;color:#A6A8B4">#${k+1}</span></div>
+      <div style="display:flex;gap:16px;align-items:baseline"><div><div style="font-size:11px;color:#A6A8B4">xP5</div><div style="font-size:24px;font-weight:600;letter-spacing:-.035em;color:#E5484D">${p.xp5.toFixed(1)}</div></div><div><div style="font-size:11px;color:#A6A8B4">форма</div><div style="font-size:16px;font-weight:600;letter-spacing:-.02em">${p.form.toFixed(1)}</div></div><div><div style="font-size:11px;color:#A6A8B4">цена</div><div style="font-size:16px;font-weight:600;letter-spacing:-.02em">£${money(p.price)}</div></div></div>
+      ${fxPills(p)}
+      <div style="display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:1px solid #F1F1F6"><div style="font-size:11px;color:#A6A8B4">замены</div>${subs.map(i=>`<div style="display:flex;align-items:center;gap:8px">${cav(i,22)}<span style="font-size:13px;font-weight:500;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${pnk(i)}</span><span style="font-size:12px;font-weight:600;color:${P[i].xp5-p.xp5>=0?'#2EB67D':'#E5484D'}">${sgn(P[i].xp5-p.xp5)}</span></div>`).join('')||'<div style="font-size:12px;color:#A6A8B4">нет вариантов в бюджет</div>'}</div></div>`}).join('');
+  // одиночные
+  const single=diverse(s.single.filter(m=>!isBlocked(m.inn)),2).slice(0,8), smx=Math.max(1,...single.map(m=>m.gain));
+  const hs=new Set(single.map(m=>m.hit||0)), hTxt=hs.size===1?([...hs][0]?`все с хитом −${[...hs][0]}`:'без хита'):'хит — у каждого свой';
+  const SC='32px minmax(170px,1fr) minmax(190px,1fr) minmax(180px,1fr) 80px 90px';
+  const singleSec=sec('Лучшие одиночные ходы',`топ-8 по приросту xP за 5 туров · ${hTxt}`,`<div class="card tb"><div style="min-width:720px">
+    <div class="g th" style="grid-template-columns:${SC}"><div>#</div><div>Продать</div><div>Купить</div><div>Прирост xP5</div><div style="text-align:right">Δ цена</div><div style="text-align:right">Банк после</div></div>
+    ${single.map((m,i)=>`<div class="g hv" style="grid-template-columns:${SC};padding:10px 8px">
+      <div style="font-size:14px;font-weight:600;color:#A6A8B4">${i+1}</div>
+      ${whoRow(m.out,32,pt(m.out),{op:.4,mut:1})}
+      <div style="display:flex;align-items:center;gap:10px;min-width:0"><span style="color:#C9CAD6">→</span>${whoRow(m.inn,32,pt(m.inn))}</div>
+      <div style="display:flex;align-items:center;gap:12px"><span style="font-size:15px;font-weight:600;letter-spacing:-.02em;color:#6B5CE7;min-width:48px">+${m.gain.toFixed(1)}</span><div class="b4" style="flex:1"><i style="width:${Math.round(m.gain/smx*100)}%"></i></div></div>
+      <div style="text-align:right;font-size:14px;color:#7A7C8A">${sgn(m.delta/10)}</div>
+      <div style="text-align:right;font-size:14px;font-weight:600">£${money(m.bank_after)}</div></div>`).join('')||'<div class="empty">нет подходящих ходов</div>'}</div></div>`);
+  // двойные
+  const dbl=s.double.filter(p=>!isBlocked(p.a.inn)&&!isBlocked(p.b.inn)).slice(0,4);
+  const dh=new Set(dbl.map(d=>d.hit||0)), dTxt=dh.size===1?([...dh][0]?'хит −'+[...dh][0]:'без хита'):'хит у каждого свой';
+  const pairRow=(a)=>`<div style="display:flex;align-items:center;gap:8px">${cav(a.out,28,.4)}<span style="font-size:13px;color:#7A7C8A">${pnk(a.out)}</span><span style="color:#C9CAD6">→</span>${cav(a.inn,28)}<span style="font-size:14px;font-weight:600">${pnk(a.inn)}</span></div>`;
+  const dblSec=dbl.length?sec('Двойные ходы',`топ-4 · ${dTxt}`,`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">${dbl.map((d,i)=>`<div class="card r24 hov" style="padding:20px 22px;display:flex;flex-direction:column;gap:14px;transition:box-shadow .2s">
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:13px;color:#A6A8B4;font-weight:500">№${i+1}</span><span style="font-size:22px;font-weight:600;letter-spacing:-.03em;color:#6B5CE7">+${d.gain.toFixed(1)} <span style="font-size:12px;color:#A6A8B4;font-weight:500;letter-spacing:0">xP5</span></span></div>
+      <div style="display:flex;flex-direction:column;gap:8px">${pairRow(d.a)}${pairRow(d.b)}</div>
+      <div style="font-size:12px;color:#A6A8B4;padding-top:12px;border-top:1px solid #F1F1F6">${d.hit?'хит −'+d.hit:'без хита'} · банк после <b style="color:#17181F;font-weight:600">£${money(d.bank_after)}</b></div></div>`).join('')}</div>`):'';
+  // план
+  let planSec='';
+  if(pl.steps&&!pl.error){
+    const PC='70px minmax(240px,1.4fr) 70px 70px 90px minmax(120px,.8fr)';
+    planSec=`<div class="sec" style="gap:24px"><div style="display:flex;flex-direction:column;gap:10px;padding:0 4px"><div style="font-weight:600;font-size:20px;letter-spacing:-.025em">План на ${pl.horizon} туров</div><div class="desc">Планировщик подбирает ходы по турам с учётом банка, свободных трансферов, хитов и лимита клуба. Это расчёт по xP: травмы и новости проверяет Claude, оценки чипов приблизительные.</div></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:32px;padding:0 4px">
+        <div class="stat"><div class="k">Без трансферов</div><div class="v">${pl.baseline}</div><div class="s">xP за ${pl.horizon} туров</div></div>
+        <div class="stat"><div class="k">По плану</div><div class="v">${pl.best_total}</div><div class="s">с учётом хитов</div></div>
+        <div class="stat"><div class="k">Прирост</div><div class="v" style="color:#2EB67D">+${pl.gain}</div><div class="s">банк в конце £${money(pl.bank_end)}</div></div></div>
+      <div class="card gl tb"><div style="min-width:640px"><div class="g th" style="grid-template-columns:${PC}"><div>Тур</div><div>Трансферы</div><div style="text-align:right">FT до</div><div style="text-align:right">Хит</div><div style="text-align:right">xP тура</div><div>Капитан</div></div>
+      ${pl.steps.map(st=>{const nx=st.gw===D.meta.gw_next;return `<div class="g" style="grid-template-columns:${PC};padding:10px 8px;background:${nx?'#F6F4FF':'transparent'}">
+        <div style="font-size:15px;font-weight:600;letter-spacing:-.02em;color:${nx?'#6B5CE7':'#17181F'}">GW${st.gw}</div>
+        <div style="display:flex;flex-direction:column;gap:6px;min-width:0">${st.moves.length?st.moves.map(([o,c])=>`<div style="display:flex;align-items:center;gap:8px;min-width:0">${cav(o,28,.4)}<span style="font-size:13px;color:#7A7C8A;white-space:nowrap">${pnk(o)}</span><span style="color:#C9CAD6">→</span>${cav(c,28)}<span style="font-size:14px;font-weight:600;white-space:nowrap">${pnk(c)}</span></div>`).join(''):'<span style="font-size:13px;color:#A6A8B4">без ходов</span>'}</div>
+        <div style="text-align:right;font-size:14px;color:#7A7C8A">${st.ft_before}</div>
+        <div style="text-align:right;font-size:13px;font-weight:600;color:${st.hit?'#E5484D':'#C9CAD6'}">${st.hit?'−'+st.hit:'–'}</div>
+        <div style="text-align:right;font-size:14px;font-weight:600;letter-spacing:-.02em">${st.value.toFixed(1)}</div>
+        <div style="display:flex;align-items:center;gap:7px;font-size:13px"><span class="cap">C</span>${st.captain?pnk(st.captain):'–'}</div></div>`}).join('')}</div></div></div>`;
+  } else planSec=`<div class="card pd"><div class="empty">${esc(pl.error||'План не построен')}</div></div>`;
+  // альтернативы
+  const mainKey=new Set((pl.steps||[]).flatMap(st=>st.moves.map(([o,c])=>st.gw+':'+o+':'+c)));
+  const alts=(pl.alts||[]).map((a,i)=>{const diff=a.total!=null?(a.total-pl.best_total):0, eq=diff>=-0.05;
+    return `<div class="card r24" style="padding:22px;display:flex;flex-direction:column;gap:14px"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><div><div style="font-size:15px;font-weight:600;letter-spacing:-.01em">Вариант ${String.fromCharCode(66+i)}</div><div style="font-size:12px;color:#A6A8B4;margin-top:2px">+${a.gain} xP к игре без трансферов</div></div><span class="pl ${eq?'t-ok':'t-gr'}" style="padding:4px 10px">${eq?'на уровне основного':sgn(diff)+' к основному'}</span></div>
+      <div style="display:flex;flex-direction:column">${(a.first||[]).map(m=>{const same=mainKey.has(m.gw+':'+m.out+':'+m.in);return `<div style="display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid #F4F4F8"><span style="font-size:13px;font-weight:600;color:#7A7C8A">GW${m.gw}</span>
+        <div style="display:flex;align-items:center;gap:8px;min-width:0">${cav(m.out,26,.4)}<span style="color:#C9CAD6;font-size:12px">→</span>${cav(m.in,26)}<div style="min-width:0"><div style="font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${pnk(m.in)}</div><div style="font-size:11px;color:#A6A8B4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">вместо ${pnk(m.out)}</div></div></div>
+        ${same?'<span></span>':'<span style="font-size:10px;font-weight:600;color:#9A5B12;background:#FDEBD3;border-radius:999px;padding:3px 8px">иначе</span>'}</div>`}).join('')||'<div class="empty">без ходов</div>'}</div></div>`}).join('');
+  const altSec=alts?sec('Альтернативные планы','близкий результат · метка «иначе» — ход отличается от основного',`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px">${alts}</div>`):'';
+  // чипы
+  const chd=D.chips||{}, ex=chd.expiry||{};
+  const chips=(chd.recommend||[]).map(c=>{const a=CHA[c.chip]||'WC',cc=CHC[a];return `<div class="card r24" style="padding:22px;display:flex;flex-direction:column;gap:14px"><div style="display:flex;align-items:center;gap:12px">${chipIc(c.chip,40)}<div><div style="font-size:15px;font-weight:600;letter-spacing:-.01em">${CHN[c.chip]||c.chip}</div><div style="font-size:12px;color:#A6A8B4;margin-top:1px">план на тур</div></div></div>
+    <div style="display:flex;align-items:baseline;gap:10px"><span style="font-size:34px;font-weight:600;letter-spacing:-.04em;line-height:1">GW${c.gw}</span><span style="font-size:15px;font-weight:600;color:#2EB67D">≈ +${c.gain} xP</span></div>
+    <div style="font-size:13px;color:#7A7C8A;line-height:1.55;text-wrap:pretty">${esc(CTIP[c.chip]||c.note||'')}</div></div>`}).join('');
+  const chipSec=sec('Чипы',ex.active?`первый набор сгорает после дедлайна GW${ex.gw} · осталось ${ex.gws_left} туров`:'',chips?`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">${chips}</div>`:'<div class="card pd"><div class="empty">нет доступных чипов</div></div>','color:#E8A23B;font-weight:600');
+  return head+sec('Слабые звенья','кого менять первым · в каждой карточке — замены и их прирост xP5',`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">${weak}</div>`)+singleSec+dblSec+rotSec()+planSec+altSec+chipSec;
+}
+
+/* ===================== Скаут-лист ===================== */
+let scoutF='all';
+function vScout(){
+  const all=wlList(), nU=all.filter(w=>w.source==='user').length, nC=all.length-nU;
+  const L=all.filter(w=>scoutF==='all'||(scoutF==='user')===(w.source==='user'));
+  const GR={1:['P1','главные цели','t-bl'],2:['P2','кандидаты','t-sc'],3:['P3','наблюдение','t-gr']};
+  const card=w=>{const q=P[w.id], weak=myMinPos(q.pos), out=['i','s','u'].includes(q.status), user=w.source==='user', o=ownerName(w.id);
+    let sig,sc; if(q.mine){sig='В моём составе';sc='t-me'}else if(out){sig='Травмирован — ждём';sc='t-bl'}else if(isBlocked(w.id)){sig=o?'Занят: '+o:'В чёрном списке';sc='t-sc'}else if(weak&&q.xp5>weak.xp5+1){sig=`Лучше ${weak.name} на +${(q.xp5-weak.xp5).toFixed(1)} xP5`;sc='t-ok'}else{sig='Наблюдаем';sc='t-gr'}
+    return `<div style="break-inside:avoid;margin-bottom:14px;background:#FFFFFF;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;position:relative;box-shadow:0 1px 2px rgba(23,24,31,.04);transition:box-shadow .2s" class="hov">
+      <div style="padding:18px 20px 0;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="${GR[w.prio||3][2]}" style="font-size:11px;font-weight:700;border-radius:999px;padding:3px 9px">P${w.prio||3}</span>
+          <div style="display:flex;align-items:center;gap:6px"><span class="${user?'t-sc':'t-me'}" style="font-size:11px;font-weight:600;border-radius:999px;padding:3px 9px">${user?'добавил '+esc(ME_NAME)+(w.added?' · '+fmtD(w.added):'')+(w.local?' · не сохранено':''):'Claude'}</span>${user?`<button onclick="wlRm(${w.id})" title="убрать" style="width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:#A6A8B4;cursor:pointer;font-size:14px;background:rgba(255,255,255,.7);border:0;padding:0" onmouseover="this.style.color='#17181F'" onmouseout="this.style.color='#A6A8B4'">×</button>`:''}</div></div>
+        <div style="display:flex;align-items:center;gap:14px">${cav(w.id,64)}<div style="min-width:0;flex:1"><div style="font-size:18px;font-weight:600;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${pnk(w.id)}</div><div style="font-size:12px;color:#7A7C8A;margin-top:2px">${q.tname} · ${POS1[q.pos]}</div><div style="margin-top:6px"><span class="${sc}" style="font-size:11px;font-weight:600;border-radius:999px;padding:3px 9px">${esc(sig)}</span></div></div><div style="text-align:right;flex-shrink:0"><div style="font-size:22px;font-weight:600;letter-spacing:-.03em">£${money(q.price)}</div></div></div></div>
+      <div style="padding:14px 20px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px"><div class="tile ac"><b>${q.xp5.toFixed(1)}</b><span>xP5</span></div><div class="tile"><b>${q.form.toFixed(1)}</b><span>форма</span></div><div class="tile"><b>${q.ppg.toFixed(1)}</b><span>очк/игру</span></div><div class="tile"><b>${q.own.toFixed(1)}%</b><span>влад.</span></div></div>
+      <div style="padding:10px 20px 0">${fxPills(q)}</div>
+      <div style="padding:14px 20px 20px;display:flex;flex-direction:column;gap:10px">${q.status!=='a'&&q.news?`<div style="font-size:12px;color:#B13036">${esc(q.news)}</div>`:''}${w.note?`<div style="font-size:13px;line-height:1.55;color:#4A4C5A;text-wrap:pretty">${esc(w.note)}</div>`:''}
+        ${w.trigger?`<div style="display:flex;gap:10px;align-items:flex-start;padding-top:10px;border-top:1px solid #F1F1F6"><span class="gdot" style="width:18px;height:18px;flex-shrink:0;margin-top:1px"></span><div style="font-size:13px;line-height:1.5;color:#4A4C5A;text-wrap:pretty"><b style="color:#17181F;font-weight:600">Триггер.</b> ${esc(w.trigger)}</div></div>`:''}</div></div>`;};
+  const groups=[1,2,3].map(pr=>{const g=L.filter(w=>(w.prio||3)===pr&&P[w.id]).sort((a,b)=>(b.source==='user')-(a.source==='user')||P[b.id].xp5-P[a.id].xp5);
+    return g.length?`<div style="display:flex;flex-direction:column;gap:18px"><div style="display:flex;align-items:baseline;gap:10px;padding:0 4px"><span class="${GR[pr][2]}" style="font-size:13px;font-weight:700;border-radius:999px;padding:4px 10px">P${pr}</span><span style="font-weight:600;font-size:20px;letter-spacing:-.025em">${GR[pr][1]}</span><span style="font-size:14px;color:#A6A8B4">${g.length}</span></div><div style="columns:3 280px;column-gap:14px">${g.map(card).join('')}</div></div>`:''}).join('');
+  Object.keys(WL_PICK).forEach(k=>delete WL_PICK[k]);
+  const opts=D.players.filter(p=>!p.mine&&!wlGet(p.id)).sort((a,b)=>b.xp5-a.xp5).map(p=>{const k=p.name+' · '+p.tname+' · £'+money(p.price)+(p.taken_by?' · занят':''); WL_PICK[k]=p.id; return `<option value="${esc(k)}">`}).join('');
+  const un=wlUnsaved();
+  const fileNote=!SRV?` Сейчас дашборд открыт как файл: добавления хранятся в этом браузере${un?` (несохранённых: ${un})`:''} — чтобы они попали в config.json, открой его через run.bat.`:(un?` <button class="btn sm" onclick="wlSyncLocal()">Сохранить ${un} изменений из браузера в config.json</button>`:'');
+  const sb=k=>scoutF===k?'on':'';
+  return `<div class="hdr"><div class="hd"><div class="ht">Скаут-лист <span>${all.length}</span></div><div class="desc" style="max-width:720px">Игроки под наблюдением. Список ведёт Claude, своих добавляешь ниже или из карточки игрока. Отмеченные тобой Claude видит в конфиге и брифе и комментирует.${fileNote}</div></div>
+    <div class="seg md"><button class="${sb('all')}" onclick="scoutF='all';render()">Все · ${all.length}</button><button class="${sb('user')}" onclick="scoutF='user';render()">Мои · ${nU}</button><button class="${sb('claude')}" onclick="scoutF='claude';render()">От Claude · ${nC}</button></div></div>
+  <div style="background:#FFFFFF;border-radius:20px;padding:10px;display:flex;gap:8px;flex-wrap:wrap;box-shadow:0 1px 2px rgba(23,24,31,.04),0 12px 40px -24px rgba(107,92,231,.25)">
+    <input id="scq" list="scdl" class="inp" placeholder="Добавить игрока: начни вводить имя…" style="flex:2 1 240px;min-width:0"><datalist id="scdl">${opts}</datalist>
+    <select id="scp" class="inp" style="flex:0 1 160px;padding:12px 14px;appearance:none;-webkit-appearance:none"><option value="1">P1 — главная цель</option><option value="2" selected>P2 — кандидат</option><option value="3">P3 — наблюдение</option></select>
+    <input id="scn" class="inp" placeholder="Заметка: почему он (необязательно)" style="flex:3 1 260px;min-width:0">
+    <button class="btn" style="flex:0 0 auto" onclick="wlFormAdd('sc')">В скаут-лист</button></div>
+  ${groups||'<div class="card pd"><div class="empty">Пусто. Добавь игрока выше.</div></div>'}`;
+}
+const myMinPos=pos=>D.me.squad.map(x=>P[x.id]).filter(q=>q&&q.pos===pos).sort((a,b)=>a.xp5-b.xp5)[0];
+
+/* ===================== Игроки ===================== */
+function vPlayers(){
+  let rows=D.players.slice();
+  if(!state.wide&&!state.q) rows=rows.filter(p=>!p.wide);
+  if(state.pos!=='ALL') rows=rows.filter(p=>p.pos===state.pos);
+  if(state.free) rows=rows.filter(p=>p.mine||!isBlocked(p.id));
+  if(state.q) rows=rows.filter(p=>(p.name+' '+p.tname).toLowerCase().includes(state.q.toLowerCase()));
+  rows.sort((a,b)=>((b[state.sort]??0)-(a[state.sort]??0))*(-state.dir));
+  const COLS=[['price','Цена'],['score','Рейтинг'],['form','Форма'],['ppg','Очк/игру'],['xgi90','xGI/90'],['dc90','DC/90'],['xp5','xP (5 т.)'],['top_cnt','Топ-'+D.top.n],['own','Влад.']];
+  const GC='minmax(160px,1.3fr) 48px 96px 50px 62px 54px 50px 62px 56px 58px minmax(190px,1fr) 54px';
+  const TH=([k,l,t])=>`<div class="srt" data-s="${k}"${t?` title="${t}"`:''} style="text-align:right;cursor:pointer;white-space:nowrap;color:${state.sort===k?'#17181F':'#A6A8B4'};font-weight:${state.sort===k?600:400}">${l}${state.sort===k?(state.dir<0?' ↓':' ↑'):''}</div>`;
+  const shown=rows.slice(0,150);
+  const body=shown.map(p=>{const dp=p.d_price_w||0, taken=!!ownerName(p.id);return `<div class="g hv" style="grid-template-columns:${GC};gap:8px;padding:9px 8px;${taken?'opacity:.55':''}" data-id="${p.id}">
+    <div class="who">${cav(p.id,32)}<div style="min-width:0"><div class="row6"><span class="nm">${esc(p.name)}</span>${flag(p)}${tagA(p)}</div><div class="cl">${p.tname} · ${p.pos}</div></div></div>
+    <div style="text-align:right;font-size:14px;font-weight:500">${money(p.price)}</div>
+    <div style="display:flex;align-items:center;gap:8px;justify-content:flex-end"><div class="b4" style="flex:1"><i style="width:${Math.min(100,p.score)}%"></i></div><span style="font-size:14px;font-weight:600;letter-spacing:-.02em;min-width:22px;text-align:right">${p.score.toFixed(0)}</span></div>
+    <div style="text-align:right;font-size:14px;color:#4A4C5A">${p.form.toFixed(1)}</div><div style="text-align:right;font-size:14px;color:#4A4C5A">${p.ppg.toFixed(1)}</div><div style="text-align:right;font-size:14px;color:#4A4C5A">${p.xgi90.toFixed(2)}</div><div style="text-align:right;font-size:14px;color:#4A4C5A">${p.dc90.toFixed(1)}</div>
+    <div style="text-align:right;font-size:14px;font-weight:600;color:#6B5CE7">${p.xp5.toFixed(1)}</div><div style="text-align:right;font-size:13px;color:#7A7C8A">${p.top_cnt}/${D.top.n}</div><div style="text-align:right;font-size:13px;color:#7A7C8A">${p.own.toFixed(1)}%</div>
+    ${fxPills(p)}
+    <div style="text-align:right;font-size:13px;font-weight:600;color:${dp>0?'#2EB67D':dp<0?'#E5484D':'#C9CAD6'}">${dp?sgn(dp/10):'–'}</div></div>`}).join('');
+  return `<div class="hdr"><div class="hd"><div class="ht">Игроки <span>${rows.length}</span></div><div style="font-size:14px;color:#7A7C8A">рейтинг = форма, xGI, DC, календарь и минуты · сортировка по клику на колонку${rows.length>150?' · показаны первые 150':''}</div></div>
+    <input type="search" id="q" value="${esc(state.q)}" placeholder="Поиск игрока или клуба" style="flex:0 1 260px;border:0;outline:none;background:#FFFFFF;border-radius:999px;padding:11px 18px;font-size:14px;color:#17181F;box-shadow:0 1px 2px rgba(23,24,31,.06);font-family:inherit"></div>
+  <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+    <div class="seg sm" id="posseg">${[['ALL','Все'],['GK','Вратари'],['DEF','Защитники'],['MID','Полузащитники'],['FWD','Нападающие']].map(([k,l])=>`<button class="${state.pos===k?'on':''}" data-p="${k}">${l}</button>`).join('')}</div>
+    <div class="seg sm">${[['main','Основное'],['prob','Шансы на GW'+D.meta.gw_next]].map(([k,l])=>`<button class="${PV===k?'on':''}" onclick="PV='${k}';state.sort='${k==='prob'?'_ga':'score'}';state.dir=-1;render()">${l}</button>`).join('')}</div>
+    <button class="sw2 ${state.free?'on':''}" onclick="state.free=!state.free;render()"><span><i></i></span>Скрыть занятых и чёрный список</button>
+    <button class="sw2 ${state.wide?'on':''}" onclick="state.wide=!state.wide;render()" title="Все, кто сыграл от 90 минут за сезон. Поиск всегда ищет по всем."><span><i></i></span>Весь рынок</button></div>
+  ${PV==='prob'?vPlayersProb(rows):`<div class="card tb"><div style="min-width:960px">
+    <div style="display:grid;grid-template-columns:${GC};gap:8px;padding:6px 8px 12px;font-size:12px;color:#A6A8B4;align-items:center"><div>Игрок</div>${COLS.map(TH).join('')}<div>Календарь</div>${TH(['d_price_w','Δ 7 дн','изменение цены за 7 дней'])}</div>
+    ${body||'<div class="empty">никого не нашлось</div>'}</div></div>`}`;
+}
+
+/* ===================== Соперники и лига ===================== */
+function vThreat(){
+  const th=D.threats||{}, rc=D.race||{}, {lt,me:mr,n,lead}=myPlace();
+  const leadName=lead?nameOfKey(leagueKeyByEntry(lead.entry))||lead.manager:'';
+  const gapF=mr&&lead?(mr.rank>1?`<span>до ${esc(leadName)} <b style="color:#E5484D">−${lead.total-mr.total}</b></span>`:(lt[1]?`<span>отрыв <b style="color:#2EB67D">+${mr.total-lt[1].total}</b></span>`:'')):'';
+  const head=`<div class="hd"><div class="ht">Соперники и лига <span>GW${D.meta.gw_next}</span></div><div class="facts">${mr?`<span>ты <b>${mr.rank}-й из ${n}</b></span>${SP}`:''}${gapF?gapF+SP:''}${rc.remaining!=null?`<span>осталось <b>${rc.remaining} тур</b></span>${SP}`:''}<span>ходы соперников до дедлайна — вероятности, не факты</span></div></div>`;
+  // угроза перехвата
+  const it=(th.intercept||[]).filter(x=>P[x.id]), umx=Math.max(0.01,...it.map(x=>x.urgency));
+  const TC='minmax(180px,1.2fr) 70px minmax(180px,1fr) 110px 100px';
+  const thr=sec('Угроза перехвата моих целей','срочность = риск × мой прирост · чем выше, тем раньше покупать',`<div class="card tb"><div style="min-width:640px">
+    <div class="g th" style="grid-template-columns:${TC};padding:6px 8px 12px"><div>Игрок</div><div style="text-align:right">Риск</div><div>Кто может</div><div style="text-align:right">Мой прирост xP</div><div style="text-align:right">Срочность</div></div>
+    ${it.map(x=>{const r=Math.round(x.risk*100), rcol=r>=40?'#E5484D':r>=10?'#E8A23B':'#17181F';return `<div class="g hv" style="grid-template-columns:${TC};padding:9px 8px" data-id="${x.id}">
+      ${whoRow(x.id,32,pt(x.id))}<div style="text-align:right;font-size:15px;font-weight:600;letter-spacing:-.02em;color:${rcol}">${r}%</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">${Object.entries(x.who).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<span class="pl t-sc">${esc(OWN[k]||k)} ${Math.round(v*100)}%</span>`).join('')}</div>
+      <div style="text-align:right;font-size:14px;font-weight:600;color:#2EB67D">+${x.gain}</div>
+      <div style="display:flex;align-items:center;gap:8px;justify-content:flex-end"><div class="b4" style="width:48px"><i style="background:${rcol};width:${Math.min(100,x.urgency/umx*100)}%;border-radius:0"></i></div><span style="font-size:14px;font-weight:600;letter-spacing:-.02em;min-width:38px;text-align:right">${x.urgency.toFixed(2)}</span></div></div>`}).join('')||'<div class="empty">угроз не видно</div>'}</div></div>`);
+  // мини-лига
+  const keys=['me',...Object.keys(D.league||{}).filter(k=>k!=='me').sort((a,b)=>{const ra=lt.find(r=>r.entry===D.league[a].entry),rb=lt.find(r=>r.entry===D.league[b].entry);return (ra?ra.rank:99)-(rb?rb.rank:99);})];
+  const posOrd={GK:0,DEF:1,MID:2,FWD:3};
+  const mgr=keys.map(k=>{const m=D.league[k]; if(!m) return ''; const row=lt.find(r=>r.entry===m.entry), me_=k==='me', isLead=row&&row.rank===1&&!me_;
+    const avB=me_?'#EDEAFF':isLead?'#17181F':'#F1F1F6', avF=me_?'#6B5CE7':isLead?'#FFFFFF':'#7A7C8A';
+    const h=(m.gw_points||[]).map(g=>g.pts), hmx=Math.max(...h,1), hmn=Math.min(...h,0), pts=h.map((v,i)=>[(6+i*(288/Math.max(h.length-1,1))).toFixed(1),(50-(v-hmn)/(hmx-hmn||1)*44).toFixed(1)]);
+    const avg=((D.race||{}).players||{})[k]?D.race.players[k].mean:(h.length?(h.reduce((a,b)=>a+b,0)/h.length).toFixed(1):'–');
+    const sq=m.squad.map(s=>[s,P[s.id]]).filter(x=>x[1]).sort((a,b)=>posOrd[a[1].pos]-posOrd[b[1].pos]);
+    const gpts=m.gw_points||[];
+    return `<div class="card" style="padding:24px;display:flex;flex-direction:column;gap:18px;border:1px solid ${me_?'#E3DEFF':'transparent'}">
+      <div style="display:flex;align-items:center;gap:12px">${mgrAv(k,nameOfKey(k),44,avB,avF)}<div style="flex:1;min-width:0"><div style="font-size:16px;font-weight:600;letter-spacing:-.01em">${esc(nameOfKey(k))} <span style="font-size:12px;color:#A6A8B4;font-weight:500">${me_?'ты':''}</span></div><div style="font-size:12px;color:#7A7C8A;margin-top:1px">${esc(m.team||'')}</div></div><div style="text-align:right"><div style="font-size:22px;font-weight:600;letter-spacing:-.03em">${m.overall_pts??'–'}</div><div style="font-size:11px;color:#A6A8B4">${row?row.rank+' место':''}</div></div></div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px"><div class="tile"><b>£${money(m.bank)}</b><span>банк</span></div><div class="tile"><b>${m.ft_estimate}</b><span>FT</span></div><div class="tile"><b>${m.hits_lost}</b><span>на хитах</span></div><div class="tile"><b>${m.bench_lost}</b><span>скамейка</span></div></div>
+      ${h.length?`<div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;font-size:11px;color:#A6A8B4"><span>очки по турам GW${gpts[0].gw}–${gpts[gpts.length-1].gw}</span><span>ср. ${avg}</span></div>
+        <svg viewBox="0 0 300 56" preserveAspectRatio="none" style="width:100%;height:56px;display:block;overflow:visible"><polyline points="${pts.map(p=>p.join(',')).join(' ')}" fill="none" stroke="#6B5CE7" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></polyline>${pts.map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#6B5CE7"><title>GW${gpts[i].gw}: ${h[i]}</title></circle>`).join('')}</svg></div>`:''}
+      <div style="display:flex;gap:6px;flex-wrap:wrap">${(m.chips||[]).map(c=>{const a=CHKEY(c.name);return `<span style="display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:#6B5CE7;background:#F6F4FF;border-radius:999px;padding:5px 11px 5px 6px;white-space:nowrap">${chipIc(c.name,20)}${esc(c.label||c.name)} · GW${c.event}</span>`}).join('')||'<span style="font-size:12px;color:#A6A8B4">фишек не использовано</span>'}</div>
+      <div style="display:flex;flex-direction:column;border-top:1px solid #F1F1F6">${sq.map(([s,p])=>`<div style="display:grid;grid-template-columns:30px 1fr auto;gap:8px;align-items:center;padding:6px 0;border-bottom:1px solid #F7F7FA;font-size:13px"><span style="font-size:10px;font-weight:600;color:#A6A8B4">${p.pos}</span><span style="display:flex;align-items:center;gap:6px;min-width:0"><span style="font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${pnk(p.id)}</span>${s.captain?'<span style="width:16px;height:16px;border-radius:50%;background:#6B5CE7;color:#FFFFFF;font-size:9px;font-weight:700;display:grid;place-items:center">C</span>':''}${flag(p)}</span><span style="color:#A6A8B4;font-size:12px;white-space:nowrap">${p.tname} · £${money(p.price)}</span></div>`).join('')}</div>
+      <div><div style="font-size:11px;color:#A6A8B4;margin-bottom:6px">последние трансферы</div>${(m.transfers_recent||[]).map(t=>`<div style="font-size:13px;color:#7A7C8A;padding:2px 0">GW${t.gw}: ${pnk(t.out)} → <b style="color:#17181F;font-weight:600">${pnk(t.in)}</b></div>`).join('')||'<div style="font-size:13px;color:#A6A8B4">нет</div>'}</div></div>`}).join('');
+  const conf=D.conflicts.length?`<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#B13036;font-weight:600"><span style="width:16px;height:16px;border-radius:50%;background:#E5484D;color:#FFFFFF;font-size:10px;display:grid;place-items:center">!</span>дубли между составами: ${D.conflicts.map(i=>pnk(i)).join(', ')}</div>`
+    :`<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#1D7A4F;font-weight:600"><span style="width:16px;height:16px;border-radius:50%;background:#2EB67D;color:#FFFFFF;font-size:10px;display:grid;place-items:center">✓</span>дублей между составами нет — правило лиги соблюдено</div>`;
+  const mgrSec=`<div class="sec"><div class="sh"><div class="t">Мини-лига</div>${conf}</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:start">${mgr}</div></div>`;
+  // вероятные ходы друзей
+  const prRow=(x,col,mx)=>`<div style="display:grid;grid-template-columns:1fr 70px 36px;gap:10px;align-items:center;padding:7px 0;border-top:1px solid #F4F4F8;font-size:13px"><span style="min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><b style="font-weight:600">${pnk(x.id)}</b> <span style="color:#A6A8B4">${pt(x.id)}</span></span><div class="b4"><i style="background:${col};width:${Math.min(100,x.prob*100*1.6)}%;border-radius:0"></i></div><span style="text-align:right;font-weight:600">${Math.round(x.prob*100)}%</span></div>`;
+  const fr=Object.entries(th.friends||{}).map(([k,f])=>`<div class="card" style="padding:24px;display:flex;flex-direction:column;gap:20px">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><span style="font-size:16px;font-weight:600;letter-spacing:-.01em">${esc(f.name)}</span><span class="pl ${f.verified?'t-ok':'t-gr'}" title="${f.verified?'':'API не показывает ходы на ближайший тур до дедлайна — пришли Claude скрин или список состава'}">${f.verified?'состав подтверждён':'состав на прошлый дедлайн'}</span><span style="margin-left:auto;font-size:13px;color:#7A7C8A">банк <b style="color:#17181F;font-weight:600">£${money(f.bank)}</b> · FT <b style="color:#17181F;font-weight:600">${f.ft}</b> · ожидаемо ходов <b style="color:#17181F;font-weight:600">${f.exp_moves}</b></span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px"><div><div style="font-size:12px;color:#A6A8B4;margin-bottom:6px">вероятно продаст</div>${f.sells.map(x=>prRow(x,'#E8A23B')).join('')||'<div style="font-size:13px;color:#A6A8B4">—</div>'}</div><div><div style="font-size:12px;color:#A6A8B4;margin-bottom:6px">вероятно купит</div>${f.buys.map(x=>prRow(x,'#E5484D')).join('')||'<div style="font-size:13px;color:#A6A8B4">—</div>'}</div></div></div>`).join('');
+  const frSec=fr?sec('Что, вероятно, сделают друзья','по составам, травмам, форме и истории трансферов',`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start">${fr}</div>`):'';
+  // гонка
+  let raceSec='';
+  if(rc.players){
+    const rp=Object.entries(rc.players).sort((a,b)=>b[1].p_win-a[1].p_win); let oi=0; const RCOL=['#17181F','#A6A8B4','#C9CAD6','#DDDCE6','#E6E5EE'];
+    const rv=rp.map(([k,v])=>{const me_=k==='me', col=me_?'#6B5CE7':RCOL[Math.min(oi++,4)];return {k,v,me_,col,bg:me_?'#EDEAFF':col==='#17181F'?'#17181F':'#F1F1F6',fg:me_?'#6B5CE7':col==='#17181F'?'#FFFFFF':'#7A7C8A',pct:Math.round(v.p_win*100)};});
+    const meLead=rc.gap===0||rc.leader==='me';
+    raceSec=`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:start">
+      <div class="card gl pd" style="gap:20px"><div class="lbl">Гонка за лигу</div><div style="display:flex;gap:4px;height:10px;border-radius:5px;overflow:hidden">${rv.map(r=>`<div style="background:${r.col};width:${Math.max(1,r.pct)}%;min-width:4px;border-radius:5px"></div>`).join('')}</div>
+        <div style="display:flex;flex-direction:column">${rv.map(r=>`<div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid #EFEFF4">${mgrAv(r.k,r.v.name,40,r.bg,r.fg)}<div style="flex:1;min-width:0"><div style="font-size:15px;font-weight:600">${esc(r.v.name)} <span style="font-size:12px;color:#A6A8B4;font-weight:500">${r.me_?'ты':''}</span></div><div style="font-size:12px;color:#7A7C8A;margin-top:2px">${r.v.total} очк. · ср. ${r.v.mean} · финал ≈ ${r.v.exp_final}</div></div><div style="font-size:26px;font-weight:600;letter-spacing:-.04em;color:${r.col}">${r.pct}%</div></div>`).join('')}</div>
+        <div style="font-size:13px;color:#7A7C8A;line-height:1.6;text-wrap:pretty">Осталось ${rc.remaining} тур${rc.gap&&!meLead?`, отставание ${rc.gap} очк. (≈ ${rc.need_per_gw}/тур)`:''}. ${esc(rc.text||'')}</div></div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div class="card pd" style="gap:16px"><div class="lbl">Твой шанс на победу: влияние риска</div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:8px;font-size:12px;color:#A6A8B4;padding-bottom:6px"><div>средний прирост</div><div style="text-align:right">обычно</div><div style="text-align:right">риск ×1.25</div><div style="text-align:right">риск ×1.5</div></div>
+          ${(rc.scenarios||[]).map(r=>`<div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:8px;align-items:center;padding:10px 0;border-top:1px solid #F4F4F8;font-size:14px"><div style="color:#4A4C5A">+${r.boost} очк./тур</div>${r.p.map((v,j)=>`<div style="text-align:right;font-weight:600;${j?'color:#7A7C8A':''}">${Math.round(v*100)}%</div>`).join('')}</div>`).join('')}
+          <div style="font-size:13px;color:#7A7C8A;line-height:1.6;text-wrap:pretty">Если догоняешь — рискованные дифференциалы могут повысить шанс, даже если слегка снижают средний результат.</div></div>
+        <div class="card pd" style="gap:12px"><div class="lbl">Фишки у соперников</div>
+          ${Object.entries(rc.chips_left||{}).map(([k,v])=>`<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid #F4F4F8"><span style="font-size:14px;font-weight:600;flex:1">${esc(k==='me'?ME_NAME:(OWN[k]||k))}</span><div style="display:flex;gap:6px">${v.map(nm=>{const a=CHKEY(nm);return `<span title="${esc(nm)}">${chipIc(nm,28)}</span>`}).join('')||'<span style="font-size:12px;color:#A6A8B4">нет</span>'}</div></div>`).join('')}</div>
+      </div></div>`;
+  }
+  return head+liveSec()+thr+mgrSec+eoSec()+frSec+raceSec+vExtra();
+}
+/* ниже макета: актуальность данных и чёрный список — нужны для работы, оформлены в стиле дизайна 2 */
+function vExtra(){
+  const ck=(D.checklist||[]).map(c=>`<div style="display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid #F4F4F8"><span class="pl ${c.status==='ok'?'t-ok':'t-sc'}">${c.status==='ok'?'ок':'проверь'}</span><div style="font-size:13px;line-height:1.55;color:#4A4C5A"><b style="color:#17181F;font-weight:600">${esc(c.name)}</b>: ${esc(c.text)}</div></div>`).join('');
+  const ents=blEntries().filter(e=>P[e.id]), rel=ents.filter(e=>e.status==='released'&&!e.pin), act=ents.filter(e=>!(e.status==='released'&&!e.pin));
+  const st=e=>e.status==='held'?`<span class="pl t-sc">у ${esc(OWN[e.owner]||e.owner)}</span>`:e.status==='released'?'<span class="pl t-ok">освободился</span>':e.status==='unverified'?`<span class="pl t-gr" title="API не показывает ходы на ближайший тур до дедлайна">ждём дедлайн · ${esc(OWN[e.owner]||'?')}</span>`:'<span class="pl t-gr">вручную</span>';
+  const bRow=(e,right)=>`<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid #F4F4F8;flex-wrap:wrap">${whoRow(e.id,32,`${P[e.id].tname} · ${P[e.id].pos} · £${money(P[e.id].price)}`)}<div style="margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap">${right}</div></div>`;
+  const relH=rel.map(e=>bRow(e,`<span style="font-size:12px;color:#7A7C8A">${esc(OWN[e.owner]||'Соперник')} больше не держит</span>`+(e.local?`<button class="btn g sm" onclick="pinBL(${e.id})">Оставить в ЧС</button><button class="btn r sm" onclick="rmBL(${e.id})">Убрать</button>`:`<button class="btn g sm" onclick="BL_LOCAL.set(${e.id},{id:${e.id},owner:null,pin:true});saveBL();render()">Оставить в ЧС</button>`))).join('');
+  const actH=act.map(e=>bRow(e,st(e)+(e.local?`<select class="inp" style="padding:7px 10px;font-size:13px" onchange="setOwner(${e.id},this.value)"><option value="">кто держит?</option>${ownOpts(e.owner)}</select><button class="btn r sm" onclick="rmBL(${e.id})">убрать</button>`:'<span class="pl t-mu">config.json</span>'))).join('');
+  const specs=act.map(e=>P[e.id].name+':'+P[e.id].tname+(e.owner?'@'+e.owner:''));
+  const opts=D.players.filter(p=>!p.mine&&!isBlocked(p.id)).map(p=>`<option value="${esc(p.name+' · '+p.tname+' £'+money(p.price))}">`).join('');
+  return `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start">
+    <div class="card pd" style="gap:8px"><div class="lbl" style="margin-bottom:8px">Актуальность данных · откуда взяты составы</div>${ck||'<div class="empty">нет данных</div>'}</div>
+    ${btCard()}
+    <div class="card pd" style="gap:8px"><div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span class="lbl">Чёрный список · не рекомендуются нигде</span><span style="font-size:12px;color:#A6A8B4">${act.length}</span></div>
+      ${rel.length?`<div style="font-size:13px;font-weight:600;color:#1D7A4F;margin-top:4px">Освободились · ${rel.length}</div>${relH}`:''}
+      ${actH||'<div style="font-size:13px;color:#A6A8B4;padding:8px 0">Пусто. Добавь игроков, которых забрал соперник на новый тур.</div>'}
+      <div style="display:flex;gap:8px;flex-wrap:wrap;padding-top:12px;border-top:1px solid #F4F4F8"><input id="blq" list="bldl" class="inp" placeholder="Игрок…" style="flex:1 1 160px;min-width:0;padding:10px 14px"><datalist id="bldl">${opts}</datalist><select id="blo" class="inp" style="padding:10px 12px"><option value="">чей игрок?</option>${ownOpts('')}</select><button class="btn sm" onclick="addBL()">Добавить</button></div>
+      <details class="fd" style="margin-top:8px"><summary style="font-size:12px;color:#6B5CE7">для config.json → "blacklist" (чтобы учитывали расчёты и brief)</summary><textarea id="blout" readonly style="margin-top:8px">${esc(JSON.stringify(specs,null,2))}</textarea><button class="btn g sm" style="margin-top:8px" onclick="copyBL()">Скопировать</button></details></div>
+  </div>`;
+}
+
+/* ===================== Рынок ===================== */
+function nextPriceChange(){ // смена цен FPL ≈ 01:30 по Лондону → местное время
+  try{ const now=new Date(), lon=new Date(now.toLocaleString('en-US',{timeZone:'Europe/London'})), off=now-lon;
+    const t=new Date(lon); t.setHours(1,30,0,0); if(t<=lon) t.setDate(t.getDate()+1); const loc=new Date(t.getTime()+off);
+    const today=loc.toDateString()===now.toDateString(); return (today?'сегодня ':'завтра ')+pad2(loc.getHours())+':'+pad2(loc.getMinutes()); }catch(e){ return 'ночью'; }
+}
+function vMarket(){
+  const mk=D.market||{}, lk=D.luck||{}, thr=mk.thr||1;
+  const mRow=(x,col)=>{const p=P[x.id];return `<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid #F4F4F8">${cav(x.id,36)}<div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:600">${pnk(x.id)}</div><div style="font-size:12px;color:#A6A8B4">${pt(x.id)} · £${money(x.price)} → £${money(x.price+(x.net>0?1:-1))}</div></div><div style="text-align:right"><div style="font-size:15px;font-weight:600;letter-spacing:-.02em;color:${col}">${fmtN(x.net)}</div><div style="font-size:11px;color:#A6A8B4">${Math.round(Math.abs(x.net)/thr*100)}% порога</div></div></div>`;};
+  const up=mk.targets_up||[], dn=mk.my_risk||[], gain=(mk.my_gain||[]).filter(x=>P[x.id]).slice(0,2);
+  const stable=D.me.squad.length-dn.length;
+  const lst=(arr,col,rtl)=>arr.filter(x=>P[x.id]).map(x=>`<div class="g hv" style="grid-template-columns:minmax(0,1fr) 90px 80px;padding:8px" data-id="${x.id}">${whoRow(x.id,32,`${pt(x.id)} · £${money(x.price)}`,{tag:tagB(x.id)})}<div class="b4"${rtl?' style="direction:rtl"':''}><i style="background:${col};width:${Math.min(100,Math.abs(x.net)/(thr*3.5)*100)}%"></i></div><div style="text-align:right;font-size:13px;font-weight:600;color:${col};white-space:nowrap">${fmtN(x.net)}</div></div>`).join('')||'<div class="empty">нет</div>';
+  const luck=(arr,col)=>arr.filter(x=>P[x.id]).map(x=>{const p=P[x.id];return `<div class="g hv" style="grid-template-columns:minmax(0,1fr) 56px 100px;gap:10px;padding:8px" data-id="${x.id}"><div class="who">${cav(x.id,32)}<div style="min-width:0"><div class="nm">${pnk(x.id)} <span style="font-size:11px;color:#A6A8B4;font-weight:500">${p.tname} · ${p.pos}</span></div><div style="font-size:12px;color:#7A7C8A;margin-top:1px">${x.gi} GI vs xGI ${x.xgi}${p.pos==='DEF'||p.pos==='GK'?' · CS '+x.cs:''}</div></div></div><div style="text-align:right;font-size:14px;font-weight:600;color:${col}">${sgn(x.delta,2)}</div><div style="text-align:right">${availPill(x.id)}</div></div>`}).join('')||'<div class="empty">нет</div>';
+  return `<div class="hd"><div class="ht">Рынок <span>цены и удача</span></div><div class="facts"><span>порог изменения <b>≈ ${Math.round(thr).toLocaleString('ru-RU')}</b> чистых трансферов</span>${SP}<span>смена цен <b>${nextPriceChange()}</b></span>${SP}<span>ориентир, не гарантия${mk.calib_events?` · калибровка по ${mk.calib_events} событиям`:''}</span></div></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
+    <div class="card gl" style="padding:24px 28px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span class="lbl">Мои цели дорожают</span>${up.length?'<span style="font-size:12px;font-weight:600;color:#E8A23B">брать сегодня</span>':''}</div>${up.filter(x=>P[x.id]).map(x=>mRow(x,'#2EB67D')).join('')||'<div style="font-size:13px;color:#A6A8B4;padding:10px 0">рост цен у целей не ожидается</div>'}</div>
+    <div class="card" style="padding:24px 28px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span class="lbl">Мои игроки под угрозой падения</span><span style="font-size:12px;color:#A6A8B4">учитывай при продаже</span></div>${dn.filter(x=>P[x.id]).map(x=>mRow(x,'#E5484D')).join('')}
+      <div style="font-size:13px;color:#7A7C8A;line-height:1.6;padding-top:12px;text-wrap:pretty">${dn.length?`Остальные ${stable} игроков стабильны.`:'Все игроки состава стабильны.'}${gain.length?` ${gain.map(x=>esc(P[x.id].name)).join(' и ')} ${gain.length>1?'держат':'держит'} положительное давление, но до порога далеко.`:''}</div></div></div>
+  ${sec('Движение цен','полоса — доля порога · метка — мой / скаут / чей игрок',`<div class="grid3"><div class="card tb"><div class="ch"><b>Растут в цене</b><span>чистые трансферы за день</span></div>${lst(mk.rising||[],'#2EB67D')}</div><div class="card tb"><div class="ch"><b>Падают в цене</b><span>чистые трансферы за день</span></div>${lst(mk.falling||[],'#E5484D',1)}</div></div>`)}
+  ${ownSec()}
+  <div class="sec"><div style="display:flex;flex-direction:column;gap:8px;padding:0 4px"><div style="font-weight:600;font-size:20px;letter-spacing:-.025em">Удача: очки против ожиданий</div><div class="desc">Разница фактических голов + ассистов (у защитников и вратарей — чистых матчей) и ожидаемых (xGI, xGC). Недоудачливые чаще подтягиваются, перегретые — просядут.</div></div>
+    <div class="grid3"><div class="card tb"><div class="ch"><b style="color:#1D7A4F">Недоудачливые</b><span>ожидаемый рост</span></div>${luck(lk.under||[],'#2EB67D')}</div><div class="card tb"><div class="ch"><b style="color:#B13036">Перегретые</b><span>ожидаемый спад</span></div>${luck(lk.over||[],'#E5484D')}</div></div></div>`;
+}
+
+/* ===================== Топ-50 ===================== */
+function vTop(){
+  const t=D.top, N=t.n, ch=t.chips||{};
+  const tile=(lab,id,note,cnt,cls)=>id==null?'':`<div style="padding:20px;border-radius:22px;display:flex;align-items:center;gap:14px" onmouseover="this.style.background='#FAFAFC'" onmouseout="this.style.background=''">${cav(id,44)}<div style="flex:1;min-width:0"><div style="font-size:11px;color:#A6A8B4;margin-bottom:2px">${lab}</div><div style="font-size:15px;font-weight:600;letter-spacing:-.01em">${pnk(id)} <span style="font-size:11px;color:#A6A8B4;font-weight:500">${pt(id)}</span></div><div style="font-size:12px;color:#7A7C8A;margin-top:2px">${note}</div></div><span class="pl ${cls}" style="font-size:12px;padding:4px 10px">×${cnt}</span></div>`;
+  const stat=id=>{const p=P[id]; if(!p) return ''; if(p.mine) return 'уже у меня — топ догоняет'; const o=ownerName(id); if(o) return 'занят: '+o; if(isBlocked(id)) return 'в чёрном списке'; return 'свободен в лиге · £'+money(p.price);};
+  const cap=(t.caps_list||[])[0], tin=(t.ins_list||[])[0], tout=(t.outs_list||[])[0];
+  const gem=(t.ins_list||[]).find(([i])=>P[i]&&!P[i].mine&&!isBlocked(i)&&(!tin||i!==tin[0]));
+  const outNote=id=>{const p=P[id]; if(!p) return ''; return p.net_tr<0?`цена падает, −${Math.round(Math.abs(p.net_tr)/1000)}k`:(p.mine?'у меня — подумай о продаже':'£'+money(p.price));};
+  const summary=`<div class="card gl" style="padding:8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px">
+    ${cap?tile('Капитан топ-'+N,cap[0],(cap[1]===N?'единогласно':cap[1]+' из '+N)+(ch['3xc']?' · '+ch['3xc']+' с Triple Captain':''),cap[1],'t-me'):''}
+    ${tin?tile('Главный вход',tin[0],stat(tin[0]),tin[1],'t-ok'):''}
+    ${tout?tile('Главный выход',tout[0],outNote(tout[0]),tout[1],'t-bl'):''}
+    ${gem?tile('Гем для скаут-листа',gem[0],(wlGet(gem[0])?'уже в скаут-листе · £':'свободен в лиге · £')+money(P[gem[0]].price),gem[1],'t-sc'):''}</div>`;
+  const mx=Math.max(1,...(t.ins_list||[]).map(x=>x[1]),...(t.outs_list||[]).map(x=>x[1]));
+  const mvl=(arr,col,cls,rtl)=>arr.map(([i,n])=>`<div class="g hv" style="grid-template-columns:minmax(0,1fr) 72px 44px;padding:8px" ${P[i]?`data-id="${i}"`:''}>${whoRow(i,32,`${pt(i)} · £${money(P[i]?P[i].price:(D.all_names[i]||{}).price)}`,{tag:tagB(i)})}<div class="b4"${rtl?' style="direction:rtl"':''}><i style="background:${col};width:${Math.round(n/mx*100)}%"></i></div><div style="text-align:right"><span class="pl ${cls}" style="font-size:12px">×${n}</span></div></div>`).join('')||'<div class="empty">нет</div>';
+  const sum=a=>(a||[]).reduce((s,x)=>s+x[1],0);
+  const caps=(t.caps_list||[]).map(([i,n])=>{const p=P[i], f=p&&(p.fix||[])[0];return `<div class="g" style="grid-template-columns:minmax(0,1fr) 44px;padding:8px">${whoRow(i,32,`${pt(i)}${f?' · '+(f.h?'дома':'в гостях')+' против '+f.opp:''}${ch['3xc']?' · '+ch['3xc']+' с Triple Captain':''}`)}<div style="text-align:right"><span class="pl t-me" style="font-size:12px">×${n}</span></div></div>`}).join('');
+  const capName=cap?pn(cap[0]):'';
+  const chipRows=[['3xc','Triple Captain'],['bboost','Bench Boost'],['freehit','Free Hit'],['wildcard','Wildcard']].map(([k,nm])=>{const n=ch[k]||0;return `<div style="display:grid;grid-template-columns:minmax(0,1fr) 72px 44px;gap:12px;align-items:center;padding:10px 8px;border-top:1px solid #F4F4F8"><div style="min-width:0"><div style="font-size:14px;font-weight:600">${nm}</div><div style="font-size:11px;color:#A6A8B4">${n?(k==='3xc'&&capName?'на '+esc(capName):'используют'):'не используют'}</div></div><div class="b4"><i style="width:${Math.round(n/N*100)}%"></i></div><div style="text-align:right;font-size:13px;font-weight:600">${n}</div></div>`}).join('');
+  const own=(t.owned_list||[]).map(([i,n])=>{const p=P[i], d=p?p.top_delta:0;return `<div class="g hv" style="grid-template-columns:minmax(0,1fr) 140px 72px 72px 120px;padding:8px" ${p?`data-id="${i}"`:''}><div class="who">${cav(i,32)}<div style="min-width:0"><div class="nm">${pnk(i)} <span style="font-size:11px;color:#A6A8B4;font-weight:500">${pt(i)}${p?' · '+p.pos:''}</span></div><div class="cl">£${money(p?p.price:(D.all_names[i]||{}).price)}</div></div></div>
+    <div class="b4"><i style="width:${Math.round(n/N*100)}%"></i></div><div style="text-align:right;font-size:14px;font-weight:600;letter-spacing:-.01em">${n}<span style="font-size:11px;color:#A6A8B4;font-weight:500">/${N}</span></div>
+    <div style="text-align:right;font-size:13px;font-weight:600;color:${d>0?'#2EB67D':d<0?'#E5484D':'#A6A8B4'}">${d?(d>0?'+'+d:'−'+Math.abs(d)):'–'}</div><div>${availPill(i)}</div></div>`}).join('');
+  return `<div class="hd"><div class="ht">Топ-${N} мира <span>что делают лучшие</span></div><div class="facts"><span>составы лидеров Overall-лиги, GW${D.meta.gw_cur} → GW${D.meta.gw_next}</span>${SP}<span>фишки в туре ${Object.entries(ch).map(([k,v])=>`<b>${CHN[k]||k} ${v}</b>`).join(' · ')||'<b>нет</b>'}</span>${SP}<span>здесь рождаются гемы и тренды</span></div></div>
+  ${summary}
+  ${sec(`Трансферы топ-${N} на GW${D.meta.gw_next}`,`× — число менеджеров из ${N} · метка — статус в нашей лиге`,`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:start">
+    <div class="card tb"><div class="ch"><b style="color:#1D7A4F">Покупают</b><span>${sum(t.ins_list)} трансферов</span></div>${mvl(t.ins_list||[],'#2EB67D','t-ok')}</div>
+    <div class="card tb"><div class="ch"><b style="color:#B13036">Продают</b><span>${sum(t.outs_list)} трансферов</span></div>${mvl(t.outs_list||[],'#E5484D','t-bl',1)}</div>
+    <div style="display:flex;flex-direction:column;gap:16px"><div class="card tb"><div class="ch"><b>Капитаны</b><span>из ${N}</span></div>${caps||'<div class="empty">нет</div>'}</div><div class="card tb"><div class="ch"><b>Фишки в GW${D.meta.gw_next}</b><span>из ${N}</span></div>${chipRows}</div></div></div>`)}
+  ${sec('Самые популярные игроки',`владение в топ-${N} · Δ с прошлого снимка · статус в нашей лиге`,`<div class="card tb"><div style="min-width:560px"><div style="display:grid;grid-template-columns:minmax(0,1fr) 140px 72px 72px 120px;gap:12px;padding:8px 8px 10px;font-size:11px;color:#A6A8B4;letter-spacing:.04em;text-transform:uppercase"><div>Игрок</div><div>В составах</div><div style="text-align:right">Доля</div><div style="text-align:right">Δ</div><div>Доступность</div></div>${own}</div></div>`)}`;
+}
+
+/* ===================== Изменения ===================== */
+function vChg(){
+  const c=D.changes;
+  if(!c.has_prev) return `<div class="hd"><div class="ht">Изменения <span>с прошлого снимка</span></div></div><div class="card pd"><div class="empty">Это первый снимок. Запусти инструмент завтра (или через пару часов) — здесь появятся изменения цен, статусов, новые игроки в топ-списках и динамика владения.</div></div>`;
+  const ST={a:['t-ok','в строю'],d:['t-sc','под вопросом'],i:['t-bl','травма'],s:['t-bl','дисквалификация'],u:['t-mu','недоступен'],n:['t-mu','недоступен']};
+  const prices=c.price.map(x=>`<div class="g hv" style="grid-template-columns:minmax(0,1fr) 96px;padding:8px" ${P[x.id]?`data-id="${x.id}"`:''}>${whoRow(x.id,32,`${pt(x.id)}${P[x.id]?' · '+P[x.id].pos:''}`,{tag:tagB(x.id)})}<div style="text-align:right;font-size:13px;font-weight:600;color:${x.to>x.from?'#2EB67D':'#E5484D'};white-space:nowrap">£${money(x.from)} → £${money(x.to)}</div></div>`).join('')||'<div class="empty">без изменений</div>';
+  const sts=c.status.map(x=>{const s=ST[x.to]||ST.u;return `<div class="g hv" style="grid-template-columns:minmax(0,1fr) auto;padding:8px" ${P[x.id]?`data-id="${x.id}"`:''}><div class="who">${cav(x.id,32)}<div style="min-width:0"><div class="row6"><span class="nm">${pnk(x.id)}</span><span style="font-size:11px;color:#A6A8B4">${pt(x.id)}</span>${tagB(x.id)}</div><div style="font-size:12px;color:#7A7C8A;margin-top:1px;text-wrap:pretty">${esc(x.news||(x.to==='a'?'Снят флаг — доступен':''))}</div></div></div><span class="pl ${s[0]}">${s[1]}</span></div>`}).join('')||'<div class="empty">без изменений</div>';
+  const li=(arr,cls)=>arr.length?arr.map(i=>{const p=P[i];return `<div class="g hv" style="grid-template-columns:minmax(0,1fr) auto;padding:8px" ${p?`data-id="${i}"`:''}><div class="who">${cav(i,32)}<div style="min-width:0"><div style="font-size:14px;font-weight:600">${pnk(i)} <span style="font-size:11px;color:#A6A8B4;font-weight:500">${pt(i)}</span></div><div style="font-size:12px;color:#7A7C8A">${p?'xP5 '+p.xp5.toFixed(1)+' · '+p.top_cnt+'/'+D.top.n+' в топ-'+D.top.n:''}</div></div></div><span class="pl ${cls}">${p?'xP топ-'+p.pos:'топ-список'}</span></div>`}).join(''):'<div class="empty">без изменений</div>';
+  const omx=Math.max(0.01,...c.own_up.map(x=>x.d)), fmx=Math.max(0.01,...c.form_up.map(x=>x.d));
+  const tr=(arr,mx,col,sub)=>arr.map(x=>{const p=P[x.id];return `<div class="g hv" style="grid-template-columns:minmax(0,1fr) 80px 64px;padding:8px" ${p?`data-id="${x.id}"`:''}>${whoRow(x.id,32,`${pt(x.id)} · ${sub(p)}`,{tag:tagB(x.id)})}<div class="b4"><i style="background:${col};width:${Math.round(x.d/mx*100)}%"></i></div><div style="text-align:right;font-size:13px;font-weight:600;color:${col};white-space:nowrap">+${x.d}${sub===ownSub?'%':''}</div></div>`}).join('')||'<div class="empty">нет</div>';
+  const ownSub=p=>'владение '+(p?p.own.toFixed(1):'–')+'%', formSub=p=>'форма '+(p?p.form.toFixed(1):'–');
+  const total=c.price.length+c.status.length+c.new_in_pool.length+c.left_pool.length;
+  return `<div class="hd"><div class="ht">Изменения <span>с прошлого снимка</span></div><div class="facts"><span>с <b>${fmtDT(c.prev_ts+'Z')}</b> по <b>${fmtDT(D.meta.generated)}</b></span>${SP}<span><b>${total}</b> событий</span>${SP}<span>подсвечено то, что касается моего состава и скаут-листа</span></div></div>
+  <div class="grid3"><div class="card tb"><div class="ch"><b>Цены</b><span>${c.price.length} изменений</span></div>${prices}</div><div class="card tb"><div class="ch"><b>Травмы и статусы</b><span>${c.status.length} обновлений</span></div>${sts}</div></div>
+  ${sec('Движение в топ-списках','кто вошёл и выпал из xP-топов',`<div class="grid3"><div class="card tb"><div class="ch"><b style="color:#1D7A4F">Новые в топ-списках</b><span>${c.new_in_pool.length}</span></div>${li(c.new_in_pool,'t-ok')}</div><div class="card tb"><div class="ch"><b style="color:#B13036">Вылетели из списков</b><span>${c.left_pool.length}</span></div>${li(c.left_pool,'t-bl')}</div></div>`)}
+  ${sec('Тренды','владение за 7 дней · форма за тур',`<div class="grid3"><div class="card tb"><div class="ch"><b>Растёт владение</b><span>7 дн.</span></div>${tr(c.own_up,omx,'#2EB67D',ownSub)}</div><div class="card tb"><div class="ch"><b>Растёт форма</b><span>после GW${D.meta.gw_cur}</span></div>${tr(c.form_up,fmx,'#6B5CE7',formSub)}</div></div>`)}`;
+}
+
+/* ===================== Карточка игрока (drawer) — по макету карточки (скрин Жени, 21.10.2026) ===================== */
+const FDRT={1:'лёгкий',2:'средний',3:'сложный',4:'тяжёлый'};  // слово — по 4 цветам легенды, цифра — сложность FPL 1–5
+const DPILL={1:'d1',2:'d2',3:'d3',4:'d4'};
+const POSP={GK:'Вратари',DEF:'Защитники',MID:'Полузащитники',FWD:'Нападающие'};
+function priceLine(p){
+  const t=p.ptrend||'', top=`Топ-${D.top.n}: ${p.top_cnt}/${D.top.n}.`;
+  const txt={up2:'Подорожает сегодня ночью.',up:'Может подорожать в ближайшие дни.','up?':'Цена может подрасти.',dn2:'Подешевеет сегодня ночью.',dn:'Может подешеветь в ближайшие дни.','dn?':'Цена может опуститься.'}[t]||'Цена стабильна.';
+  return txt+' '+top;
+}
+function barsHtml(ser){
+  const mx=Math.max(1,...ser.map(s=>s.pts)), H=64;
+  return `<div class="dbars">${ser.map(s=>{const m=s.m||[], f=m[0], d=f&&f.fdr?DF(f.fdr):2, opp=m.length?m.map(x=>x.opp+(x.h?'':' ·')).join('+'):'—';
+    const mins=s.min===0?'t-bl':s.min<60?'t-sc':'dmin';
+    return `<div class="dbar" title="GW${s.gw}: ${s.pts} очк., ${s.min}′ · ${esc(m.map(x=>(x.h?'дома ':'в гостях ')+x.opp+': '+x.pts).join('; '))}"><b>${s.pts}</b><i style="height:${Math.max(3,Math.round(Math.max(0,s.pts)/mx*H))}px;${s.min===0?'background:#E6E5EE':''}"></i><span class="gw">GW${s.gw}</span><span class="op ${DPILL[d]}">${esc(opp)}</span><span class="mn ${mins}">${s.min}′</span></div>`;}).join('')}</div>`;
+}
+function drScout(p){
+  const w=wlGet(p.id), canBL=!(!BL_LOCAL.has(p.id)&&(BL_CFG.has(p.id)||(p.taken_by&&!p.mine)));
+  let title, text;
+  if(p.mine){ title='В моём составе'; text=`xP ${p.xp5.toFixed(1)} за 5 туров, владение ${p.own.toFixed(1)}%. Продажа не рассматривается без явного апгрейда.`; }
+  else if(w){ title='В скаут-листе'; text=(w.source==='user'?'Добавил '+ME_NAME+(w.added?' · '+fmtD(w.added):'')+'. ':'От Claude. ')+(w.note||''); }
+  else { title='Добавить в скаут-лист'; text=`Будет отмечен как «добавил ${ME_NAME}» — Claude увидит и оценит.`; }
+  return `<div class="dmine"><b>${esc(title)}</b><div class="dt">${esc(text)}</div>
+    ${p.mine?'':`<div class="drow"><select id="drp">${[1,2,3].map(i=>`<option value="${i}" ${(w?w.prio:(p.mine?1:2))===i?'selected':''}>P${i}</option>`).join('')}</select><input type="text" id="drn" placeholder="Заметка" value="${esc(w&&w.source==='user'?w.note||'':'')}"><input type="hidden" id="drid" value="${p.id}"><button class="dwb" onclick="wlFormAdd('dr')">${w?'Обновить':'Добавить'}</button>${w?`<button class="dwb" style="color:#B13036" onclick="wlRm(${p.id})">Убрать</button>`:''}</div>`}
+    ${canBL&&!p.mine?`<div class="dbl"><span>Не предлагать в трансферах и скаутинге</span><button class="dwb" onclick="toggleBL(${p.id})">${BL_LOCAL.has(p.id)?'Убрать из чёрного списка':'В чёрный список'}</button></div>`:''}</div>`;
+}
+function seasonsHtml(p){
+  const S=p.seasons; if(!S) return '';
+  const rows=(S.rows||[]).map(r=>`<tr><td class="g">${esc(r.season)}</td><td>${r.pts}</td><td>${r.min}</td><td>${r.starts}</td><td>${r.ga}</td><td>${r.p90==null?'–':r.p90.toFixed(1)}</td><td>${(r.c0/10).toFixed(1)}→${(r.c1/10).toFixed(1)}</td></tr>`).join('');
+  const w=p.prior_w>=0.1?`<div class="dd" style="padding-top:6px">В прогнозе xP прошлый сезон занимает <b>${Math.round(p.prior_w*100)}%</b>: в этом сезоне мало матчей, вес падает с каждым туром.</div>`:'';
+  return `<div class="dsec2"><div class="dh">Прошлые сезоны</div><div class="dcard" style="padding:8px 20px">
+    ${rows?`<table class="dtab"><thead><tr><th>Сезон</th><th>Очки</th><th>Мин</th><th>Старты</th><th title="Голы + ассисты">Г+А</th><th title="Очки за 90 минут">О/90</th><th>Цена</th></tr></thead><tbody>${rows}</tbody></table>`:''}
+    <div class="dd" style="padding:10px 0 4px">${esc(S.note)}</div>${S.flag?`<div class="dd" style="color:#9A5B12;padding:0 0 4px">${esc(S.flag)}</div>`:''}${w}</div></div>`;
+}
+function openDrawer(id){
+  const p=P[id]; if(!p) return;
+  const mk=D.market||{}, thr=mk.thr||0, net=p.net!=null?p.net:p.net_tr;
+  const pricePill=thr&&net?`<span class="pl ${net>0?'t-ok':'t-bl'}" style="font-size:12px;padding:4px 10px">${fmtN(net)} · ${Math.round(Math.abs(net)/thr*100)}% порога</span>`:'';
+  const ser=p.series||[], pl=ser.filter(s=>s.min>0), tot=ser.reduce((a,s)=>a+s.pts,0), avg=pl.length?pl.reduce((a,s)=>a+s.pts,0)/pl.length:0;
+  const fx=p.fix||[], g0=D.meta.gw_next, last=fx.length?Math.max(...fx.map(f=>f.gw)):g0-1, xpg=p.xpg||[], gl=[]; for(let g=g0;g<=last;g++) gl.push(g);
+  const next=gl.map(g=>{const fs=fx.filter(f=>f.gw===g), xp=xpg[g-g0];
+    if(!fs.length) return `<tr><td class="g">GW${g}</td><td colspan="2" style="color:#A6A8B4">нет матча (пустой тур)</td><td class="xc">0</td></tr>`;
+    return fs.map((f,j)=>{const d=DF(f.fdr);return `<tr><td class="g">${j?'':'GW'+g}${fs.length>1&&!j?' <span class="pl t-me" style="font-size:10px;padding:1px 6px">x2</span>':''}</td><td><b>${f.opp}</b> <span style="color:#7A7C8A">${f.h?'дома':'в гостях'}</span></td><td><span class="dnum ${DPILL[d]}" title="сложность FPL ${f.fdr} из 5">${f.fdr}</span> ${FDRT[d]}</td><td class="xc">${j?'':(xp!=null?xp.toFixed(1):'–')}</td></tr>`}).join('');}).join('');
+  const kv=[[`£${money(p.price)}`,'Цена'],[p.score.toFixed(0),'Рейтинг'],[p.form.toFixed(1),'Форма'],[p.ppg.toFixed(1),'Очки за игру'],[p.xgi90.toFixed(2),'xGI / 90'],[p.dc90.toFixed(1),'Защ. действия / 90'],[p.xp1.toFixed(1),'xP ближайший тур'+(p.prior_w>=0.1?` · прошлый сезон ${Math.round(p.prior_w*100)}%`:'')],[p.xp5.toFixed(1),'xP 5 туров'],[p.own.toFixed(1)+'%','Владение'],[`${p.top_cnt}/${D.top.n}`,'В топ-'+D.top.n]];
+  const ins=(D.insurance[id]||[]).filter(i=>!isBlocked(i)&&P[i]).slice(0,5).map(i=>`<div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid #F4F4F8">${whoRow(i,30,`${pt(i)} · £${money(P[i].price)}`)}<span style="margin-left:auto;font-size:13px;font-weight:600;color:#6B5CE7;white-space:nowrap">xP5 ${P[i].xp5.toFixed(1)}</span></div>`).join('');
+  $('#drawer').innerHTML=`<div class="dhead"><button class="dx" onclick="closeDrawer()" aria-label="Закрыть">×</button>
+    <div style="display:flex;align-items:center;gap:16px;padding-right:44px">${cav(id,64).replace('data-id','data-x')}<div style="min-width:0"><div style="font-size:13px;color:#7A7C8A">${p.tname} · ${POSP[p.pos]}</div><div style="font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.15;margin-top:2px" title="${esc(p.full.trim())}">${esc(p.name)}</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">${p.mine?'<span class="pl t-me" style="font-size:12px;padding:4px 10px">мой</span>':availPill(id).replace('class="pl','style="font-size:12px;padding:4px 10px" class="pl')}${pricePill}${spPills(p)}${p.status!=='a'&&p.news?`<span class="pl t-bl" style="font-size:12px;padding:4px 10px">${esc(p.news)}</span>`:''}</div></div></div>
+    <div style="font-size:14px;color:#4A4C5A;margin-top:18px">${priceLine(p)}</div></div>
+  <div class="dsec2"><div class="dh">Очки в прошлых турах</div>
+    ${ser.length?`<div class="dd">За ${ser.length} тур${ser.length===1?'':ser.length<5?'а':'ов'}: <b>${tot}</b> очк. · в среднем <b>${avg.toFixed(1)}</b> за игру. Плашка под столбиком — сложность соперника, нижняя — минуты.</div><div class="dcard">${barsHtml(ser)}</div>`:'<div class="dd">История загружается при запуске без --no-history.</div>'}</div>
+  <div class="dkv">${kv.map(([v,k])=>`<div><b>${v}</b><span>${k}</span></div>`).join('')}</div>
+  ${seasonsHtml(p)}
+  <div class="dsec2"><div class="dh">Следующие матчи</div><div class="dcard" style="padding:8px 20px">${next?`<table class="dtab"><thead><tr><th>Тур</th><th>Соперник</th><th>Сложность</th><th class="xc">xP</th></tr></thead><tbody>${next}</tbody></table>`:'<div class="dd" style="padding:12px 0">нет данных календаря</div>'}</div></div>
+  ${chancesHtml(p)}
+  ${drScout(p)}
+  ${ins?`<div class="dsec2"><div class="dh">Если выбьется — замена в бюджет</div><div class="dcard" style="padding:6px 20px">${ins}</div></div>`:''}`;
+  $('#drawer').classList.add('open'); $('#drawer').scrollTop=0;
+}
+
+function closeDrawer(){ $('#drawer').classList.remove('open'); }
+
+function bind(){
+  const q=$('#q'); if(q){q.oninput=()=>{state.q=q.value; const pos=q.selectionStart; render(); const q2=$('#q'); q2.focus(); q2.setSelectionRange(pos,pos);}}
+  document.querySelectorAll('#posseg button').forEach(b=>b.onclick=()=>{state.pos=b.dataset.p; render()});
+  document.querySelectorAll('.srt').forEach(h=>h.onclick=()=>{const k=h.dataset.s; if(state.sort===k) state.dir*=-1; else {state.sort=k; state.dir=-1} render()});
+}
+render();
+</script>
+</body>
+</html>

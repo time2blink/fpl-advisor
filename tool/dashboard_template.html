@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FPL Advisor</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzRmNmJmMCIvPjxzdG9wIG9mZnNldD0iLjU1IiBzdG9wLWNvbG9yPSIjN2E2ZmU2Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYTM4NGVlIi8+PC9saW5lYXJHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9ImdsIiBjeD0iLjc4IiBjeT0iLjIiIHI9Ii43Ij48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iLjM4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz48L3JhZGlhbEdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0ibG4iIHgxPSIwIiB5MT0iMSIgeDI9IjEiIHkyPSIwIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iLjc4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9ImdvbGQiIGN4PSIuNCIgY3k9Ii4zNSIgcj0iLjgiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZjJiOCIvPjxzdG9wIG9mZnNldD0iLjU1IiBzdG9wLWNvbG9yPSIjZmZkMTY2Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZjRhOTNiIi8+PC9yYWRpYWxHcmFkaWVudD48ZmlsdGVyIGlkPSJzaCIgeD0iLTIwJSIgeT0iLTIwJSIgd2lkdGg9IjE0MCUiIGhlaWdodD0iMTUwJSI+PGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjEwIiBzdGREZXZpYXRpb249IjEwIiBmbG9vZC1jb2xvcj0iIzJhMmY3YSIgZmxvb2Qtb3BhY2l0eT0iLjM1Ii8+PC9maWx0ZXI+PGNsaXBQYXRoIGlkPSJzcSI+PHJlY3QgeD0iMTYiIHk9IjE2IiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjQ4MCIgcng9IjExNiIvPjwvY2xpcFBhdGg+PC9kZWZzPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjQ4MCIgaGVpZ2h0PSI0ODAiIHJ4PSIxMTYiIGZpbGw9InVybCgjYmcpIi8+PGcgY2xpcC1wYXRoPSJ1cmwoI3NxKSI+PHJlY3QgeD0iMTYiIHk9IjE2IiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjQ4MCIgZmlsbD0idXJsKCNnbCkiLz48IS0tINGA0LDQt9C80LXRgtC60LAg0L/QvtC70Y8gLS0+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjIiIHN0cm9rZS13aWR0aD0iNyI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjY4IiByPSIxNTAiLz48bGluZSB4MT0iMTYiIHkxPSIyNjgiIHgyPSI0OTYiIHkyPSIyNjgiLz48cGF0aCBkPSJNOTYgNDk2VjQzMGgzMjB2NjYiLz48L2c+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjY4IiByPSI5IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii4yOCIvPjwvZz48IS0tINC70LjQvdC40Y8g0YDQvtGB0YLQsCB4UCAtLT48ZyBmaWx0ZXI9InVybCgjc2gpIj48cG9seWxpbmUgcG9pbnRzPSIxMDQsMzcwIDE5MiwzMDAgMjYyLDMzNiAzNjYsMjA2IiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjbG4pIiBzdHJva2Utd2lkdGg9IjMwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48ZyBmaWxsPSIjZmZmIj48Y2lyY2xlIGN4PSIxMDQiIGN5PSIzNzAiIHI9IjE5Ii8+PGNpcmNsZSBjeD0iMTkyIiBjeT0iMzAwIiByPSIxOSIvPjxjaXJjbGUgY3g9IjI2MiIgY3k9IjMzNiIgcj0iMTkiLz48L2c+PGNpcmNsZSBjeD0iMzY2IiBjeT0iMjA2IiByPSI0MCIgZmlsbD0idXJsKCNnb2xkKSIvPjxwYXRoIGQ9Ik0zNjYgMTgybDYuOCAxNC42IDE2IDItMTEuOCAxMSAzIDE1LjhMMzY2IDIxNy42MDBsLTE0IDcuODAwIDMtMTUuODAwLTExLjgwMC0xMSAxNi0yeiIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuOTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTEuNTAwKSIvPjwvZz48L3N2Zz4K">
+<style>
+:root{color-scheme:light;
+  --bg:#eef0f4; --card:#fbfbfd; --ink:#2a2d36; --ink2:#737889; --line:#e3e6ec; --blue:#4c6fff; --green:#3fae7a;
+  --orange:#e8a23b; --red:#e5645a; --purple:#8b6cf0; --soft:#f1f3f8; --shadow:0 1px 2px rgba(30,40,70,.04),0 10px 30px rgba(30,40,70,.06);
+  --pitch1:#e6f2ea; --pitch2:#dcece2; --radius:20px;
+}
+@media (prefers-color-scheme: dark) and (min-width:99999px){
+  :root{--bg:#000;--card:#1c1c1e;--ink:#f5f5f7;--ink2:#98989d;--line:#2c2c2e;--soft:#2c2c2e;--shadow:none;--pitch1:#14261b;--pitch2:#112017}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI Variable","Segoe UI",Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.nav{position:sticky;top:0;z-index:20;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.brand{font-weight:700;font-size:17px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.brand i{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#0071e3,#af52de);display:inline-block}
+.seg{display:flex;background:var(--soft);border-radius:10px;padding:3px;gap:2px;overflow:auto}
+.seg button{border:0;background:transparent;color:var(--ink2);font:inherit;font-weight:500;padding:6px 14px;border-radius:8px;cursor:pointer;white-space:nowrap;transition:.15s}
+.seg button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.meta{margin-left:auto;color:var(--ink2);font-size:12px;text-align:right}
+.wrap{max-width:1180px;margin:0 auto;padding:22px 20px 80px}
+h1{font-size:34px;letter-spacing:-.03em;margin:6px 0 4px}
+h2{font-size:21px;letter-spacing:-.02em;margin:0 0 12px}
+h3{font-size:15px;margin:0 0 8px;letter-spacing:-.01em}
+.sub{color:var(--ink2)}
+.grid{display:grid;gap:16px}
+.g4{grid-template-columns:repeat(4,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}.g3,.g2{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+.tile .k{color:var(--ink2);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.04em}
+.tile .v{font-size:30px;font-weight:700;letter-spacing:-.03em;margin-top:4px}
+.tile .s{color:var(--ink2);font-size:12px;margin-top:2px}
+.hero{background:linear-gradient(135deg,#0a84ff 0%,#5e5ce6 55%,#af52de 100%);color:#fff;border-radius:24px;padding:28px 30px;margin-bottom:16px;position:relative;overflow:hidden}
+.hero h1{margin:0;font-size:38px}
+.hero .cd{font-size:15px;opacity:.9;margin-top:4px}
+.hero .big{display:flex;gap:30px;margin-top:18px;flex-wrap:wrap}
+.hero .big div b{display:block;font-size:26px;letter-spacing:-.02em}
+.hero .big div span{opacity:.8;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:600;background:var(--soft);color:var(--ink2)}
+.pill.g{background:#e3f7e8;color:#1a7f37}.pill.r{background:#ffe5e3;color:#c4261d}.pill.o{background:#fff1d9;color:#a15c00}.pill.b{background:#e0efff;color:#005bb5}.pill.p{background:#f3e6fb;color:#8a2fb0}
+@media (prefers-color-scheme: dark) and (min-width:99999px){.pill.g{background:#12351e;color:#6ee08a}.pill.r{background:#401714;color:#ff8a82}.pill.o{background:#3b2a0a;color:#ffc46b}.pill.b{background:#0c2a4a;color:#6cb3ff}.pill.p{background:#2e1a3a;color:#d9a0f3}}
+table{width:100%;border-collapse:collapse}
+th{font-size:11.5px;color:var(--ink2);font-weight:600;text-transform:uppercase;letter-spacing:.04em;text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap;cursor:default}
+th.s{cursor:pointer}th.s:hover{color:var(--ink)}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:middle;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+tbody tr.row{cursor:pointer}tbody tr.row:hover{background:var(--soft)}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.nm b{font-weight:600}.nm small{color:var(--ink2);margin-left:6px}
+.bar{height:6px;background:var(--soft);border-radius:4px;width:70px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:8px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#34c759,#30b0c7)}
+.fx{display:inline-flex;gap:3px}
+.fx span{font-size:10.5px;font-weight:600;padding:2px 5px;border-radius:5px;color:#fff;min-width:34px;text-align:center}
+.f2{background:#34c759}.f3{background:#9aa0a6}.f4{background:#ff9f0a}.f5{background:#ff3b30}
+.up{color:#1a9e45}.dn{color:#d92d20}.mut{color:var(--ink2)}
+.pitch{background:linear-gradient(180deg,var(--pitch1),var(--pitch2));border-radius:22px;padding:22px 14px;display:flex;flex-direction:column;gap:18px}
+.line{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.pc{background:var(--card);border-radius:14px;padding:10px 12px;width:158px;box-shadow:0 2px 10px rgba(0,0,0,.08);cursor:pointer;position:relative;transition:.15s}
+.pc:hover{transform:translateY(-2px)}
+.pc .n{font-weight:650;font-size:14px;display:flex;align-items:center;gap:6px}
+.pc .t{color:var(--ink2);font-size:11.5px}
+.pc .st{display:flex;justify-content:space-between;margin-top:6px;font-size:11.5px}
+.pc .fx{margin-top:6px}.pc .fx span{min-width:0;padding:1px 4px;font-size:9.5px}
+.cap{position:absolute;top:-7px;right:-7px;width:22px;height:22px;border-radius:50%;background:#1d1d1f;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.cap.v{background:#6e6e73}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.bench{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+input[type=search],select{font:inherit;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);outline:none}
+input[type=search]:focus,select:focus{border-color:var(--blue)}
+.sw{display:flex;align-items:center;gap:8px;color:var(--ink2);cursor:pointer;user-select:none}
+.sw input{appearance:none;width:38px;height:22px;background:#c7c7cc;border-radius:12px;position:relative;cursor:pointer;transition:.2s;margin:0}
+.sw input:before{content:"";position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:2px;left:2px;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.sw input:checked{background:var(--green)}.sw input:checked:before{left:18px}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--card);box-shadow:-10px 0 40px rgba(0,0,0,.18);transform:translateX(105%);transition:.25s;z-index:40;padding:24px;overflow:auto}
+.drawer.open{transform:none}
+.x{position:absolute;top:14px;right:16px;border:0;background:var(--soft);width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:16px;color:var(--ink2)}
+.mtbl{width:100%;border-collapse:collapse;font-size:13px;margin:4px 0 6px}.mtbl th{text-align:left;font-size:11px;color:var(--ink2);font-weight:600;padding:4px 6px;border-bottom:1px solid #e5e5ea}.mtbl td{padding:5px 6px;border-bottom:1px solid #f0f0f3}.mtbl .num{text-align:right}
+.fdrb{display:inline-block;min-width:20px;text-align:center;color:#fff;font-weight:700;border-radius:5px;padding:1px 5px;font-size:11px}.f1{background:#1f8f4e}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.kv div{background:var(--soft);border-radius:12px;padding:10px 12px}.kv b{display:block;font-size:18px}.kv span{color:var(--ink2);font-size:11.5px}
+.empty{color:var(--ink2);padding:18px;text-align:center}
+.alert{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:12px;background:var(--soft);margin-bottom:8px}
+.tipi{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--soft);color:var(--ink2);font-size:12px;font-weight:600;cursor:help;position:relative;margin-left:6px;vertical-align:middle}.tipi .tipb{display:none;position:absolute;left:24px;top:-6px;width:300px;padding:10px 12px;border-radius:12px;background:var(--card,#fff);color:var(--ink,#1d1d1f);box-shadow:0 8px 30px rgba(0,0,0,.25);font-weight:400;font-size:12.5px;line-height:1.45;z-index:50;text-align:left}.tipi:hover .tipb,.tipi:focus .tipb{display:block}
+.alert.r{background:#ffe5e3}.alert.o{background:#fff1d9}
+@media (prefers-color-scheme: dark) and (min-width:99999px){.alert.r{background:#401714}.alert.o{background:#3b2a0a}}
+.mv{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.mv:last-child{border:0}
+.mv .arrow{color:var(--ink2)}
+.mv .gain{margin-left:auto;text-align:right}
+.demo{background:#ff9f0a;color:#fff;text-align:center;padding:6px;font-weight:600;font-size:12.5px}
+.btn{border:0;background:var(--blue);color:#fff;font:inherit;font-weight:600;padding:8px 14px;border-radius:10px;cursor:pointer}.btn.g{background:var(--soft);color:var(--ink)}.btn.r{background:#ffe5e3;color:#c4261d}
+textarea{width:100%;font:12px/1.4 ui-monospace,Consolas,monospace;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);min-height:90px}
+.sec{display:none}.sec.on{display:block}
+.tbl-wrap{overflow:auto;border-radius:12px}
+.manager h3{display:flex;justify-content:space-between;align-items:center}
+.mini li{list-style:none;display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed var(--line)}
+.mini{padding:0;margin:8px 0}
+.mini .p{color:var(--ink2);width:34px;font-size:11px;font-weight:600}
+svg text{font-family:inherit}
+
+/* ===== v1.3: спокойный, мягкий интерфейс (меньше резкого контраста) ===== */
+html{background:var(--bg)}
+body{font-size:14.5px;line-height:1.55;font-feature-settings:"cv11","ss01";background:radial-gradient(1200px 500px at 15% -10%,#e4e9ff 0%,transparent 60%),radial-gradient(900px 500px at 100% 0,#e8f3ef 0%,transparent 55%),var(--bg);background-attachment:fixed}
+.nav{background:color-mix(in srgb,#f6f7fb 72%,transparent);border-bottom:1px solid rgba(120,130,160,.15)}
+.nav-in{padding:14px 24px;gap:22px}
+.brand{font-size:17px;color:var(--ink)}
+.brand i{background:linear-gradient(135deg,#6f86ff,#9a85f5);box-shadow:0 4px 12px rgba(111,134,255,.35);border-radius:9px}
+.seg{background:rgba(120,130,170,.12);padding:4px;border-radius:14px}
+.seg button{padding:7px 15px;border-radius:10px;font-weight:550}
+.seg button:hover{color:var(--ink)}
+.seg button.on{background:#fff;color:var(--ink);box-shadow:0 2px 8px rgba(40,50,90,.12)}
+.wrap{padding:30px 24px 90px;max-width:1220px}
+h1{font-size:32px;font-weight:700;letter-spacing:-.035em;color:var(--ink);margin:6px 0 6px}
+h2{font-size:19px;font-weight:650;letter-spacing:-.02em;margin:0 0 14px}
+h3{font-size:14px;font-weight:650;color:var(--ink);margin:0 0 10px}
+.grid{gap:20px}
+.card{padding:22px 24px;border:1px solid rgba(120,130,160,.12);transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:0 1px 2px rgba(30,40,70,.05),0 14px 36px rgba(30,40,70,.09)}
+.tile .k{font-size:11.5px;letter-spacing:.06em}
+.tile .v{font-size:28px}
+.hero{background:linear-gradient(135deg,#5d78f2 0%,#7b72e8 55%,#9a80ec 100%);border-radius:26px;padding:32px 34px;margin-bottom:22px;box-shadow:0 18px 40px rgba(93,120,242,.28)}
+.hero:after{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.22),transparent 65%);pointer-events:none}
+.hero h1{color:#fff}
+.hero .big{gap:38px;margin-top:22px}
+.hero .big div b{font-size:25px;font-weight:650}
+.pill{padding:3px 10px;font-weight:600;font-size:11.5px;letter-spacing:.01em}
+.pill.g{background:#e2f3ea;color:#2a7c56}.pill.r{background:#fbe6e4;color:#b4473f}.pill.o{background:#fbefd9;color:#946420}.pill.b{background:#e3e9ff;color:#3a56c9}.pill.p{background:#ece6fb;color:#6d4fc0}
+.alert.r{background:#fbe9e7}.alert.o{background:#fcf1de}
+.alert{border-radius:14px;padding:12px 14px}
+th{font-size:11px;padding:10px 12px;color:#8a8fa0;border-bottom:1px solid var(--line)}
+td{padding:13px 12px;border-bottom:1px solid rgba(120,130,160,.12)}
+tbody tr.row:hover{background:#f3f5fb}
+.tbl-wrap{border-radius:14px}
+.bar{height:7px;background:#e8ebf3;border-radius:6px}
+.bar i{background:linear-gradient(90deg,#6f86ff,#7ac6b0)}
+.f2{background:#5fbf8f}.f3{background:#b7bccb}.f4{background:#eba94c}.f5{background:#e5776d}
+.fx span{border-radius:6px;font-weight:600}
+.up{color:#2f9466}.dn{color:#cc564c}
+.pitch{background:radial-gradient(120% 90% at 50% 0,#eaf5ee,#dcece2);border:1px solid rgba(80,130,100,.15);border-radius:26px;padding:28px 16px;gap:22px}
+.pc{background:#fff;border-radius:16px;border:1px solid rgba(120,130,160,.1);box-shadow:0 4px 14px rgba(30,60,50,.1);padding:12px 14px}
+.pc:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(30,60,50,.16)}
+.cap{background:#4c6fff}.cap.v{background:#9aa1b5}
+.kv div{background:#f1f3f8;border-radius:14px;padding:12px 14px}
+.kv b{font-weight:650}
+input[type=search],select{border-radius:12px;padding:9px 14px;background:#fff;border:1px solid var(--line)}
+input[type=search]:focus,select:focus{border-color:#8fa2ff;box-shadow:0 0 0 4px rgba(111,134,255,.15)}
+.btn{background:linear-gradient(135deg,#5d78f2,#7b72e8);border-radius:12px;padding:9px 16px;box-shadow:0 4px 12px rgba(93,120,242,.3);transition:.15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.g{background:#eceff6;color:var(--ink);box-shadow:none}.btn.r{background:#fbe6e4;color:#b4473f;box-shadow:none}
+.drawer{background:#fbfbfd;box-shadow:-14px 0 50px rgba(30,40,70,.18);border-left:1px solid var(--line)}
+.x{background:#eceff6}
+.mv{padding:12px 0}
+.demo{background:#e8a23b}
+.sw input{background:#d3d7e2}.sw input:checked{background:#3fae7a}
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-thumb{background:#cfd4e2;border-radius:8px;border:2px solid transparent;background-clip:padding-box}
+.sec.on,#app>*{animation:fadein .25s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+.hero{display:flex;gap:28px;align-items:stretch;justify-content:space-between;flex-wrap:wrap}
+.hero .hl{flex:1 1 440px;min-width:0;position:relative;z-index:1}
+.hteam{flex:0 1 380px;min-width:300px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:22px;padding:20px 22px;backdrop-filter:blur(8px);position:relative;z-index:1;align-self:center}
+.tm-top{display:flex;gap:16px;align-items:center}
+.setbtn{flex:none;align-self:flex-start;width:38px;height:38px;border-radius:12px;border:0;background:rgba(255,255,255,.18);color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .15s,transform .15s}.setbtn:hover{background:rgba(255,255,255,.32);transform:rotate(30deg)}
+.modal-bg{position:fixed;inset:0;background:rgba(20,24,40,.42);backdrop-filter:blur(3px);z-index:60;display:none;align-items:flex-start;justify-content:center;padding:6vh 16px;overflow:auto}.modal-bg.open{display:flex}
+.modal{background:#fbfbfd;color:#1d1d1f;border-radius:22px;box-shadow:0 30px 80px rgba(20,30,70,.35);width:min(560px,100%);padding:26px 26px 22px;position:relative}
+.modal h2{margin:0 0 4px;font-size:22px}.modal .x{position:absolute;top:16px;right:16px}
+.modal label.f{display:block;font-size:12px;font-weight:600;color:#6e6e73;margin:16px 0 6px;text-transform:uppercase;letter-spacing:.04em}
+.srow{display:flex;gap:8px;align-items:center;margin-bottom:8px}.srow input{min-width:0}.srow .sid{flex:0 0 130px}.srow .snm{flex:1}
+.modal input[type=text]{border:1px solid #d2d2d7;border-radius:10px;padding:9px 11px;font:inherit;background:#fff;width:100%}
+.modal input:focus{outline:2px solid #0071e3;outline-offset:-1px;border-color:transparent}
+.modal input[readonly]{background:#f5f5f7;color:#6e6e73}
+.schk{font-size:12px;min-height:16px;margin:-4px 0 6px 2px}.schk.ok{color:#1f8f4e}.schk.bad{color:#c4271b}
+.sact{display:flex;gap:10px;justify-content:flex-end;align-items:center;margin-top:20px;flex-wrap:wrap}
+.smsg{font-size:13px;margin-top:12px;white-space:pre-wrap}.smsg.bad{color:#c4271b}.smsg.ok{color:#1f8f4e}
+.sro{background:#fff4e0;border-radius:12px;padding:12px 14px;font-size:13px;margin-top:14px;line-height:1.5}
+.ibtn{border:0;background:#f0f0f3;border-radius:9px;width:34px;height:36px;cursor:pointer;font-size:14px;color:#6e6e73;flex:none}.ibtn:hover{background:#e5e5ea;color:#1d1d1f}
+.srvbar{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#c4271b;color:#fff;border-radius:12px;padding:10px 16px;z-index:55;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.2);max-width:min(680px,92vw)}
+
+.tm-img,.tm-mono{width:72px;height:72px;border-radius:20px;flex:none;background:rgba(255,255,255,.92);object-fit:contain;padding:8px;box-shadow:0 8px 20px rgba(30,30,90,.25)}
+.tm-mono{display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#5d78f2;padding:0}
+.tm-name{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.tm-sub{opacity:.8;font-size:13px;margin-top:3px}
+.tm-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.22)}
+.tm-stats b{display:block;font-size:18px;font-weight:650}
+.tm-stats span{opacity:.78;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+
+.vb{display:flex;gap:14px;align-items:center;margin:20px 0 4px;padding:14px 18px;border-radius:18px;background:rgba(255,255,255,.96);color:#2a2d36;box-shadow:0 10px 26px rgba(30,30,90,.22);border-left:6px solid #aab}
+.vb-i{font-size:26px}.vb-t{font-size:18px;font-weight:700;letter-spacing:-.01em}.vb-s{font-size:13.5px;color:#5c6172;margin-top:2px}
+.vb-no{border-left-color:#e5645a}.vb-go{border-left-color:#3fae7a}.vb-mid{border-left-color:#e8a23b}.vb-hold{border-left-color:#7b86a8}
+.vb-no .vb-t{color:#b4473f}.vb-go .vb-t{color:#237a55}.vb-mid .vb-t{color:#946420}
+.htiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px}
+.ht{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.26);border-radius:16px;padding:12px 14px;backdrop-filter:blur(6px)}
+.ht span{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;opacity:.8}
+.ht b{display:block;font-size:23px;font-weight:700;letter-spacing:-.02em;margin:4px 0 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ht i{font-style:normal;font-size:12px;opacity:.85}
+.ht .hup{color:#c9ffe3;opacity:1;font-weight:600}.ht .hdn{color:#ffd2cd;opacity:1;font-weight:600}
+.ht-off{background:rgba(229,100,90,.28);border-color:rgba(255,200,195,.5)}
+
+/* ===== v1.4: премиальный вид — фото игроков, карточки, таймлайн ===== */
+.plk,.av[data-id]{cursor:pointer}.plk{border-radius:4px;transition:color .12s}.plk:hover{color:#0071e3;text-decoration:underline;text-underline-offset:2px}.av[data-id]{transition:transform .12s}.av[data-id]:hover{transform:translateY(-1px)}
+.av{--s:44px;position:relative;display:inline-block;width:var(--s);height:var(--s);flex:none;vertical-align:middle;margin-right:10px}
+.avp{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:linear-gradient(145deg,hsl(var(--h,220) 70% 92%),hsl(var(--h,220) 60% 80%));display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7),0 3px 10px rgba(30,40,80,.14)}
+.avp b{font-size:calc(var(--s)*.34);color:hsl(var(--h,220) 45% 38%);font-weight:700;letter-spacing:-.02em}
+.avp img{position:absolute;left:50%;bottom:-6%;height:112%;transform:translateX(-50%);object-fit:cover}
+.avb{position:absolute;right:-5px;bottom:-4px;width:calc(var(--s)*.42);height:calc(var(--s)*.42);object-fit:contain;background:#fff;border-radius:50%;padding:2px;box-shadow:0 2px 6px rgba(30,40,80,.25)}
+td.nm,.mv>div:first-child{}
+td.nm .av{margin-right:10px}
+.chead{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.chead h2{margin:0}
+.ring{display:flex;gap:18px;align-items:center}
+.ringv{position:relative;width:132px;height:132px;flex:none}
+.ringt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ringt b{font-size:30px;font-weight:700;letter-spacing:-.03em}.ringt span{font-size:11px;color:var(--ink2);text-transform:uppercase;letter-spacing:.05em}
+.ringl{flex:1;min-width:0;display:flex;flex-direction:column;gap:10px}
+.rlh{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
+.rlb{height:7px;background:#e8ebf3;border-radius:6px;overflow:hidden}
+.rlb i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,#6f86ff,#9a85f5)}
+.chip{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid rgba(120,130,160,.12)}.chip:last-child{border:0}
+.chi{width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,#eef1ff,#e4e8fb);display:flex;align-items:center;justify-content:center;font-size:21px;flex:none}
+.chb{flex:1;min-width:0}.chn{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.alert{cursor:pointer;align-items:center}.alert:hover{filter:brightness(.98)}
+.tl{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(210px,1fr);gap:14px;overflow:auto;padding:12px 4px 8px;margin-top:6px}
+.tls{background:var(--soft);border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:10px;border:1px solid transparent}
+.tls.now{background:linear-gradient(180deg,#eef1ff,#f6f4ff);border-color:#cfd7ff;box-shadow:0 8px 22px rgba(93,120,242,.14)}
+.tlh{display:flex;align-items:center;gap:8px}.tlh .sub{margin-left:auto;font-size:12px}
+.tlm{display:flex;align-items:center;gap:6px;background:#fff;border-radius:14px;padding:8px 10px;cursor:pointer;box-shadow:0 2px 8px rgba(30,40,80,.06);transition:.15s}
+.tlm:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(30,40,80,.12)}
+.tlm .av{margin:0}.tlm .ar{color:#9aa1b5;margin:0 2px}
+.tln{display:flex;flex-direction:column;margin-left:6px;min-width:0}.tln b{font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tln span{font-size:11px;color:var(--ink2)}
+.tlz{padding:14px 4px}
+.tlc{font-size:12.5px;color:var(--ink2);display:flex;gap:6px;align-items:center}
+.mc{cursor:pointer;transition:.18s;position:relative;overflow:hidden}
+.mc:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(60,80,160,.18)}
+.mc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.rank{width:26px;height:26px;border-radius:9px;background:linear-gradient(135deg,#6f86ff,#9a85f5);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.mc-pl{display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:14px}
+.mc-p{display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:0}
+.mc-p .av{margin:0 0 8px}.mc-p b{font-size:14px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mc-p span:not(.av):not(.avp){font-size:11.5px;color:var(--ink2)}
+.mc-p.in b{color:#2f9466}
+.mc-ar{align-self:center;font-size:22px;color:#b0b6c8;padding-top:2px}
+.mc-g{margin:6px 0 12px}
+.lg{display:grid;grid-template-columns:28px 1fr 1fr auto;gap:12px;align-items:center;padding:12px 10px;border-radius:14px}
+.lg.you{background:linear-gradient(90deg,#eef1ff,#f6f4ff)}
+.lgr{width:26px;height:26px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(30,40,80,.12);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
+.lgn{display:flex;flex-direction:column;min-width:0}.lgn b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lgb .sub{font-size:11px}.lgp{text-align:right;display:flex;flex-direction:column}.lgp b{font-size:18px}
+.tmvs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.tmv{display:flex;align-items:center;gap:8px;background:var(--soft);border-radius:14px;padding:8px 10px;cursor:pointer;transition:.15s}.tmv:hover{background:#e9edf8}
+.tmv .av{margin:0}.tmv b{flex:1;min-width:0;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+table.cal td,table.cal th{padding:9px 8px}
+.cc{display:inline-block;min-width:46px;text-align:center;padding:5px 8px;border-radius:9px;font-size:11.5px;font-weight:650;color:#fff}
+.cc.cx{background:#e3e6ee;color:#9aa1b5}
+.pc{width:176px}
+.pc-top{display:flex;align-items:center;gap:10px}.pc-top .av{margin:0}.pc-id{min-width:0}
+.pc .n{font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc.hot{box-shadow:0 6px 18px rgba(63,174,122,.25);border-color:rgba(63,174,122,.35)}
+.pc .st{gap:6px;flex-wrap:wrap}
+.pitch{position:relative;background:repeating-linear-gradient(180deg,#e3f1e8 0,#e3f1e8 64px,#dbeee1 64px,#dbeee1 128px)}
+.pitch:before{content:"";position:absolute;left:50%;top:50%;width:150px;height:150px;border:2px solid rgba(255,255,255,.6);border-radius:50%;transform:translate(-50%,-50%);pointer-events:none}
+.line{position:relative;z-index:1}
+h2{position:relative}
+@media(max-width:700px){.lg{grid-template-columns:28px 1fr auto}.lgb{display:none}.tmvs{grid-template-columns:1fr}.ring{flex-direction:column}}
+.warn{margin-top:10px;font-size:12.5px;color:var(--ink2)}.warn summary{cursor:pointer;padding:6px 2px}.warn .alert{margin-top:8px}
+.hteam{min-width:0!important;flex:1 1 300px}.hero{padding:28px 26px}.hero .hl{flex:1 1 360px}
+.ring{flex-wrap:wrap}
+
+.top3>.card{height:540px;display:flex;flex-direction:column;overflow:hidden}
+.top3>.card>h2{flex:none}
+.top3 .scr{flex:1;min-height:0;overflow-y:auto;padding-right:6px;margin-right:-6px}
+.top3 .scr::-webkit-scrollbar{width:8px}.top3 .scr::-webkit-scrollbar-thumb{background:#c9cfe0;border-radius:8px}
+.top3>.card:nth-child(2){overflow:hidden}
+@media(max-width:900px){.top3>.card{height:auto;max-height:420px}}
+
+.sq-seg{display:inline-flex;margin:4px 0 14px}
+.note-b{background:#eef1ff;border:1px solid #d9dfff;border-radius:14px;padding:12px 16px;margin-bottom:16px;color:#3a4270;line-height:1.5}
+.note-b.warn-b{background:#fcf1de;border-color:#f1dcb3;color:#7a5413}
+.alt .altg{display:grid;grid-template-columns:52px 1fr;gap:8px;align-items:start;padding:8px 0;border-top:1px solid rgba(120,130,160,.12)}
+.alt .altg>div{display:flex;flex-direction:column;gap:6px}
+.tlm.same{opacity:.72}
+.wc{cursor:pointer;transition:.18s}.wc:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(60,80,160,.16)}
+.wc-top{display:flex;align-items:center;gap:6px;margin-bottom:10px}.wc-top .av{margin:0 8px 0 0}.wc-id{flex:1;min-width:0;display:flex;flex-direction:column}.wc-id span{font-size:12px;color:var(--ink2)}
+.pillrow{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.wc-st{display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--ink2);margin-bottom:8px}.wc-st b{color:var(--ink)}
+.wc-n{margin-top:10px;font-size:13px;line-height:1.45}
+.wc-t{margin-top:8px;font-size:12.5px;color:#3a4270;background:#eef1ff;border-radius:10px;padding:8px 10px}
+/* скаут-лист v1.17 */
+.seg button[data-k=scout]{color:#a15c00}.seg button[data-k=scout].on{background:linear-gradient(135deg,#ffe9b8,#ffd9a0);color:#6b3d00}
+
+.scoutbg h1{display:flex;align-items:center;gap:10px}
+.scout-add{margin-bottom:16px;border:1px dashed #e8b765!important}
+.scout-file{margin-bottom:14px;background:#fff3d6!important;font-size:13.5px;line-height:1.5}.scout-file textarea{width:100%;min-height:140px}
+.scoutseg{margin:4px 0 6px;display:inline-flex}
+.scout-h{margin:22px 0 10px;font-size:19px}
+.wc{position:relative}.wx{position:absolute;top:10px;right:10px;border:0;background:transparent;color:#9aa0b4;font-size:14px;cursor:pointer;border-radius:8px;padding:2px 7px;opacity:0;transition:.15s}.wc:hover .wx{opacity:1}.wx:hover{background:#ffe5e3;color:#c4261d}
+.wc .wc-top .pill{margin-right:22px}
+.wc.user{border:2px solid #f0a73c!important}
+.wsrc{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;border-radius:999px;padding:3px 9px}
+.wsrc.u{background:#ffe7bf;color:#8a4b00}.wsrc.c{background:#ebe7fb;color:#5a45b0}
+.drscout{margin:16px 0 6px;padding:14px 16px;border-radius:16px;background:#f3f0ff;border:1px solid #e1dafc}.drscout.user{background:#fff4dd;border-color:#f3cf8c}.drscout.add{background:#fff8ea;border:1px dashed #e8b765}
+.drscout .toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.drscout select,.drscout input[type=text],.scout-add select,.scout-add input[type=text]{border:1px solid #d9dbe5;border-radius:10px;padding:8px 10px;font:inherit;background:#fff}
+.scoutlink{cursor:pointer}
+.wltoast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:#1d1d1f;color:#fff;padding:11px 18px;border-radius:14px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:90;max-width:min(560px,92vw)}.wltoast.on{opacity:1;transform:translateX(-50%)}.wltoast.bad{background:#c4261d}
+
+
+.sect{margin-top:30px}
+.fold{background:var(--card);border-radius:var(--radius);border:1px solid rgba(120,130,160,.12);box-shadow:var(--shadow);margin-bottom:12px}
+.fold>summary{list-style:none;cursor:pointer;padding:16px 22px;display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+.fold>summary::-webkit-details-marker{display:none}
+.fold>summary b{font-size:16px}
+.fold>summary:before{content:"▸";margin-right:10px;color:var(--ink2);transition:.15s;display:inline-block}
+.fold[open]>summary:before{transform:rotate(90deg)}
+.fold .foldb{padding:4px 22px 22px}
+.folds{margin:12px 0 18px}
+.rep{display:inline-block;cursor:pointer;margin-right:-4px;transition:.15s}.rep:hover{transform:translateY(-2px)}
+.rep .av{margin-right:0;box-shadow:0 0 0 2px #fff;border-radius:50%}
+
+#tt{position:fixed;display:none;z-index:1000;max-width:320px;padding:10px 13px;border-radius:12px;background:rgba(32,36,52,.96);color:#fff;font-size:12.5px;line-height:1.45;box-shadow:0 10px 30px rgba(0,0,0,.28);pointer-events:none}
+th[data-tip],.tile .k[data-tip],.ht span[data-tip],.kv span[data-tip],.wc-st span[data-tip]{cursor:help}
+th[data-tip]{text-decoration:underline dotted rgba(120,130,160,.55);text-underline-offset:4px}
+.tipi .tipb{display:none!important}
+.tipi:hover,.tipi:focus{background:#dfe5ff;color:#3a56c9}
+.brand-ic{width:32px;height:32px;border-radius:9px;display:block;box-shadow:0 4px 12px rgba(111,134,255,.35)}
+
+.ico{display:inline-flex;width:var(--s);height:var(--s);flex:none;vertical-align:middle;filter:drop-shadow(0 3px 6px rgba(40,50,100,.22))}
+.ico svg{display:block}
+.vb-i{display:flex;align-items:center}
+.alert>span{display:flex;align-items:center}
+.chipill{display:inline-flex;align-items:center;gap:6px;padding-left:4px}
+.chi{background:none!important;width:auto!important;height:auto!important;border-radius:0!important}
+.avp .shirt{position:absolute;left:50%;top:52%;width:78%;transform:translate(-50%,-50%);opacity:.95}
+.avp b{position:relative;z-index:1;color:#fff!important;text-shadow:0 1px 3px rgba(30,30,80,.45);font-size:calc(var(--s)*.3)!important}
+.avd{border:2px solid #fff}
+.chip-warn{display:flex;gap:12px;align-items:center;background:#fcf1de;border:1px solid #f1dcb3;border-radius:14px;padding:10px 14px;margin-bottom:12px;color:#7a5413}.chip-warn div{display:flex;flex-direction:column}.chip-warn span{font-size:12.5px}
+.sched{margin-bottom:12px;font-size:13px;color:var(--ink2);line-height:2}
+.chip-warn.slim{padding:7px 12px;margin-bottom:6px;gap:8px;flex-direction:row;align-items:center;font-size:13px}.chip-warn.slim span{font-size:12.5px}.chip-warn.slim div{display:inline}
+.chip{padding:12px 0}
+.avp.has b,.avp.has .shirt{display:none}
+.pc-note{margin-top:8px;font-size:11.5px;line-height:1.4;color:#5c6172;background:#f1f3f8;border-radius:9px;padding:6px 8px}
+.pc{width:190px}
+.xpc{margin-top:20px;display:flex;align-items:center;gap:28px;background:#eeebfd;border-radius:24px;padding:24px 32px;color:#2a2d36}
+.xpc-i{flex:none;font-size:40px;font-weight:800;letter-spacing:-.04em;line-height:1;color:#6a4fe6;min-width:92px;text-align:center}
+.xpc-t{font-size:14.5px;line-height:1.6}.xpc-t b{font-weight:700}
+@media(max-width:600px){.xpc{flex-direction:column;align-items:flex-start;gap:12px;padding:20px}.xpc-i{text-align:left;min-width:0}}
+.dsw{display:grid;grid-template-columns:1fr 1fr;gap:8px}.dsw button{border:1px solid #e3e6ec;background:#fff;border-radius:12px;padding:10px 12px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:2px;font:inherit}.dsw button b{font-size:14px}.dsw button span{font-size:12px;color:#737889}.dsw button.on{border:2px solid #4c6fff;background:#eef1ff}
+.tm-dsw{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.22);flex-wrap:wrap}.tm-dsw>span{opacity:.78;font-size:11px;text-transform:uppercase;letter-spacing:.05em}.tm-dsw>div{display:flex;gap:3px;background:rgba(255,255,255,.16);border-radius:999px;padding:3px}.tm-dsw button{border:0;background:transparent;color:#fff;font:inherit;font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:999px;cursor:pointer;opacity:.85}.tm-dsw button:hover{opacity:1}.tm-dsw button.on{background:#fff;color:#4c5bd4;opacity:1;cursor:default}
+</style>
+</head>
+<body>
+<div id="demo" class="demo" style="display:none">ДЕМО-ДАННЫЕ (офлайн-режим). Для реальных данных запусти без --offline</div>
+<div class="nav"><div class="nav-in">
+  <div class="brand"><img class="brand-ic" alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzRmNmJmMCIvPjxzdG9wIG9mZnNldD0iLjU1IiBzdG9wLWNvbG9yPSIjN2E2ZmU2Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYTM4NGVlIi8+PC9saW5lYXJHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9ImdsIiBjeD0iLjc4IiBjeT0iLjIiIHI9Ii43Ij48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iLjM4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz48L3JhZGlhbEdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0ibG4iIHgxPSIwIiB5MT0iMSIgeDI9IjEiIHkyPSIwIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iLjc4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9ImdvbGQiIGN4PSIuNCIgY3k9Ii4zNSIgcj0iLjgiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZjJiOCIvPjxzdG9wIG9mZnNldD0iLjU1IiBzdG9wLWNvbG9yPSIjZmZkMTY2Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZjRhOTNiIi8+PC9yYWRpYWxHcmFkaWVudD48ZmlsdGVyIGlkPSJzaCIgeD0iLTIwJSIgeT0iLTIwJSIgd2lkdGg9IjE0MCUiIGhlaWdodD0iMTUwJSI+PGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjEwIiBzdGREZXZpYXRpb249IjEwIiBmbG9vZC1jb2xvcj0iIzJhMmY3YSIgZmxvb2Qtb3BhY2l0eT0iLjM1Ii8+PC9maWx0ZXI+PGNsaXBQYXRoIGlkPSJzcSI+PHJlY3QgeD0iMTYiIHk9IjE2IiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjQ4MCIgcng9IjExNiIvPjwvY2xpcFBhdGg+PC9kZWZzPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjQ4MCIgaGVpZ2h0PSI0ODAiIHJ4PSIxMTYiIGZpbGw9InVybCgjYmcpIi8+PGcgY2xpcC1wYXRoPSJ1cmwoI3NxKSI+PHJlY3QgeD0iMTYiIHk9IjE2IiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjQ4MCIgZmlsbD0idXJsKCNnbCkiLz48IS0tINGA0LDQt9C80LXRgtC60LAg0L/QvtC70Y8gLS0+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjIiIHN0cm9rZS13aWR0aD0iNyI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjY4IiByPSIxNTAiLz48bGluZSB4MT0iMTYiIHkxPSIyNjgiIHgyPSI0OTYiIHkyPSIyNjgiLz48cGF0aCBkPSJNOTYgNDk2VjQzMGgzMjB2NjYiLz48L2c+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjY4IiByPSI5IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii4yOCIvPjwvZz48IS0tINC70LjQvdC40Y8g0YDQvtGB0YLQsCB4UCAtLT48ZyBmaWx0ZXI9InVybCgjc2gpIj48cG9seWxpbmUgcG9pbnRzPSIxMDQsMzcwIDE5MiwzMDAgMjYyLDMzNiAzNjYsMjA2IiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjbG4pIiBzdHJva2Utd2lkdGg9IjMwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48ZyBmaWxsPSIjZmZmIj48Y2lyY2xlIGN4PSIxMDQiIGN5PSIzNzAiIHI9IjE5Ii8+PGNpcmNsZSBjeD0iMTkyIiBjeT0iMzAwIiByPSIxOSIvPjxjaXJjbGUgY3g9IjI2MiIgY3k9IjMzNiIgcj0iMTkiLz48L2c+PGNpcmNsZSBjeD0iMzY2IiBjeT0iMjA2IiByPSI0MCIgZmlsbD0idXJsKCNnb2xkKSIvPjxwYXRoIGQ9Ik0zNjYgMTgybDYuOCAxNC42IDE2IDItMTEuOCAxMSAzIDE1LjhMMzY2IDIxNy42MDBsLTE0IDcuODAwIDMtMTUuODAwLTExLjgwMC0xMSAxNi0yeiIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuOTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTEuNTAwKSIvPjwvZz48L3N2Zz4K">FPL Advisor</div>
+  <div class="seg" id="tabs"></div>
+  <div class="meta" id="meta"></div>
+</div></div>
+<div class="wrap" id="app"></div>
+<div class="drawer" id="drawer"></div>
+
+<script>
+const DESIGN = 1;
+const D = /*__DATA__*/null;
+/*__CORE__*/
+function renderTabs(){
+  $('#tabs').innerHTML = TABS.map(([k,l])=>`<button class="${k===tab?'on':''}" data-k="${k}">${l}</button>`).join('');
+  $('#tabs').querySelectorAll('button').forEach(b=>b.onclick=()=>{tab=b.dataset.k;location.hash=tab;render()});
+}
+function render(){
+  renderTabs();
+  $('#meta').innerHTML = `GW${D.meta.gw_cur} сыгран · следующий GW${D.meta.gw_next}<br>обновлено ${new Date(D.meta.generated).toLocaleString('ru-RU')} · снимков: ${D.meta.snapshots}`;
+  if(D.meta.offline) $('#demo').style.display='block';
+  const v = {scout:vScout,threat:vThreatAll,over:vOver,squad:vSquad,moves:vMoves,players:vPlayersAll,market:vMarket,top:vTop,chg:vChg}[tab]||vOver;
+  $('#app').innerHTML = v();
+  bind();
+  applyTerms();
+  countdown();
+}
+
+/* ---------- Скаут-лист (v1.17) ---------- */
+const myMinPos=pos=>D.me.squad.map(x=>P[x.id]).filter(q=>q&&q.pos===pos).sort((a,b)=>a.xp5-b.xp5)[0];
+function wcCard(w){
+  const q=P[w.id],weak=myMinPos(q.pos),blocked=isBlocked(w.id)&&!q.mine,out=['i','s','u'].includes(q.status),user=w.source==='user';
+  let sig,sc;
+  if(q.mine){sig='В моём составе';sc='b'}else if(out){sig='Травмирован — ждём';sc='r'}else if(blocked){sig='Занят: '+(blockWhy(w.id).replace('занят: ',''));sc='o'}else if(weak&&q.xp5>weak.xp5+1){sig='Лучше слабого звена '+weak.name+' на +'+(q.xp5-weak.xp5).toFixed(1)+' xP5';sc='g'}else{sig='Наблюдаем';sc=''}
+  const who=user?`<span class="wsrc u" title="добавлено вручную в дашборде">${ic('star',16)} добавил ${esc(ME_NAME)}${w.added?' · '+fmtD(w.added):''}${w.local?' · не сохранено':''}</span>`:`<span class="wsrc c">Claude</span>`;
+  return `<div class="card wc${user?' user':''}" data-id="${w.id}"><button class="wx" title="Убрать из скаут-листа" onclick="wlRm(${w.id})">✕</button><div class="wc-top">${av(w.id,48)}<div class="wc-id"><b>${esc(q.name)}</b><span>${q.tname} · ${POSN[q.pos]} · £${money(q.price)}</span></div><span class="pill ${w.prio===1?'r':w.prio===2?'o':''}" title="приоритет">P${w.prio}</span></div>
+  <div class="pillrow">${who}<span class="pill ${sc}">${esc(sig)}</span>${q.status!=='a'?`<span class="pill o">${esc(q.news||q.status)}</span>`:''}</div>
+  <div class="wc-st"><span>xP5 <b>${q.xp5.toFixed(1)}</b></span><span>форма <b>${q.form.toFixed(1)}</b></span><span>очк/игру <b>${q.ppg.toFixed(1)}</b></span><span>влад. <b>${q.own}%</b></span></div>${fxHtml(q,5)}
+  ${w.note?`<div class="wc-n">${esc(w.note)}</div>`:''}${w.trigger?`<div class="wc-t"><b>Триггер:</b> ${esc(w.trigger)}</div>`:''}</div>`;
+}
+let scoutF='all';
+function vScout(){
+  const all=wlList(), nU=all.filter(w=>w.source==='user').length, nC=all.length-nU;
+  const L=all.filter(w=>scoutF==='all'||(scoutF==='user')===(w.source==='user'));
+  const groups=[1,2,3].map(pr=>{const g=L.filter(w=>(w.prio||3)===pr).sort((a,b)=>(b.source==='user')-(a.source==='user')||P[b.id].xp5-P[a.id].xp5); return g.length?`<h2 class="scout-h">P${pr} <span class="sub">${['','главные цели','кандидаты','наблюдаем'][pr]} · ${g.length}</span></h2><div class="grid g3">${g.map(wcCard).join('')}</div>`:''}).join('');
+  Object.keys(WL_PICK).forEach(k=>delete WL_PICK[k]);
+  const opts=D.players.filter(p=>!p.mine&&!wlGet(p.id)).sort((a,b)=>b.xp5-a.xp5).map(p=>{const k=p.name+' · '+p.tname+' · £'+money(p.price)+(p.taken_by?' · занят':''); WL_PICK[k]=p.id; return `<option value="${esc(k)}">`}).join('');
+  const unsaved=wlUnsaved();
+  const fileNote=!SRV?`<div class="card scout-file"><b>Дашборд открыт как файл.</b> Добавления хранятся только в этом браузере${unsaved?` (несохранённых: ${unsaved})`:''}. Чтобы они попали в config.json и их видел Claude — запусти <b>run.bat</b> (ярлык FPL Advisor), не закрывай чёрное окно и нажми здесь «Сохранить в config.json».
+    ${unsaved?`<details style="margin-top:8px"><summary class="sub">или вставь вручную в config.json → "watchlist"</summary><textarea readonly style="margin-top:8px">${esc(JSON.stringify(all.map(w=>{const o={player:w.player||wlSpec(w.id),prio:w.prio,note:w.note||'',trigger:w.trigger||''}; if(w.source==='user'){o.fpl_id=w.id;o.source='user';o.added=w.added||''} return o;}),null,2))}</textarea></details>`:''}</div>`
+    :(unsaved?`<div class="card scout-file"><b>Есть изменения из режима «файл» (${unsaved}).</b> <button class="btn" onclick="wlSyncLocal()">Сохранить в config.json</button></div>`:'');
+  return `<div class="scoutbg">
+  <h1>${ic('star',30)} Скаут-лист</h1>
+  <div class="sub" style="margin-bottom:14px">Игроки под наблюдением. Список ведёт Claude, а ты добавляешь своих — кнопкой ниже или в карточке любого игрока («В скаут-лист»). Твои отмечены <span class="wsrc u">${ic('star',14)} добавил ${esc(ME_NAME)}</span>: Claude видит их в config.json и brief и даёт по ним комментарий.</div>
+  ${fileNote}
+  <div class="card scout-add"><div class="toolbar"><input type="search" id="scq" list="scdl" placeholder="Добавить игрока: начни вводить имя…" style="flex:2;min-width:200px"><datalist id="scdl">${opts}</datalist>
+    <select id="scp" title="приоритет"><option value="1">P1 — главная цель</option><option value="2" selected>P2 — кандидат</option><option value="3">P3 — наблюдаем</option></select>
+    <input type="text" id="scn" placeholder="Заметка: почему он (необязательно)" style="flex:3;min-width:180px"><button class="btn" onclick="wlFormAdd('sc')">В скаут-лист</button></div></div>
+  <div class="seg scoutseg" id="scf">${[['all','Все · '+all.length],['user','Мои · '+nU],['claude','От Claude · '+nC]].map(([k,l])=>`<button class="${scoutF===k?'on':''}" onclick="scoutF='${k}';render()">${l}</button>`).join('')}</div>
+  ${groups||'<div class="card empty">Пусто. Добавь игрока выше.</div>'}
+  </div>`;
+}
+
+/* ---------- Обзор ---------- */
+function vOver(){
+  const me=D.me, s=D.sugg, lu=s.lineup;
+  const alerts=[];
+  me.squad.forEach(x=>{const p=P[x.id]; if(p&&(p.status!=='a'||p.news)) alerts.push(`<div class="alert ${p.status==='a'?'o':'r'}" data-id="${x.id}">${av(x.id,36)}<div><b>${esc(p.name)}</b> (${p.tname}) — ${esc(p.news||'статус '+p.status)}</div></div>`)});
+  D.conflicts.forEach(id=>alerts.push(`<div class="alert r"><span>${ic('danger',32)}</span><div><b>${pnk(id)}</b> есть и в твоём составе, и у соперника — нарушение правила лиги.</div></div>`));
+  releasedList().filter(e=>P[e.id]).forEach(e=>alerts.unshift(`<div class="alert" style="background:#e3f7e8"><span>${ic('star',32)}</span><div><b>${esc(P[e.id].name)}</b> (${P[e.id].tname}) — ${OWN[e.owner]||'соперник'} больше его не держит. Можно убрать из чёрного списка (вкладка «Чёрный список»).</div></div>`));
+  Object.entries(D.friend_moves||{}).forEach(([k,v])=>{ if(v.sold.length||v.bought.length) alerts.push(`<div class="alert"><span>${ic('swap',32)}</span><div><b>${OWN[k]||k}</b>: продал ${v.sold.map(i=>pnk(i)).join(', ')||'—'}; купил ${v.bought.map(i=>pnk(i)).join(', ')||'—'}</div></div>`)});
+  const prices = D.changes.price.filter(c=>me.squad.some(x=>x.id===c.id));
+  prices.forEach(c=>alerts.push(`<div class="alert"><span>${ic('money',32)}</span><div>${pnk(c.id)}: цена ${money(c.from)} → ${money(c.to)}</div></div>`));
+  const warnHtml=(D.warnings||[]).length?`<details class="warn"><summary>Технические предупреждения (${D.warnings.length})</summary>${D.warnings.map(w=>`<div class="alert o"><div>${esc(w)}</div></div>`).join('')}</details>`:'';
+  ((D.threats||{}).intercept||[]).filter(x=>x.risk>=0.15&&!isBlocked(x.id)&&P[x.id]).slice(0,3).forEach(x=>alerts.push(`<div class="alert r"><span>${ic('target',32)}</span><div><b>${pnk(x.id)}</b> могут перехватить: ${Object.entries(x.who).map(([k,v])=>(OWN[k]||k)+' '+Math.round(v*100)+'%').join(', ')} (мой прирост +${x.gain} xP). Покупать раньше.</div></div>`));
+  const mk=D.market||{}; (mk.targets_up||[]).slice(0,2).forEach(x=>alerts.push(`<div class="alert o"><span>${ic('up',32)}</span><div><b>${pnk(x.id)}</b> дорожает (давление ${x.net>0?'+':''}${x.net.toLocaleString('ru-RU')}). Если он в планах, лучше купить сегодня.</div></div>`));
+  (mk.my_risk||[]).slice(0,2).forEach(x=>alerts.push(`<div class="alert"><span>${ic('down',32)}</span><div><b>${pnk(x.id)}</b> может подешеветь — учитывай при продаже.</div></div>`));
+  const best = s.single.filter(m=>!isBlocked(m.inn)).slice(0,3).map(mv=>`<div class="mv"><div><b>${pnk(mv.out)}</b> <span class="arrow">→</span> <b>${pnk(mv.inn)}</b><div class="sub">${pt(mv.out)} → ${pt(mv.inn)} · банк после £${money(mv.bank_after)}</div></div><div class="gain"><b class="up">+${mv.gain.toFixed(1)}</b><div class="sub">xP за 5 туров</div></div></div>`).join('')||'<div class="empty">Нет выгодных ходов с текущим бюджетом</div>';
+  const CL=D.claude_lineup, clUse=CL&&!CL.errors.length&&!CL.stale;
+  const cap = clUse&&CL.captain?pn(CL.captain):(lu.captain?pn(lu.captain):'–'), vice=clUse&&CL.vice?pn(CL.vice):(lu.vice?pn(lu.vice):'–');
+  const capWho=clUse?'Claude':'расчёт';
+  const lt = (D.league_table||[]).map((r,i)=>`<tr><td>${r.rank}</td><td><b>${esc(r.manager)}</b><div class="sub">${esc(r.name)}</div></td><td class="num"><b>${r.total}</b></td><td class="num sub">+${r.event_total}</td></tr>`).join('');
+  const heroTeam=(()=>{
+    const nm=me.team||'Моя команда', gp=(me.gw_points||[]), lastg=gp[gp.length-1];
+    const init=(nm.match(/[A-Za-zА-Яа-я0-9]/g)||['F']).slice(0,2).join('').toUpperCase();
+    const lgRow=(D.league_table||[]).find(r=>r.entry===me.entry), lgN=(D.league_table||[]).length;
+    const l3=gp.slice(-3), avg3=l3.length?(l3.reduce((a,c)=>a+c.pts,0)/l3.length).toFixed(1):'–';
+    const best=gp.length?gp.reduce((a,c)=>c.pts>a.pts?c:a):null;
+    const fmtRank=r=>r==null?'–':r>=1e6?(r/1e6).toFixed(2)+'M':r>=1e3?Math.round(r/1e3)+'K':r;
+    const f=me.fav_team;
+    const badge=f?`<img class="tm-img" alt="${esc(f.name)}" src="https://resources.premierleague.com/premierleague/badges/100/t${f.code}.png" onerror="this.outerHTML='<div class=&quot;tm-mono&quot;>${esc(init)}</div>'">`:`<div class="tm-mono">${esc(init)}</div>`;
+    const st=[
+      lgRow?['Место в лиге',lgRow.rank+' из '+lgN]:null,
+      ['Всего очков',me.overall_pts!=null?me.overall_pts:'–'],
+      ['Мировой ранг',fmtRank(me.overall_rank)],
+      lastg?['Последний тур',lastg.pts+' очк.']:null,
+      ['Среднее за 3 тура',avg3],
+      best?['Лучший тур','GW'+best.gw+' · '+best.pts]:null
+    ].filter(Boolean).map(x=>`<div><b>${esc(x[1])}</b><span>${esc(x[0])}</span></div>`).join('');
+    return `<div class="hteam"><div class="tm-top">${badge}<div style="flex:1;min-width:0"><div class="tm-name">${esc(nm)}</div><div class="tm-sub">${esc(me.manager||'')}${me.region?' · '+esc(me.region):''}</div></div><button class="setbtn" onclick="openSettings()" title="Настройки: мой ID, соперники, мини-лига" aria-label="Настройки"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button></div><div class="tm-stats">${st}</div><div class="tm-dsw"><span>Вид дашборда</span><div><button onclick="setDesign(2)" title="Дизайн 2 — светлый, по макетам">Светлый</button><button class="on" title="текущий вид">Классический</button></div></div></div>`;
+  })();
+  const tc=((D.top||{}).caps_list||[])[0];
+  const capFinal=(clUse&&CL.captain)?CL.captain:lu.captain;
+  const capNote=(tc&&tc[0]!==capFinal&&P[tc[0]])?`${clUse?'рекомендация Claude':'по xP'} · топ-50: ${esc(P[tc[0]].name)} ×${tc[1]}`:(clUse?`рекомендация Claude на GW${CL.gw}`:`по xP на GW${D.meta.gw_next}`);
+  const heroVal = me.squad.reduce((a,x)=>a+(x.sell||x.now||0),0) || me.value || 0;
+  const heroDelta = me.squad.reduce((a,x)=>a+((x.now||0)-(x.buy||x.now||0)),0);
+  const heroVerdict=(()=>{
+    const ft=s.ft, st=(D.plan&&D.plan.steps||[]).find(x=>x.gw===D.meta.gw_next), mvs=(st&&st.moves)||[];
+    const sick=me.squad.filter(x=>{const p=P[x.id];return p&&(['i','s','u'].includes(p.status)||(p.chance!=null&&p.chance<=50&&p.status!=='a'));});
+    const mv=mvs.slice(0,2).map(m=>`<b>${pnk(m[0])}</b> → <b>${pnk(m[1])}</b>`).join(' · ');
+    const top=(s.single||[]).filter(m=>!isBlocked(m.inn))[0];
+    let cls,icn,t1,t2;
+    if(ft<=0){ cls='vb-no'; icn=ic('danger',44); t1='Бесплатных трансферов нет'; t2=sick.length?`Проблемы в составе есть (${sick.map(x=>pnk(x.id)).join(', ')}). Только хит −4 — и лишь если это явный апгрейд.`:'Каждый ход стоит −4 очка. Без явного апгрейда стартёра оставляй состав и копи трансфер на следующий тур.'; }
+    else if(sick.length){ cls='vb-go'; icn=ic('injury',44); t1='Срочно делай трансферы'; t2=`Проблема в составе: ${sick.map(x=>pnk(x.id)).join(', ')}.`+(mv?' План: '+mv+'.':''); }
+    else if(mvs.length){ cls='vb-go'; icn=ic('ok',44); t1='Пора делать трансферы'; t2='План на этот тур: '+mv+(st.hit?` (хит −${st.hit})`:' без хита')+'.'; }
+    else if(top&&top.gain>=8){ cls='vb-mid'; icn=ic('mid',44); t1='Можно сделать трансфер'; t2=`Лучший ход: <b>${pnk(top.out)}</b> → <b>${pnk(top.inn)}</b> (+${top.gain.toFixed(1)} xP). Выгода умеренная — решай по новостям.`; }
+    else { cls='vb-hold'; icn=ic('hold',44); t1='Ничего не делай — копи трансфер'; t2='Выгодных ходов на этот тур нет. Свободный трансфер сохранится и пригодится позже (максимум накопления — 5).'; }
+    return `<div class="vb ${cls}"><div class="vb-i">${icn}</div><div><div class="vb-t">${t1}</div><div class="vb-s">${t2}</div></div></div>`;
+  })();
+  const rcx=D.race||{}, pw=(rcx.players||{}), meP=pw.me;
+  const winCard=meP?`<div class="card"><h2>Шанс выиграть лигу</h2><div class="ring"><div class="ringv">${RING(meP.p_win,132)}<div class="ringt"><b>${Math.round(meP.p_win*100)}%</b><span>твой шанс</span></div></div><div class="ringl">${Object.entries(pw).sort((x,y)=>y[1].p_win-x[1].p_win).map(([k,v])=>`<div class="rl"><div class="rlh"><span>${esc(v.name)}</span><b>${Math.round(v.p_win*100)}%</b></div><div class="rlb"><i style="width:${Math.max(2,v.p_win*100)}%;${k==='me'?'':'background:#b7bccb'}"></i></div><div class="sub">${v.total} очк. · ср. ${v.mean}/тур</div></div>`).join('')}</div></div><div class="sub" style="margin-top:10px">${esc(rcx.text||'')}</div></div>`:'';
+  const CHI={};
+  const sched0=((D.chips||{}).schedule||[]).length?D.chips.schedule:((D.chips||{}).recommend||[]).slice().sort((x,y)=>x.gw-y.gw);
+  const chs=sched0, mx=Math.max(1,...chs.map(c=>c.gain));
+  const ex=(D.chips||{}).expiry||{};
+  const CSHORT={wildcard:'Пересборка состава',bboost:'Скамейка тоже играет',freehit:'Один идеальный тур','3xc':'Капитан ×3'};
+  const CTIP={wildcard:'Прирост xP за 6 туров после розыгрыша сверх обычного плана, без хитов.',bboost:'Сумма xP четырёх игроков скамейки; штраф за матчи «свои против своих». Важно, чтобы скамейка реально играла.',freehit:'Идеальный состав на один тур; лучше всего работает на пустых и двойных турах.','3xc':'Капитан приносит тройные очки.'};
+  const exLine=ex.active?`<div class="chip-warn slim" data-tip="Все неиспользованные чипы первого набора пропадут после дедлайна GW${ex.gw} (${new Date(ex.deadline).toLocaleDateString('ru-RU',{day:'numeric',month:'long'})}). Один чип за тур.">${ic('warn',20)}<b>Сгорают после GW${ex.gw}</b><span>· ${new Date(ex.deadline).toLocaleDateString('ru-RU',{day:'numeric',month:'long'})}, осталось ${ex.gws_left} тур.</span></div>`:'';
+  const chipCard=`<div class="card"><div class="chead"><h2>Чипы</h2><span class="sub">расписание по турам</span></div>${exLine}<div class="scr">${chs.length?chs.map(c=>`<div class="chip" data-tip="${esc(CTIP[c.chip]||c.note||'')}"><div class="chi">${chipIc(c.chip,40)}</div><div class="chb"><div class="chn"><b>${CHIPN[c.chip]||c.chip}</b><span class="pill b">GW${c.gw}</span></div><div class="rlb"><i style="width:${Math.max(4,c.gain/mx*100)}%"></i></div><div class="sub">${CSHORT[c.chip]||''} · +${c.gain} xP</div></div></div>`).join(''):'<div class="empty">Чипов нет</div>'}</div></div>`;
+  const alertCard=`<div class="card"><h2>Внимание</h2><div class="scr">${alerts.join('')||'<div class="empty">Всё спокойно ✓</div>'}${warnHtml}</div></div>`;
+  const steps=(D.plan&&D.plan.steps||[]).slice(0,5);
+  const planCard=steps.length?`<div class="card" style="margin-top:20px"><div class="chead"><h2>План ходов</h2><span class="sub">+${D.plan.gain} xP за ${D.plan.horizon} туров · по xP, без учёта свежих новостей</span></div><div class="tl">${steps.map(st=>`<div class="tls ${st.gw===D.meta.gw_next?'now':''}"><div class="tlh"><b>GW${st.gw}</b>${st.gw===D.meta.gw_next?'<span class="pill b">ближайший</span>':''}<span class="sub">FT ${st.ft_before}</span></div>${st.moves.length?st.moves.map(([o,c])=>`<div class="tlm" data-id="${c}">${av(o,34)}<span class="ar">→</span>${av(c,34)}<div class="tln"><b>${pnk(c)}</b><span>вместо ${pnk(o)}</span></div></div>`).join(''):'<div class="sub tlz">Без ходов — копим трансфер</div>'}${st.hit?`<span class="pill r">хит −${st.hit}</span>`:''}${st.captain?`<div class="tlc"><span class="cap v" style="position:static;display:inline-flex">C</span> ${pnk(st.captain)}</div>`:''}</div>`).join('')}</div></div>`:'';
+  const bm=diverse(s.single.filter(m=>!isBlocked(m.inn)),2).slice(0,6), bmx=Math.max(1,...bm.map(m=>m.gain));
+  const bestCards=bm.length?`<div style="margin-top:20px"><div class="chead"><h2>Лучшие ходы</h2><span class="sub">нажми на игрока — его карточка</span></div><div class="grid g3">${bm.map((m,i)=>{const pi=P[m.inn],po=P[m.out];return `<div class="card mc" data-id="${m.inn}"><div class="mc-top"><span class="rank">${i+1}</span>${m.hit?`<span class="pill r">хит −${m.hit}</span>`:'<span class="pill g">без хита</span>'}</div>
+    <div class="mc-pl"><div class="mc-p">${av(m.out,54)}<b>${pnk(m.out)}</b><span>${pt(m.out)} · £${money(po?po.price:0)}</span></div><div class="mc-ar">→</div><div class="mc-p in">${av(m.inn,54)}<b>${pnk(m.inn)}</b><span>${pt(m.inn)} · £${money(pi?pi.price:0)}</span></div></div>
+    <div class="mc-g"><div class="rlh"><span>Прирост за 5 туров</span><b class="up">+${m.gain.toFixed(1)} xP</b></div><div class="rlb"><i style="width:${Math.max(6,m.gain/bmx*100)}%"></i></div></div>
+    ${pi?fxHtml(pi,5):''}<div class="sub" style="margin-top:8px">Банк после: <b>£${money(m.bank_after)}</b> · Δ цена ${m.delta>=0?'+':''}${money(m.delta)}</div></div>`}).join('')}</div></div>`:'';
+  const gpl=(D.league_table||[]), lead=gpl[0]?gpl[0].total:0;
+  const leagueCard=`<div class="card"><h2>Мини-лига</h2>${gpl.map(r=>{const you=r.entry===D.me.entry;return `<div class="lg ${you?'you':''}"><span class="lgr">${r.rank}</span><div class="lgn"><b>${esc(r.name)}</b><span class="sub">${esc(r.manager)}</span></div><div class="lgb"><div class="rlb"><i style="width:${lead?Math.max(5,r.total/lead*100):0}%;${you?'':'background:#b7bccb'}"></i></div><span class="sub">${r.rank===1?'лидер':'−'+(lead-r.total)}</span></div><div class="lgp"><b>${r.total}</b><span class="sub">GW ${r.event_total}</span></div></div>`}).join('')||'<div class="empty">нет данных</div>'}</div>`;
+  const tmv=(arr,cls)=>arr.slice(0,6).map(([i,c])=>`<div class="tmv" data-id="${i}">${av(i,40)}<b>${pnk(i)}</b><span class="pill ${cls}">×${c}</span></div>`).join('');
+  const topCard=`<div class="card"><h2>Движения топ-${D.top.n}</h2><h3>Покупают</h3><div class="tmvs">${tmv(D.top.ins_list,'g')}</div><h3 style="margin-top:14px">Продают</h3><div class="tmvs">${tmv(D.top.outs_list,'r')}</div></div>`;
+  const rowsF=D.me.squad.map(x=>P[x.id]).filter(Boolean);
+  const nGW=Math.max(0,...rowsF.map(p=>(p.fix||[]).length));
+  const gws=[...new Set(rowsF.flatMap(p=>(p.fix||[]).map(f=>f.gw)))].sort((a,b)=>a-b).slice(0,6);
+  const calCard=`<div class="card" style="margin-top:20px"><div class="chead"><h2>Календарь моей команды</h2><span class="sub">цвет = сложность соперника (зелёный — лёгкий, красный — тяжёлый)</span></div><div class="tbl-wrap"><table class="cal"><thead><tr><th>Игрок</th>${gws.map(g=>`<th class="num">GW${g}</th>`).join('')}<th class="num">xP5</th></tr></thead><tbody>${rowsF.sort((a,b)=>b.xp5-a.xp5).map(p=>`<tr class="row" data-id="${p.id}"><td class="nm">${av(p.id,30)}<b>${esc(p.name)}</b><small>${p.tname}</small></td>${gws.map(g=>{const fs=(p.fix||[]).filter(f=>f.gw===g);return `<td class="num">${fs.length?fs.map(f=>`<span class="cc f${f.fdr}">${f.opp}${f.h?'':' ·'}</span>`).join(' '):'<span class="cc cx">—</span>'}</td>`}).join('')}<td class="num"><b>${p.xp5.toFixed(1)}</b></td></tr>`).join('')}</tbody></table></div></div>`;
+  const xpCard=`<div class="xpc"><div class="xpc-i" aria-hidden="true">xP?</div><div class="xpc-t"><b>xP = expected points, ожидаемые очки.</b> Прогноз, сколько очков FPL игрок в среднем принесёт за матч или тур. Считается по средним очкам за игру и форме, сложности соперника, шансу выйти на поле и здоровью. xP1 — на ближайший тур, xP5 — сумма за 5 туров. Новостей (ротация, свежие травмы, составы) xP не знает: их проверяет Claude.</div></div>`;
+  const heroBody=`<div class="grid g3 top3" style="margin-top:20px">${winCard}${chipCard}${alertCard}</div>${planCard}${bestCards}${calCard}${xpCard}`;
+  return `
+  <div class="hero">
+  <div class="hl">
+    <div class="sub" style="color:#fff;opacity:.8;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:12px">Ближайший тур</div>
+    <h1>Gameweek ${D.meta.gw_next}</h1>
+    <div class="cd" id="cd"></div>
+    ${heroVerdict}
+    <div class="htiles">
+      <div class="ht"><span>Банк</span><b>£${money(s.bank)}</b><i>${s.bank>=20?'есть запас на апгрейд':s.bank<=3?'почти пусто':'нормально'}</i></div>
+      <div class="ht ${s.ft>0?'':'ht-off'}"><span>Свободные трансферы</span><b>${s.ft}</b><i>${s.ft>0?(s.ft>1?'можно сделать '+s.ft+' без хита':'1 без хита'):'без хита нельзя'}</i></div>
+      <div class="ht"><span>Стоимость команды</span><b>£${money(heroVal)}</b><i class="${heroDelta>0?'hup':heroDelta<0?'hdn':''}">${heroDelta>0?'▲ +':heroDelta<0?'▼ −':'• '}${Math.abs(heroDelta/10).toFixed(1)} с момента покупок</i></div>
+      <div class="ht"><span>Капитан · ${capWho}</span><b>${esc(cap)}</b><i>${capNote}</i></div>
+      <div class="ht"><span>Вице · ${capWho}</span><b>${esc(vice)}</b><i>по xP на GW${D.meta.gw_next}</i></div>
+    </div>
+  </div>
+  ${heroTeam}
+  </div>
+  ${heroBody}
+  `;
+
+}
+
+function vOverExtra(){
+  const rc=D.race||{}, me=(rc.players||{}).me, pl=D.plan||{}, ch=(D.chips||{}).recommend||[];
+  const first=(pl.steps||[]).find(s=>s.moves.length);
+  const t=[];
+  if(me) t.push(`<div class="card tile"><div class="k">Шанс выиграть лигу</div><div class="v">${Math.round(me.p_win*100)}%</div><div class="s">${esc(rc.text||'')}</div></div>`);
+  if(first) t.push(`<div class="card tile"><div class="k">План: ближайший ход (GW${first.gw})</div><div class="v" style="font-size:19px;line-height:1.3">${first.moves.map(([o,c])=>pnk(o)+' → '+pnk(c)).join('<br>')}</div><div class="s">Прирост плана на ${pl.horizon} туров: +${pl.gain} xP</div></div>`);
+  else if(pl.steps) t.push(`<div class="card tile"><div class="k">План на ${pl.horizon} туров</div><div class="v" style="font-size:19px">Ходов не нужно</div><div class="s">Копим трансферы</div></div>`);
+  if(ch.length) t.push(`<div class="card tile"><div class="k">Чипы: лучший момент</div><div class="v" style="font-size:19px;line-height:1.3">${ch.slice(0,2).map(c=>CHIPN[c.chip]+' — GW'+c.gw).join('<br>')}</div><div class="s">ориентир по xP, см. «План»</div></div>`);
+  return t.length?`<div class="grid g3" style="margin-bottom:16px">${t.join('')}</div>`:'';
+}
+const CHIPN={wildcard:'Wildcard',freehit:'Free Hit',bboost:'Bench Boost','3xc':'Triple Captain'};
+const pnb = id => av(id,30) + pnk(id) + (isBlocked(id)?' <span class="pill r">в ЧС</span>':'');
+const bar = (v,max,color)=>`<span class="bar" style="width:90px"><i style="width:${Math.min(100,v/max*100)}%;${color?'background:'+color:''}"></i></span>`;
+const trendPill = t => t==='up2'?'<span class="pill g">▲▲ растёт</span>':t==='up'?'<span class="pill g">▲ растёт</span>':t==='up?'?'<span class="pill">▲?</span>':t==='dn2'?'<span class="pill r">▼▼ падает</span>':t==='dn'?'<span class="pill r">▼ падает</span>':t==='dn?'?'<span class="pill">▼?</span>':'';
+
+/* ---------- План ---------- */
+function vPlan(){
+  const pl=D.plan||{};
+  if(pl.error||!pl.steps) return `<h1>План</h1><div class="card empty">${esc(pl.error||'План не построен')}</div>`;
+  const rows=pl.steps.map(s=>{const mv=s.moves.map(([o,c])=>`${pnk(o)} → <b>${pnb(c)}</b>`).join('<br>')||'<span class="mut">без ходов</span>';return `<tr><td><b>GW${s.gw}</b></td><td style="white-space:normal">${mv}</td><td class="num">${s.ft_before}</td><td class="num">${s.hit?'<span class="pill r">−'+s.hit+'</span>':'–'}</td><td class="num"><b>${s.value.toFixed(1)}</b></td><td>${s.captain?pnk(s.captain):''}</td></tr>`}).join('');
+  const chips=((D.chips||{}).recommend||[]).map(c=>`<div class="card"><div class="k sub" style="display:flex;align-items:center;gap:8px">${chipIc(c.chip,30)} ${CHIPN[c.chip]}</div><div class="v" style="font-size:24px;font-weight:700">GW${c.gw}</div><div class="s sub">≈ +${c.gain} xP · ${esc(c.note)}</div></div>`).join('');
+  const mainKey=new Set(pl.steps.flatMap(st=>st.moves.map(([o,c])=>st.gw+':'+o+':'+c)));
+  const altCards=(pl.alts||[]).map((a,i)=>{const diff=a.total!=null?(a.total-pl.best_total):0;const byGw={};a.first.forEach(m=>{(byGw[m.gw]=byGw[m.gw]||[]).push(m)});
+    return `<div class="card alt"><div class="chead"><h3 style="margin:0">Вариант ${String.fromCharCode(66+i)}</h3><span class="pill ${diff>=-0.05?'g':'o'}">${diff>=-0.05?'на уровне основного':diff.toFixed(1)+' xP к основному'}</span></div><div class="sub" style="margin-bottom:10px">+${a.gain} xP к игре без трансферов</div>${Object.keys(byGw).map(g=>`<div class="altg"><b>GW${g}</b><div>${byGw[g].map(m=>{const same=mainKey.has(m.gw+':'+m.out+':'+m.in);return `<div class="tlm ${same?'same':'diff'}" data-id="${m.in}">${av(m.out,30)}<span class="ar">→</span>${av(m.in,30)}<div class="tln"><b>${pnk(m.in)}</b><span>вместо ${pnk(m.out)}</span></div>${same?'':'<span class="pill o" style="margin-left:auto">иначе</span>'}</div>`}).join('')}</div></div>`).join('')||'<div class="empty">без ходов</div>'}</div>`}).join('');
+  const alts=altCards;
+  return `<h1>План на ${pl.horizon} туров</h1><div class="sub" style="margin-bottom:14px">Планировщик подбирает ходы по турам с учётом банка, свободных трансферов, хитов и лимита клуба; игроки соперников и чёрного списка исключены. Это расчёт по xP (форма, очки за игру, календарь, доступность): травмы и новости проверяет Claude. Оценки чипов приблизительные.</div>
+  <div class="grid g3" style="margin-bottom:16px"><div class="card tile"><div class="k">Без трансферов</div><div class="v">${pl.baseline}</div><div class="s">xP за ${pl.horizon} туров</div></div><div class="card tile"><div class="k">По плану</div><div class="v">${pl.best_total}</div><div class="s">с учётом хитов</div></div><div class="card tile"><div class="k">Прирост</div><div class="v up">+${pl.gain}</div><div class="s">банк в конце £${money(pl.bank_end)}</div></div></div>
+  <div class="card"><h2>Ход за ходом</h2><div class="tbl-wrap"><table><thead><tr><th>Тур</th><th>Трансферы</th><th class="num">FT до</th><th class="num">Хит</th><th class="num">xP тура</th><th>Капитан</th></tr></thead><tbody>${rows}</tbody></table></div></div>
+  <h2 style="margin-top:24px">Альтернативные планы</h2><div class="sub" style="margin-bottom:12px">Другие сочетания ходов с близким результатом. Метка «иначе» — ход отличается от основного плана. Показаны ходы ближайших туров.</div><div class="grid g3">${alts||'<div class="card empty">Других вариантов нет</div>'}</div>
+  <h2 style="margin-top:24px">Чипы (доступные тебе)</h2>${(D.chips&&D.chips.expiry&&D.chips.expiry.active)?`<div class="chip-warn" style="margin-bottom:12px">${ic('warn',22)}<div><b>Первый набор сгорает после дедлайна GW${D.chips.expiry.gw}</b><span>осталось ${D.chips.expiry.gws_left} тур.; все доступные чипы нужно сыграть до этого срока</span></div></div>`:''}${((D.chips||{}).schedule||[]).length?`<div class="sched" style="margin-bottom:12px"><b>Согласованное расписание (один чип на тур):</b> ${D.chips.schedule.map(x=>`<span class="pill b chipill">${chipIc(x.chip,18)}${CHIPN[x.chip]||x.chip} · GW${x.gw} · +${x.gain} xP</span>`).join(' ')}</div>`:''}<div class="grid g3">${chips||'<div class="card empty">Нет доступных чипов</div>'}</div>`;
+}
+
+/* ---------- Соперники ---------- */
+function vThreatParts(){
+  const th=D.threats||{}, rc=D.race||{};
+  const TIP=`<span class="tipi" tabindex="0" data-tip="${esc('API не показывает ходы друзей на ближайший тур до дедлайна, поэтому «вероятные продажи и покупки» — оценка. Чтобы блок работал точно, скармливай Claude изменения составов соперников ('+RIV_AND+') перед стартом тура или в его начале (скрин или список): Claude внесёт их в pending.stas / pending.roma. После дедлайна API покажет реальные составы сам.')}">?</span>`;
+  const ck=(D.checklist||[]).map(c=>`<div class="alert ${c.status==='ok'?'':'o'}"><span>${ic(c.status==='ok'?'ok':'warn',30)}</span><div><b>${esc(c.name)}</b>: ${esc(c.text)}</div></div>`).join('');
+  const fr=Object.entries(th.friends||{}).map(([k,f])=>`<div class="card"><h3>${esc(f.name)} <span class="pill ${f.verified?'g':'b'}">${f.verified?'состав подтверждён':'состав на прошлый дедлайн'}</span>${TIP}</h3>
+    <div class="kv"><div><b>£${money(f.bank)}</b><span>Банк</span></div><div><b>${f.ft}</b><span>FT (оценка)</span></div><div><b>${f.exp_moves}</b><span>Ожидаемо ходов</span></div></div>
+    <h3>Вероятно продаст</h3>${f.sells.map(x=>`<div class="mv"><div><b>${pnk(x.id)}</b> <span class="sub">${pt(x.id)}</span></div><div class="gain">${bar(x.prob,1,'#ff9f0a')}${Math.round(x.prob*100)}%</div></div>`).join('')||'<div class="sub">—</div>'}
+    <h3 style="margin-top:10px">Вероятно купит</h3>${f.buys.map(x=>`<div class="mv"><div><b>${pnk(x.id)}</b> <span class="sub">${pt(x.id)}</span></div><div class="gain">${bar(x.prob,0.5,'#ff3b30')}${Math.round(x.prob*100)}%</div></div>`).join('')||'<div class="sub">—</div>'}</div>`).join('');
+  const inter=(th.intercept||[]).filter(x=>P[x.id]).map(x=>`<tr class="row" data-id="${x.id}"><td class="nm"><b>${pnb(x.id)}</b><small>${pt(x.id)}</small></td><td class="num"><b class="${x.risk>=0.25?'dn':''}">${Math.round(x.risk*100)}%</b></td><td>${Object.entries(x.who).map(([k,v])=>`<span class="pill o">${OWN[k]||k} ${Math.round(v*100)}%</span>`).join(' ')}</td><td class="num up">+${x.gain}</td><td class="num"><b>${x.urgency}</b></td></tr>`).join('');
+  let race='';
+  if(rc.players){
+    const ps=Object.entries(rc.players).map(([k,p])=>`<div class="mv"><div><b>${esc(p.name)}</b><div class="sub">${p.total} очк. · ср. ${p.mean}/тур</div></div><div class="gain">${bar(p.p_win,1,k==='me'?'#0071e3':'#8e8e93')}<b>${Math.round(p.p_win*100)}%</b><div class="sub">финал ≈ ${p.exp_final}</div></div></div>`).join('');
+    const sc=(rc.scenarios||[]).map(r=>`<tr><td>+${r.boost} очк./тур</td>${r.p.map(v=>`<td class="num"><b>${Math.round(v*100)}%</b></td>`).join('')}</tr>`).join('');
+    const chl=Object.entries(rc.chips_left||{}).map(([k,v])=>`<div class="mv"><b>${OWN[k]||(k==='me'?'Женя':k)}</b><div class="gain sub" style="display:flex;gap:6px;align-items:center;justify-content:flex-end">${v.map(n=>`<span title="${esc(n)}">${chipIc(n,26)}</span>`).join('')||'нет'}</div></div>`).join('');
+    race=`<div class="grid g2" style="margin-top:16px"><div class="card"><h2>Гонка за лигу</h2><div class="sub" style="margin-bottom:8px">Осталось ${rc.remaining} туров${rc.gap?`, отставание от лидера ${rc.gap} очк. (≈ ${rc.need_per_gw}/тур)`:''}. Симуляция по форме каждого менеджера.</div>${ps}<div class="alert" style="margin-top:10px"><span>${ic('compass',32)}</span><div>${esc(rc.text)}</div></div></div>
+    <div><div class="card"><h2>Твой шанс на победу: влияние риска</h2><table><thead><tr><th>Средний прирост</th><th class="num">обычно</th><th class="num">риск ×1.25</th><th class="num">риск ×1.5</th></tr></thead><tbody>${sc}</tbody></table><div class="sub" style="margin-top:6px">Если догоняешь — рискованные дифференциалы могут повысить шанс, даже если слегка снижают средний результат.</div></div><div class="card" style="margin-top:16px"><h2>Фишки у соперников</h2>${chl}</div></div></div>`;
+  }
+  return {
+    head:`<h1>Соперники и лига</h1><div class="sub" style="margin-bottom:14px">Оценка ходов соперников (${esc(RIV_AND)}) по их составам, травмам, форме и истории трансферов. До дедлайна API не показывает их новые ходы, поэтому это вероятности, а не факты.</div>`,
+    inter:`<div class="card"><div class="chead"><h2>Угроза перехвата моих целей</h2><span class="sub">срочность = риск × мой прирост · чем выше, тем раньше покупать</span></div><div class="tbl-wrap"><table><thead><tr><th>Игрок</th><th class="num">Риск</th><th>Кто может</th><th class="num">Мой прирост xP</th><th class="num">Срочность</th></tr></thead><tbody>${inter||'<tr><td colspan="5" class="empty">Угроз не видно</td></tr>'}</tbody></table></div></div>`,
+    friends:`<div class="chead" style="margin:28px 0 12px"><h2>Что, вероятно, сделают друзья ${TIP}</h2></div><div class="grid g2">${fr}</div>`,
+    race:race,
+    ck:`<div class="card" style="margin-top:28px"><div class="chead"><h2>Актуальность данных ${TIP}</h2><span class="sub">откуда взяты составы</span></div>${ck}</div>`
+  };
+}
+
+/* ---------- Рынок ---------- */
+function vMarket(){
+  const mk=D.market||{}, lk=D.luck||{};
+  const lst=(arr)=>arr.filter(x=>P[x.id]).map(x=>`<div class="mv"><div><b>${pnb(x.id)}</b> <span class="sub">${pt(x.id)} · £${money(x.price)}</span></div><div class="gain">${trendPill(x.tier)} <span class="sub">${x.net>0?'+':''}${x.net.toLocaleString('ru-RU')}</span></div></div>`).join('')||'<div class="empty">нет</div>';
+  const luck=(arr,under)=>arr.filter(x=>P[x.id]).map(x=>`<tr class="row" data-id="${x.id}"><td class="nm"><b>${pnb(x.id)}</b><small>${pt(x.id)} · ${P[x.id].pos}</small></td><td class="num ${under?'up':'dn'}">${x.delta>0?'+':''}${x.delta}</td><td class="sub">${x.gi} GI vs xGI ${x.xgi}${P[x.id].pos==='DEF'||P[x.id].pos==='GK'?' · CS '+x.cs:''}</td><td>${takenPill(P[x.id])}</td></tr>`).join('')||'<tr><td colspan="4" class="empty">нет</td></tr>';
+  return `<h1>Рынок</h1><div class="sub" style="margin-bottom:14px">Давление на цены оценивается по чистым трансферам (порог ≈ ${(mk.thr||0).toLocaleString('ru-RU')}; калибровка по ${mk.calib_events||0} событиям истории: чем дольше запускаешь, тем точнее). Это ориентир, не гарантия.</div>
+  ${(mk.targets_up||[]).length?`<div class="card" style="margin-bottom:16px;border:2px solid var(--orange)"><h2>Мои цели дорожают — брать раньше</h2>${lst(mk.targets_up)}</div>`:''}
+  <div class="grid g2"><div class="card"><h2>Растут в цене</h2>${lst(mk.rising||[])}</div><div class="card"><h2>Падают в цене</h2>${lst(mk.falling||[])}</div></div>
+  ${(mk.my_risk||[]).length?`<div class="card" style="margin-top:16px"><h2>Мои игроки под угрозой падения</h2>${lst(mk.my_risk)}</div>`:''}
+  <h2 style="margin-top:24px">Удача: очки против ожиданий</h2><div class="sub" style="margin-bottom:10px">Разница фактических голов+ассистов (защитники и вратари — чистых матчей) и ожидаемых (xGI, xGC). Недоудачливые чаще всего подтягиваются, перегретые — просядут.</div>
+  <div class="grid g2"><div class="card"><h3>Недоудачливые (ожидаемый рост)</h3><table><thead><tr><th>Игрок</th><th class="num">Δ</th><th>Детали</th><th>Доступность</th></tr></thead><tbody>${luck(lk.under||[],true)}</tbody></table></div><div class="card"><h3>Перегретые (ожидаемый спад)</h3><table><thead><tr><th>Игрок</th><th class="num">Δ</th><th>Детали</th><th>Доступность</th></tr></thead><tbody>${luck(lk.over||[],false)}</tbody></table></div></div>`;
+}
+
+/* ---------- Состав ---------- */
+function pcard(id,isBench,o){
+  const p=P[id]; if(!p) return '';
+  o=o||{};
+  const sq=D.me.squad.find(x=>x.id===id)||{};
+  const isC=o.cap!==undefined?o.cap===id:sq.captain, isV=o.vice!==undefined?o.vice===id:sq.vice;
+  const badge = isC?'<div class="cap">C</div>':isV?'<div class="cap v">V</div>':'';
+  const hot=p.xp1>=6?'hot':'';
+  return `<div class="pc ${hot}" data-id="${id}">${badge}
+    <div class="pc-top">${av(id,50)}<div class="pc-id"><div class="n">${statusDot(p)}${esc(p.name)}</div><div class="t">${p.tname} · £${money(p.price)}</div></div></div>
+    <div class="st"><span>xP1 <b>${p.xp1.toFixed(1)}</b></span><span>форма <b>${p.form.toFixed(1)}</b></span><span class="mut">прод. ${money(sq.sell)}</span></div>${fxHtml(p,5)}${o.note?`<div class="pc-note">${esc(o.note)}</div>`:''}</div>`;
+}
+let SQV='claude';
+function setSQV(v){SQV=v;render();}
+function vSquad(){
+  const lu=D.sugg.lineup, me=D.me, cl=D.claude_lineup;
+  const seg=`<div class="seg sq-seg"><button class="${SQV==='claude'?'on':''}" onclick="setSQV('claude')">Рекомендация Claude</button><button class="${SQV==='calc'?'on':''}" onclick="setSQV('calc')">Расчёт программы (xP)</button></div>`;
+  const group=(ids,o)=>{const by={GK:[],DEF:[],MID:[],FWD:[]};ids.forEach(id=>P[id]&&by[P[id].pos].push(id));return `<div class="pitch"><div class="line">${by.FWD.map(id=>pcard(id,false,o(id))).join('')}</div><div class="line">${by.MID.map(id=>pcard(id,false,o(id))).join('')}</div><div class="line">${by.DEF.map(id=>pcard(id,false,o(id))).join('')}</div><div class="line">${by.GK.map(id=>pcard(id,false,o(id))).join('')}</div></div>`;};
+  if(SQV==='claude'){
+    if(!cl) return `<h1>Состав</h1>${seg}<div class="note-b warn-b"><b>Claude ещё не дал рекомендацию.</b> Попроси меня: «дай состав на тур» — я заполню файл claude_picks.json, и он появится здесь. Пока смотри расчёт программы на соседней вкладке.</div>`;
+    const stale=cl.stale?`<div class="note-b warn-b"><b>Рекомендация составлена на GW${cl.gw}, а ближайший тур — GW${D.meta.gw_next}.</b> Попроси меня обновить её после новостей.</div>`:'';
+    const errs=cl.errors.length?`<div class="note-b warn-b"><b>В claude_picks.json есть ошибки:</b> ${cl.errors.map(esc).join('; ')}</div>`:'';
+    const oc=id=>({cap:cl.captain,vice:cl.vice,note:(cl.notes||{})[id]});
+    const progXI=new Set(lu.xi), clXI=new Set(cl.xi);
+    const dIn=cl.xi.filter(i=>!progXI.has(i)), dOut=lu.xi.filter(i=>!clXI.has(i));
+    const diff=(dIn.length||dOut.length||cl.captain!==lu.captain)?`<div class="card" style="margin-top:16px"><h3>Чем рекомендация Claude отличается от расчёта программы</h3>${dIn.length||dOut.length?`<div class="mv"><div><span class="sub">В старт вместо расчёта:</span> ${dIn.map(i=>`<span class="pill g">${pnk(i)}</span>`).join(' ')||'—'} <span class="sub">· на скамейку:</span> ${dOut.map(i=>`<span class="pill r">${pnk(i)}</span>`).join(' ')||'—'}</div></div>`:''}${cl.captain!==lu.captain?`<div class="mv"><div><span class="sub">Капитан:</span> <b>${pnk(cl.captain)}</b> <span class="sub">вместо расчётного</span> ${pnk(lu.captain)}</div></div>`:''}</div>`:'';
+    return `<h1>Состав</h1>${seg}${errs}${stale}
+    <div class="note-b"><b>Рекомендация Claude на GW${cl.gw}</b> · обновлено ${esc(cl.updated||'')} · ${esc(cl.formation||'')}${cl.status?` · <i>${esc(cl.status)}</i>`:''}<br>${esc(cl.summary||'')}</div>
+    ${group(cl.xi,oc)}<h2 style="margin-top:22px">Скамейка (по порядку автозамены)</h2><div class="bench">${cl.bench.map(id=>pcard(id,true,oc(id))).join('')}</div>${diff}`;
+  }
+  return `<h1>Состав</h1>${seg}
+  <div class="note-b"><b>Расчёт программы по xP</b> на GW${D.meta.gw_next}: <b>${lu.formation}</b>, сумма <b>${lu.xp_total}</b>. Это чисто математическая подсказка без новостей — итоговое решение принимает Claude (соседняя вкладка). Нажми на игрока — детали и запасные варианты.</div>
+  ${group(lu.xi,()=>({cap:lu.captain,vice:lu.vice}))}<h2 style="margin-top:22px">Скамейка (расчёт)</h2><div class="bench">${lu.bench.map(id=>pcard(id,true,{cap:lu.captain,vice:lu.vice})).join('')}</div>`;
+}
+
+/* ---------- Трансферы ---------- */
+function vMoves(){
+  const s=D.sugg;
+  const single=diverse(s.single.filter(m=>!isBlocked(m.inn)),2).slice(0,8).map(m=>`<tr><td class="nm">${av(m.out,32)}<b>${pnk(m.out)}</b><small>${pt(m.out)}</small></td><td class="nm">→ ${av(m.inn,32)}<b>${pnk(m.inn)}</b><small>${pt(m.inn)}</small></td><td class="num">${(m.delta>=0?'+':'')+money(m.delta)}</td><td class="num"><b class="up">+${m.gain.toFixed(1)}</b></td><td class="num">${m.hit?'<span class="pill r">−'+m.hit+'</span>':'<span class="pill g">без хита</span>'}</td><td class="num">£${money(m.bank_after)}</td></tr>`).join('');
+  const dbl=s.double.filter(p=>!isBlocked(p.a.inn)&&!isBlocked(p.b.inn)).slice(0,8).map(p=>`<div class="card" style="margin-bottom:10px">
+    <div class="mv" style="border:0;padding:0 0 6px"><div><b>${pnk(p.a.out)}</b> → <b>${pnk(p.a.inn)}</b></div></div>
+    <div class="mv" style="border:0;padding:0"><div><b>${pnk(p.b.out)}</b> → <b>${pnk(p.b.inn)}</b></div><div class="gain"><b class="up">+${p.gain.toFixed(1)}</b> xP5 ${p.hit?'· хит −'+p.hit:'· без хита'}<div class="sub">банк после £${money(p.bank_after)}</div></div></div></div>`).join('');
+  const weak=s.weak.map(id=>{const p=P[id];return `<tr class="row" data-id="${id}"><td class="nm">${av(p.id,32)}<b>${statusDot(p)} ${esc(p.name)}</b><small>${p.tname} ${p.pos}</small></td><td class="num">${p.xp5.toFixed(1)}</td><td class="num">${p.form.toFixed(1)}</td><td>${fxHtml(p,5)}</td></tr>`}).join('');
+  const wn=wlList().length;
+  const watchCards=`<div class="card scoutlink" style="margin-top:20px" onclick="tab='scout';location.hash='scout';render()"><b>Скаут-лист</b> <span class="pill p">${wn}</span> <span class="sub">переехал в отдельную вкладку →</span></div>`;
+  const insFor=id=>(D.insurance[id]||[]).filter(i=>!isBlocked(i)&&P[i]).slice(0,3).map(i=>`<span class="rep" data-id="${i}" title="${esc(pn(i))} · xP5 ${P[i].xp5.toFixed(1)}">${av(i,28)}</span>`).join('');
+  const weak2=s.weak.map(id=>{const p=P[id];return `<tr class="row" data-id="${id}"><td class="nm">${av(p.id,34)}<b>${statusDot(p)} ${esc(p.name)}</b><small>${p.tname} · ${p.pos}</small></td><td class="num"><b>${p.xp5.toFixed(1)}</b></td><td class="num">${p.form.toFixed(1)}</td><td>${fxHtml(p,5)}</td><td>${insFor(id)||'<span class="mut">—</span>'}</td></tr>`}).join('');
+  const dblC=s.double.filter(p=>!isBlocked(p.a.inn)&&!isBlocked(p.b.inn)).slice(0,4).map(p=>`<div class="mv"><div style="line-height:1.7">${av(p.a.out,26)}${pnk(p.a.out)} → ${av(p.a.inn,26)}<b>${pnk(p.a.inn)}</b> <span class="mut">+</span> ${av(p.b.out,26)}${pnk(p.b.out)} → ${av(p.b.inn,26)}<b>${pnk(p.b.inn)}</b></div><div class="gain"><b class="up">+${p.gain.toFixed(1)}</b> xP5<div class="sub">${p.hit?'хит −'+p.hit:'без хита'} · банк £${money(p.bank_after)}</div></div></div>`).join('');
+  const singleTbl=single;
+  return `<h1>Трансферы</h1><div class="sub" style="margin-bottom:6px">Банк <b>£${money(s.bank)}</b> · свободных трансферов <b>${s.ft}</b>. Цены продажи по правилу FPL (половина прибыли). Расчёт по xP; игроки соперников (${esc(RIV.join(', '))}) и чёрного списка исключены.</div>
+  <div class="card" style="margin-top:16px"><div class="chead"><h2>Слабые звенья</h2><span class="sub">кого менять первым · справа — запасные варианты</span></div><div class="tbl-wrap"><table><thead><tr><th>Игрок</th><th class="num">xP5</th><th class="num">Форма</th><th>Календарь</th><th>Замены</th></tr></thead><tbody>${weak2}</tbody></table></div></div>
+  <div class="card" style="margin-top:20px"><div class="chead"><h2>Лучшие одиночные ходы</h2><span class="sub">топ-8 по приросту xP за 5 туров</span></div><div class="tbl-wrap"><table><thead><tr><th>Продать</th><th>Купить</th><th class="num">Δ цена</th><th class="num">+xP (5 туров)</th><th class="num">Хит</th><th class="num">Банк после</th></tr></thead><tbody>${singleTbl||'<tr><td colspan="6" class="empty">Нет подходящих</td></tr>'}</tbody></table></div>
+  ${dblC?`<h3 style="margin:18px 0 4px">Двойные ходы · топ-4</h3>${dblC}`:''}</div>
+  <div class="sect">${stripH1(vPlan()).replace('<div class="sub" style="margin-bottom:14px">','<div class="sub" style="margin-bottom:14px;margin-top:2px">')}</div>
+  ${watchCards}`;
+}
+
+/* ---------- Игроки ---------- */
+function vPlayers(){
+  let rows=D.players.slice();
+  const nWide=rows.filter(p=>p.wide).length;
+  if(!state.wide&&!state.q) rows=rows.filter(p=>!p.wide);  // поиск — всегда по всем
+  if(state.pos!=='ALL') rows=rows.filter(p=>p.pos===state.pos);
+  if(state.free) rows=rows.filter(p=>p.mine||!isBlocked(p.id));
+  if(state.q) rows=rows.filter(p=>(p.name+' '+p.tname).toLowerCase().includes(state.q.toLowerCase()));
+  rows.sort((a,b)=>((b[state.sort]??0)-(a[state.sort]??0))*(-state.dir));
+  const th=(k,l,cls)=>`<th class="s ${cls||''}" data-s="${k}">${l}${state.sort===k?(state.dir<0?' ↓':' ↑'):''}</th>`;
+  const body=rows.slice(0,150).map(p=>`<tr class="row" data-id="${p.id}"><td class="nm">${av(p.id,32)}<b>${statusDot(p)} ${esc(p.name)}</b><small>${p.tname} · ${p.pos}${p.wide?' · <span class="mut" title="вне топ-списков: в рекомендациях не участвует">вне списков</span>':''}</small></td>
+    <td class="num">${money(p.price)}</td><td><span class="bar"><i style="width:${Math.min(100,p.score)}%"></i></span><b>${p.score.toFixed(0)}</b></td>
+    <td class="num">${p.form.toFixed(1)}</td><td class="num">${p.ppg.toFixed(1)}</td><td class="num">${p.xgi90.toFixed(2)}</td><td class="num">${p.dc90.toFixed(1)}</td>
+    <td class="num">${p.xp5.toFixed(1)}</td><td class="num">${p.top_cnt}/${D.top.n}</td><td class="num">${p.own.toFixed(1)}%</td><td>${fxHtml(p,5)}</td><td>${trendArrow(p.d_price_w,'',false)}</td><td>${trendPill(p.ptrend)}</td><td class="num">${p.luck==null?'':trendArrow(p.luck,'',true)}</td><td>${takenPill(p)}</td></tr>`).join('');
+  return `<h1>Игроки</h1>
+  <div class="toolbar"><div class="seg" id="posseg">${['ALL','GK','DEF','MID','FWD'].map(k=>`<button class="${state.pos===k?'on':''}" data-p="${k}">${k==='ALL'?'Все':POSN[k]}</button>`).join('')}</div>
+    <label class="sw"><input type="checkbox" id="free" ${state.free?'checked':''}> Скрыть занятых и чёрный список</label>
+    <label class="sw" title="Все, кто сыграл от 90 минут за сезон (вне топ-списков ещё ${nWide}). Поиск всегда ищет по всем."><input type="checkbox" id="wide" ${state.wide?'checked':''}> Весь рынок</label>
+    <input type="search" id="q" placeholder="Поиск игрока или клуба" value="${esc(state.q)}"><span class="sub">${rows.length} игроков${state.wide||state.q?' (весь рынок)':' (топ-списки)'}${rows.length>150?' · показаны первые 150':''}</span></div>
+  <div class="card" style="padding:6px 8px"><div class="tbl-wrap"><table><thead><tr><th>Игрок</th>${th('price','Цена','num')}${th('score','Рейтинг')}${th('form','Форма','num')}${th('ppg','Очки/игру','num')}${th('xgi90','xGI/90','num')}${th('dc90','DC/90','num')}${th('xp5','xP (5 т.)','num')}${th('top_cnt','Топ-'+D.top.n,'num')}${th('own','Влад.','num')}<th>Календарь</th><th>Цена 7д</th><th>Давление</th><th class="num">Удача</th><th>Статус</th></tr></thead><tbody>${body}</tbody></table></div></div>`;
+}
+
+/* ---------- Лига ---------- */
+function vLeague(){
+  const keys=['me',...Object.keys(D.league).filter(k=>k!=='me')];
+  const cards=keys.map(k=>{
+    const m=D.league[k]; if(!m) return '';
+    const bypos={GK:[],DEF:[],MID:[],FWD:[]};
+    m.squad.forEach(s=>{const p=P[s.id]; if(p) bypos[p.pos].push([s,p])});
+    const lis=['GK','DEF','MID','FWD'].map(pos=>bypos[pos].map(([s,p])=>`<li><span><span class="p">${pos}</span>${statusDot(p)} <b>${esc(p.name)}</b> ${s.captain?'<span class="pill p">C</span>':''}</span><span class="mut">${p.tname} · £${money(p.price)}</span></li>`).join('')).join('');
+    const spark = sparkline(m.gw_points.map(g=>g.pts),300,64);
+    const chips=m.chips.map(c=>`<span class="pill b chipill">${chipIc(c.name,18)}${c.label||c.name} · GW${c.event}</span>`).join(' ')||'<span class="sub">фишек не использовано</span>';
+    const tr=m.transfers_recent.map(t=>`<div class="sub">GW${t.gw}: ${pnk(t.out)} → <b>${pnk(t.in)}</b></div>`).join('')||'<div class="sub">нет</div>';
+    return `<div class="card manager"><h3>${esc(m.name)} <span class="pill">${m.overall_pts??'–'} очк.</span></h3>
+      <div class="sub">${esc(m.team)}</div>
+      <div class="kv"><div><b>£${money(m.bank)}</b><span>Банк</span></div><div><b>${m.ft_estimate}</b><span>FT (оценка)</span></div><div><b>${m.hits_lost}</b><span>Очков потеряно на хитах</span></div><div><b>${m.bench_lost}</b><span>Очков на скамейке (всего)</span></div></div>
+      ${spark}<div style="margin:8px 0">${chips}</div><ul class="mini">${lis}</ul><h3>Последние трансферы</h3>${tr}</div>`;
+  }).join('');
+  const conf=D.conflicts.length?`<div class="alert r"><span>${ic('danger',32)}</span><div>Дубли между составами: ${D.conflicts.map(i=>pnk(i)).join(', ')}</div></div>`:`<div class="alert"><span>${ic('ok',32)}</span><div>Дублей между составами нет — правило лиги соблюдено.</div></div>`;
+  return `<h1>Лига</h1><div class="sub" style="margin-bottom:12px">Составы, банк, потери на хитах и скамейке — из API, без скриншотов.</div>${conf}<div class="grid g3">${cards}</div>`;
+}
+function sparkline(vals,w,h){
+  if(!vals.length) return '';
+  const mx=Math.max(...vals,1), mn=Math.min(...vals,0), n=vals.length;
+  const pts=vals.map((v,i)=>[10+i*(w-20)/Math.max(n-1,1), h-8-(v-mn)/(mx-mn||1)*(h-16)]);
+  const d=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%" height="${h}"><path d="${d}" fill="none" stroke="#0071e3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>${pts.map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="#0071e3"><title>GW ${i+1}: ${vals[i]}</title></circle>`).join('')}</svg>`;
+}
+
+/* Прошлые туры: столбики с очками, под ними тур и соперник (цвет = сложность) */
+const FDRC={1:'#1f8f4e',2:'#34c759',3:'#9aa0a6',4:'#ff9f0a',5:'#ff3b30'};
+function ptsBars(series){
+  if(!series.length) return '';
+  const n=series.length, w=380, h=166, top=18, base=104, bw=Math.min(36,(w-20)/n-8);
+  const mx=Math.max(...series.map(s=>s.pts),6), mn=Math.min(...series.map(s=>s.pts),0);
+  const y=v=>base-(v-Math.max(mn,0))/(mx-Math.max(mn,0)||1)*(base-top);
+  const zero=mn<0?base-(0-mn)/(mx-mn)*(base-top):base;
+  const sc=v=>mn<0?base-(v-mn)/(mx-mn||1)*(base-top):y(v);
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%" height="${h}" style="font-family:inherit">
+  <line x1="6" x2="${w-6}" y1="${zero}" y2="${zero}" stroke="#d2d2d7"/>
+  ${series.map((s,i)=>{const cx=10+(i+.5)*(w-20)/n, yy=sc(s.pts), m=s.m||[], col=s.min===0?'#d2d2d7':(s.pts>=6?'#0071e3':'#7fb2ec');
+    const opp=m.length?m.map(x=>x.opp+(x.h?'':'·')).join('+'):'—', fd=m.length&&m[0].fdr?m[0].fdr:3;
+    return `<g><title>GW${s.gw}: ${s.pts} очк., ${s.min}′ · ${m.map(x=>(x.h?'дома ':'в гостях ')+x.opp+' (сложн. '+(x.fdr||'?')+'): '+x.pts).join('; ')}</title>
+    <rect x="${cx-bw/2}" y="${Math.min(yy,zero)}" width="${bw}" height="${Math.max(Math.abs(zero-yy),2)}" rx="4" fill="${col}"/>
+    <text x="${cx}" y="${Math.min(yy,zero)-5}" text-anchor="middle" font-size="12" font-weight="700" fill="#1d1d1f">${s.pts}</text>
+    <text x="${cx}" y="${base+16}" text-anchor="middle" font-size="10" fill="#6e6e73">GW${s.gw}</text>
+    <rect x="${cx-bw/2-2}" y="${base+22}" width="${bw+4}" height="16" rx="4" fill="${FDRC[fd]||'#9aa0a6'}"/>
+    <text x="${cx}" y="${base+33.5}" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">${esc(opp)}</text>
+    <rect x="${cx-bw/2-2}" y="${base+43}" width="${bw+4}" height="17" rx="8.5" fill="${s.min===0?'#ffe5e3':s.min<60?'#fff1db':'#e8f1fc'}"/>
+    <text x="${cx}" y="${base+55}" text-anchor="middle" font-size="11" font-weight="700" fill="${s.min===0?'#c4271b':s.min<60?'#b36b00':'#0058b0'}">${s.min}′</text></g>`}).join('')}
+  </svg>`;
+}
+const FDRT={1:'очень лёгкий',2:'лёгкий',3:'средний',4:'тяжёлый',5:'очень тяжёлый'};
+function nextTable(p){
+  const fx=p.fix||[]; if(!fx.length) return '<div class="sub">нет данных календаря</div>';
+  const g0=D.meta.gw_next, last=Math.max(...fx.map(f=>f.gw)), xpg=p.xpg||[];
+  const allG=[]; for(let g=g0; g<=last; g++) allG.push(g);
+  return `<table class="mtbl"><thead><tr><th>Тур</th><th>Соперник</th><th>Сложность</th><th class="num">xP</th></tr></thead><tbody>${allG.map(g=>{
+    const fs=fx.filter(f=>f.gw===g), xp=xpg[g-g0];
+    if(!fs.length) return `<tr><td>GW${g}</td><td colspan="2" class="mut">нет матча (пустой тур)</td><td class="num">0</td></tr>`;
+    return fs.map((f,j)=>`<tr><td>${j?'':'GW'+g+(fs.length>1?' <span class="pill">x2</span>':'')}</td><td><b>${f.opp}</b> <span class="sub">${f.h?'дома':'в гостях'}</span></td><td><span class="fdrb f${f.fdr}">${f.fdr}</span> <span class="sub">${FDRT[f.fdr]||''}</span></td><td class="num">${j?'':(xp!=null?xp.toFixed(1):'–')}</td></tr>`).join('')}).join('')}</tbody></table>`;
+}
+function pastSummary(series){
+  if(!series.length) return '';
+  const pl=series.filter(s=>s.min>0), tot=series.reduce((a,s)=>a+s.pts,0);
+  return `<div class="sub" style="margin-bottom:4px">За ${series.length} тур(ов): <b>${tot}</b> очк. · сыграл ${pl.length} · в среднем <b>${(pl.length?pl.reduce((a,s)=>a+s.pts,0)/pl.length:0).toFixed(1)}</b> за сыгранный тур. Цвет плашки под столбиком — сложность соперника, «·» — в гостях. Нижняя метка — минуты: синяя 60+, оранжевая меньше 60, красная — не играл.</div>`;
+}
+
+/* ---------- Топ-N ---------- */
+function vTop(){
+  const t=D.top;
+  const list=(arr,cls)=>arr.map(([i,c])=>`<div class="mv"><div><b>${pnk(i)}</b><span class="sub"> ${pt(i)}</span></div><div class="gain"><span class="pill ${cls}">×${c}</span></div></div>`).join('')||'<div class="empty">нет</div>';
+  const own=t.owned_list.map(([i,c])=>{const p=P[i];return `<tr class="row" data-id="${i}"><td class="nm">${av(i,32)}<b>${pnk(i)}</b><small>${pt(i)}</small></td><td class="num">${c}/${t.n}</td><td class="num">${p?trendArrow(p.top_delta,'',false):''}</td><td>${p?takenPill(p):''}</td></tr>`}).join('');
+  const chips=Object.entries(t.chips||{}).map(([k,v])=>`<span class="pill b" style="margin-right:6px">${k}: ${v}</span>`).join('')||'<span class="sub">нет</span>';
+  return `<h1>Топ-${t.n} мира</h1><div class="sub" style="margin-bottom:14px">Составы лучших менеджеров Overall-лиги. Здесь рождаются гемы и тренды. Фишки в этом туре: ${chips}</div>
+  <div class="grid g3"><div class="card"><h2>Покупают</h2>${list(t.ins_list,'g')}</div><div class="card"><h2>Продают</h2>${list(t.outs_list,'r')}</div><div class="card"><h2>Капитаны</h2>${list(t.caps_list,'b')}</div></div>
+  <div class="card" style="margin-top:16px"><h2>Самые популярные игроки</h2><div class="tbl-wrap"><table><thead><tr><th>Игрок</th><th class="num">В составах</th><th class="num">Δ с прошлого снимка</th><th>Доступность</th></tr></thead><tbody>${own}</tbody></table></div></div>`;
+}
+
+/* ---------- Изменения ---------- */
+function vChg(){
+  const c=D.changes;
+  if(!c.has_prev) return `<h1>Изменения</h1><div class="card empty">Это первый снимок. Запусти инструмент завтра (или через пару часов) — здесь появятся изменения цен, статусов, новые игроки в топ-списках и динамика владения.</div>`;
+  const li=(arr,fn)=>arr.length?arr.map(fn).join(''):'<div class="empty">без изменений</div>';
+  return `<h1>Изменения</h1><div class="sub" style="margin-bottom:14px">С ${new Date(c.prev_ts+'Z').toLocaleString('ru-RU')}</div>
+  <div class="grid g2">
+  <div class="card"><h2>Цены</h2>${li(c.price,x=>`<div class="mv"><b>${pnk(x.id)}</b><span class="sub">${pt(x.id)}</span><div class="gain ${x.to>x.from?'up':'dn'}">${money(x.from)} → ${money(x.to)}</div></div>`)}</div>
+  <div class="card"><h2>Травмы и статусы</h2>${li(c.status,x=>`<div class="mv"><b>${pnk(x.id)}</b><span class="sub">${esc(x.news)}</span><div class="gain"><span class="pill ${x.to==='a'?'g':'o'}">${x.to}</span></div></div>`)}</div>
+  <div class="card"><h2>Новые в топ-списках</h2>${li(c.new_in_pool,i=>`<div class="mv"><b>${pnk(i)}</b><span class="sub">${pt(i)}</span></div>`)}</div>
+  <div class="card"><h2>Вылетели из списков</h2>${li(c.left_pool,i=>`<div class="mv"><b>${pnk(i)}</b><span class="sub">${pt(i)}</span></div>`)}</div>
+  <div class="card"><h2>Растёт владение (7 дн.)</h2>${li(c.own_up,x=>`<div class="mv"><b>${pnk(x.id)}</b><div class="gain up">+${x.d}%</div></div>`)}</div>
+  <div class="card"><h2>Растёт форма</h2>${li(c.form_up,x=>`<div class="mv"><b>${pnk(x.id)}</b><div class="gain up">+${x.d}</div></div>`)}</div>
+  </div>`;
+}
+
+/* ---------- Чёрный список ---------- */
+const stTxt = e => e.status==='held'?`<span class="pill o">у ${OWN[e.owner]||e.owner}</span>`:e.status==='released'?`<span class="pill g">освободился</span>`:e.status==='unverified'?`<span class="pill b" title="API не показывает ходы друзей на ближайший тур до дедлайна">ждём дедлайн · ${OWN[e.owner]||'?'}</span>`:'<span class="pill">вручную</span>';
+
+function vThreatAll(){
+  const t=vThreatParts();
+  return t.head+t.inter+`<div style="margin-top:28px">${sect('Мини-лига','составы, банк, потери на хитах и скамейке',vLeague())}</div>`+t.friends+t.race+t.ck+`<div style="margin-top:20px">${fold('Чёрный список','кого не рекомендовать и кто освободился',vBL(),false)}</div>`;
+}
+function vPlayersAll(){
+  return vPlayers();
+}
+function vBL(){
+  const auto = {};
+  D.players.forEach(p=>{ if(p.taken_by&&p.taken_by!=='чёрный список'&&!BL_CFG.has(p.id)&&!BL_LOCAL.has(p.id)){ (auto[p.taken_by]=auto[p.taken_by]||[]).push(p); } });
+  const ents = blEntries().filter(e=>P[e.id]);
+  const rel = ents.filter(e=>e.status==='released'&&!e.pin);
+  const act = ents.filter(e=>!(e.status==='released'&&!e.pin));
+  const nm = e => `<b>${esc(P[e.id].name)}</b> <span class="sub">${P[e.id].tname} · ${P[e.id].pos} · £${money(P[e.id].price)}</span>`;
+  const relHtml = rel.map(e=>`<div class="mv"><div>${nm(e)}<div class="sub">${OWN[e.owner]||'Соперник'} больше не держит его. Игрок снова доступен для рекомендаций.</div></div><div class="gain">${e.local?`<button class="btn g" onclick="pinBL(${e.id})">Оставить в ЧС</button> <button class="btn r" onclick="rmBL(${e.id})">Убрать</button>`:`<button class="btn g" onclick="BL_LOCAL.set(${e.id},{id:${e.id},owner:null,pin:true});saveBL();render()">Оставить в ЧС</button><div class="sub">и удали из config.json</div>`}</div></div>`).join('');
+  const actHtml = act.map(e=>`<div class="mv"><div>${nm(e)}</div><div class="gain">${stTxt(e)} ${e.local?`<select onchange="setOwner(${e.id},this.value)"><option value="">кто держит?</option>${ownOpts(e.owner)}</select> <button class="btn r" onclick="rmBL(${e.id})">убрать</button>`:'<span class="pill">config.json</span>'}</div></div>`).join('');
+  const specs = ents.filter(e=>!(e.status==='released'&&!e.pin)).map(e=>P[e.id].name+':'+P[e.id].tname+(e.owner?'@'+e.owner:''));
+  const opts = D.players.filter(p=>!p.mine&&!isBlocked(p.id)).map(p=>`<option value="${esc(p.name+' · '+p.tname+' £'+money(p.price))}">`).join('');
+  const autoHtml = Object.entries(auto).map(([who,list])=>`<div class="card" style="margin-bottom:12px"><h3>${esc(who)} <span class="pill o">${list.length}</span></h3><div>${list.map(p=>`<span class="pill" style="margin:0 6px 6px 0">${esc(p.name)} · ${p.tname}</span>`).join('')}</div></div>`).join('');
+  const fm = Object.entries(D.friend_moves||{}).filter(([k,v])=>v.sold.length||v.bought.length).map(([k,v])=>`<div class="mv"><div><b>${OWN[k]||k}</b><div class="sub">продал: ${v.sold.map(i=>pnk(i)).join(', ')||'—'}<br>купил: ${v.bought.map(i=>pnk(i)).join(', ')||'—'}</div></div></div>`).join('');
+  return `<h1>Чёрный список</h1><div class="sub" style="margin-bottom:14px">Игроки отсюда не рекомендуются нигде: ни в трансферах, ни в заменах на травму, ни в топ-списках для покупки. Статистика по ним продолжает собираться. Если указать, у кого игрок (${esc(RIV.join('/'))}), инструмент следит за составом соперника и сообщает, когда игрок освободился.</div>
+  ${rel.length?`<div class="card" style="margin-bottom:16px;border:2px solid #34c759"><h2>${ic('star',26)} Освободились (${rel.length})</h2>${relHtml}</div>`:''}
+  <div class="grid g2"><div class="card"><h2>Вручную</h2>
+    <div class="toolbar"><input type="search" id="blq" list="bldl" placeholder="Игрок…" style="flex:1;min-width:160px"><datalist id="bldl">${opts}</datalist><select id="blo"><option value="">чей игрок?</option>${ownOpts('')}</select><button class="btn" onclick="addBL()">Добавить</button></div>
+    ${actHtml||'<div class="empty">Пусто. Добавь игроков, которых забрал соперник на новый тур, и выбери, чей он.</div>'}
+    <h3 style="margin-top:14px">Чтобы список учитывали и расчёты, и brief для Claude</h3>
+    <div class="sub" style="margin-bottom:6px">Вставь в config.json → <b>"blacklist"</b> и запусти инструмент заново:</div>
+    <textarea id="blout" readonly>${esc(JSON.stringify(specs,null,2))}</textarea><div style="margin-top:8px"><button class="btn g" onclick="copyBL()">Скопировать</button></div>
+  </div><div><h2>Ходы друзей с прошлого снимка</h2><div class="card" style="margin-bottom:16px">${fm||'<div class="empty">изменений нет (или это первый снимок)</div>'}</div><h2>Занято у соперников (авто)</h2>${autoHtml||'<div class="card empty">нет данных</div>'}</div></div>`;
+}
+
+/* ---------- Drawer ---------- */
+function drScout(p){
+  const w=wlGet(p.id);
+  if(w) return `<div class="drscout${w.source==='user'?' user':''}"><div><b>${ic('star',18)} В скаут-листе</b> <span class="pill ${w.prio===1?'r':w.prio===2?'o':''}">P${w.prio}</span> ${w.source==='user'?`<span class="wsrc u">добавил ${esc(ME_NAME)}${w.added?' · '+fmtD(w.added):''}</span>`:'<span class="wsrc c">Claude</span>'}</div>
+    ${w.note?`<div class="sub" style="margin-top:6px">${esc(w.note)}</div>`:''}
+    <div class="toolbar" style="margin-top:10px"><select id="drp">${[1,2,3].map(i=>`<option value="${i}" ${w.prio===i?'selected':''}>P${i}</option>`).join('')}</select><input type="text" id="drn" placeholder="Заметка" value="${esc(w.source==='user'?w.note||'':'')}" style="flex:1;min-width:120px"><input type="hidden" id="drid" value="${p.id}"><button class="btn g" onclick="wlFormAdd('dr')">Обновить</button><button class="btn r" onclick="wlRm(${p.id})">Убрать</button></div></div>`;
+  return `<div class="drscout add"><b>${ic('star',18)} Добавить в скаут-лист</b><div class="sub" style="margin:4px 0 8px">Будет отмечен как «добавил ${esc(ME_NAME)}» — Claude увидит и оценит.</div>
+    <div class="toolbar"><select id="drp"><option value="1">P1 — цель</option><option value="2" selected>P2 — кандидат</option><option value="3">P3 — наблюдаем</option></select><input type="text" id="drn" placeholder="Заметка: почему он" style="flex:1;min-width:120px"><input type="hidden" id="drid" value="${p.id}"><button class="btn" onclick="wlFormAdd('dr')">В скаут-лист</button></div></div>`;
+}
+
+function openDrawer(id){
+  const p=P[id]; if(!p) return;
+  const ins=(D.insurance[id]||[]).filter(i=>!isBlocked(i)).slice(0,5).map(i=>`<div class="mv"><div><b>${pnk(i)}</b><span class="sub"> ${pt(i)} £${money(P[i]?P[i].price:0)}</span></div><div class="gain sub">xP5 ${P[i]?P[i].xp5.toFixed(1):'–'}</div></div>`).join('');
+  const ser=(p.series||[]).length?pastSummary(p.series)+ptsBars(p.series):'';
+  $('#drawer').innerHTML=`<button class="x" onclick="closeDrawer()">✕</button>
+  <div class="sub">${p.tname} · ${POSN[p.pos]}</div><h1 style="font-size:28px">${esc(p.full.trim()||p.name)}</h1>
+  <div>${takenPill(p)} ${p.status!=='a'?`<span class="pill o">${esc(p.news||p.status)}</span>`:''}</div>
+  <div class="kv"><div><b>£${money(p.price)}</b><span>Цена</span></div><div><b>${p.score.toFixed(0)}</b><span>Рейтинг</span></div><div><b>${p.form.toFixed(1)}</b><span>Форма</span></div><div><b>${p.ppg.toFixed(1)}</b><span>Очки за игру</span></div><div><b>${p.xgi90.toFixed(2)}</b><span>xGI / 90</span></div><div><b>${p.dc90.toFixed(1)}</b><span>Защ. действия / 90</span></div><div><b>${p.xp1.toFixed(1)}</b><span>xP ближайший тур</span></div><div><b>${p.xp5.toFixed(1)}</b><span>xP 5 туров</span></div><div><b>${p.own.toFixed(1)}%</b><span>Владение</span></div><div><b>${p.top_cnt}/${D.top.n}</b><span>В топ-${D.top.n}</span></div></div>
+  <h3>Следующие матчи</h3>${nextTable(p)}
+  <h3 style="margin-top:14px">Очки в прошлых турах</h3>${ser||'<div class="sub">история загружается при запуске без --no-history</div>'}
+  ${p.mine?'':drScout(p)}
+  <div style="margin:14px 0">${p.mine||(!BL_LOCAL.has(p.id)&&(BL_CFG.has(p.id)||p.taken_by))?'':`<button class="btn g" onclick="toggleBL(${p.id})">${BL_LOCAL.has(p.id)?'Убрать из чёрного списка':'В чёрный список'}</button>`}</div>
+  <h3 style="margin-top:14px">Чистый трансферный поток за тур</h3><div class="sub">${p.net_tr>0?'+':''}${p.net_tr.toLocaleString('ru-RU')} (прогноз давления на цену)</div>
+  ${ins?`<h3 style="margin-top:14px">Если выбьется — замена в бюджет <span class="sub">(без занятых и чёрного списка)</span></h3>${ins}`:''}`;
+  $('#drawer').classList.add('open');
+}
+function closeDrawer(){ $('#drawer').classList.remove('open'); }
+function bind(){
+  const q=$('#q'); if(q){q.oninput=()=>{state.q=q.value; const pos=q.selectionStart; render(); const q2=$('#q'); q2.focus(); q2.setSelectionRange(pos,pos);}}
+  const f=$('#free'); if(f) f.onchange=()=>{state.free=f.checked; render()};
+  const wd=$('#wide'); if(wd) wd.onchange=()=>{state.wide=wd.checked; render()};
+  document.querySelectorAll('#posseg button').forEach(b=>b.onclick=()=>{state.pos=b.dataset.p; render()});
+  document.querySelectorAll('th.s').forEach(h=>h.onclick=()=>{const k=h.dataset.s; if(state.sort===k) state.dir*=-1; else {state.sort=k; state.dir=-1} render()});
+}
+render();
+</script>
+</body>
+</html>

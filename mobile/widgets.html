@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FPL Advisor — виджеты и уведомления</title>
+<link rel="stylesheet" href="styles.css?v=26">
+<style>
+body{padding:24px 16px 80px;font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+.pg{max-width:1100px;margin:0 auto}
+h1{font-size:30px;letter-spacing:-.04em;margin:0 0 6px}.sub{color:var(--mut);margin:0 0 20px;font-size:16px;line-height:1.5}
+.tg{display:flex;gap:8px;margin-bottom:26px}.tg button{min-height:44px;padding:0 18px;border-radius:999px;background:var(--card);box-shadow:0 0 0 1px var(--line);font-weight:700;color:var(--mut)}.tg button.on{background:var(--ac);color:#fff}
+:root[data-theme=dark] .tg button.on{color:#05241A}
+h2{font-size:22px;letter-spacing:-.03em;margin:34px 0 4px}
+.row{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.phone{width:372px;border-radius:44px;padding:10px;background:#0b0f0e;box-shadow:0 30px 60px -24px rgba(0,0,0,.55),0 0 0 2px #1d2623}
+.scr2{border-radius:34px;overflow:hidden;position:relative;min-height:720px}
+.wall{background:radial-gradient(120% 70% at 80% 0%,#2a7d62 0,transparent 60%),radial-gradient(90% 60% at 10% 100%,#1a3d6b 0,transparent 60%),linear-gradient(180deg,#0e2a24,#0a1517);padding:46px 16px 20px}
+:root[data-theme=light] .wall{background:radial-gradient(120% 70% at 80% 0%,#9fe4c6 0,transparent 60%),radial-gradient(90% 60% at 10% 100%,#a9c9f5 0,transparent 60%),linear-gradient(180deg,#d9f1e6,#e7eef6)}
+.stb{position:absolute;top:10px;left:20px;right:20px;display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:#fff}
+:root[data-theme=light] .stb{color:#102}
+.clk{text-align:center;color:#fff;margin:6px 0 18px}.clk b{font-size:54px;font-weight:300;letter-spacing:-.04em;display:block;line-height:1}.clk span{font-size:14px;opacity:.85}
+:root[data-theme=light] .clk{color:#0d2a22}
+.wcap{margin:0 0 6px;font-size:13.5px;color:#fff;opacity:.8;font-weight:600}:root[data-theme=light] .wcap{color:#0d2a22}
+/* виджеты */
+.w{position:relative;border-radius:28px;color:#fff;background:linear-gradient(0deg,rgba(2,18,16,.9),rgba(2,18,16,.9)),url(assets/hero.webp) right -40px top -50px/auto 300px no-repeat;border:1.5px solid rgba(70,255,170,.55);box-shadow:0 0 22px -6px rgba(40,255,150,.5),0 14px 30px -16px rgba(0,0,0,.6);overflow:hidden}
+:root[data-theme=light] .w.lt{background:rgba(255,255,255,.92);color:#10231c;border-color:rgba(11,127,84,.35);box-shadow:0 14px 30px -16px rgba(0,0,0,.35)}
+.w .tpill{font-size:12.5px;padding:4px 12px}
+.w2{width:100%;height:158px;padding:13px}
+.two>div{flex:1;min-width:0}
+.w4{width:100%;height:164px;padding:14px 16px;display:grid;grid-template-columns:132px 1fr;gap:12px}
+.w41{width:100%;padding:12px 14px}
+.bg2{font-size:38px;font-weight:800;letter-spacing:-.05em;line-height:1;margin-top:10px}.bg2 small{font-size:15px;font-weight:600;opacity:.85;margin:0 9px 0 3px;letter-spacing:0}
+.w .dl{font-size:13.5px;opacity:.88;margin-top:6px}
+.badge2{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:14px;font-weight:800;padding:5px 11px;border-radius:999px;background:linear-gradient(135deg,#FFCB3D,#F2891F);color:#3a1c00}
+.badge2.ok{background:linear-gradient(135deg,#5BFFB4,#22C781);color:#04251B}
+.todo2{display:flex;flex-direction:column;gap:6px;justify-content:center}
+.todo2 .t{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;line-height:1.2}
+.todo2 .t svg{width:26px;height:26px;flex:none;border-radius:8px}
+.todo2 .t.dn{opacity:.55;font-weight:600}.todo2 .t.dn span{text-decoration:line-through}
+.todo2 .t span small{display:block;font-weight:500;opacity:.8;font-size:12.5px}
+.ft2{display:flex;gap:8px;margin-top:8px}.ft2 span{font-size:12.5px;font-weight:700;padding:3px 9px;border-radius:999px;background:rgba(255,255,255,.14)}
+.lv{display:flex;align-items:center;gap:10px}.lv b{white-space:nowrap}.lv .lp{font-size:12.5px;font-weight:800;color:#ffdada;background:rgba(229,50,59,.35);padding:3px 9px;border-radius:999px;display:inline-flex;align-items:center;gap:5px}
+.lv .lp i{width:7px;height:7px;border-radius:50%;background:#ff4d55;display:inline-block;box-shadow:0 0 0 3px rgba(255,77,85,.3)}
+.lv .cols{display:flex;gap:5px;margin-left:auto}.lv .cols div{text-align:center;min-width:50px;padding:5px 5px;border-radius:12px;background:rgba(255,255,255,.1)}
+.lv .cols b{display:block;font-size:19px;letter-spacing:-.03em}.lv .cols span{font-size:11.5px;opacity:.85}
+.lv .cols .me{box-shadow:inset 0 0 0 1.5px #5BFFB4}
+.dock{display:flex;justify-content:space-around;margin-top:22px}.dock i{width:54px;height:54px;border-radius:16px;background:rgba(255,255,255,.16);backdrop-filter:blur(8px)}
+.stack2{display:flex;flex-direction:column;gap:12px}
+.two{display:flex;gap:12px}
+/* уведомления */
+.shade{background:linear-gradient(180deg,#0c1a16,#0a1214);padding:46px 12px 20px;min-height:720px}
+:root[data-theme=light] .shade{background:linear-gradient(180deg,#dfeee7,#e8eef3)}
+.qs{display:flex;gap:8px;margin-bottom:14px}.qs i{flex:1;height:50px;border-radius:25px;background:rgba(255,255,255,.1)}:root[data-theme=light] .qs i{background:rgba(0,0,0,.07)}.qs i.on{background:var(--ac)}
+.nt2{border-radius:24px;background:#1b2723;color:#eaf3ef;padding:12px 14px 6px;margin-bottom:10px;box-shadow:0 8px 20px -12px rgba(0,0,0,.6)}
+:root[data-theme=light] .nt2{background:#fff;color:#10231c}
+.nt2.urg{box-shadow:inset 4px 0 0 #F2891F,0 8px 20px -12px rgba(0,0,0,.6)}
+.nt2.ok2{box-shadow:inset 4px 0 0 #22C781,0 8px 20px -12px rgba(0,0,0,.6)}
+.nh{display:flex;align-items:center;gap:8px;font-size:12.5px;opacity:.8;margin-bottom:8px}
+.nh img{width:20px;height:20px;border-radius:6px}.nh b{font-weight:700}.nh span{margin-left:auto}
+.nt2 .tt{font-size:16.5px;font-weight:750;letter-spacing:-.02em;line-height:1.3}
+.nt2 .bd{font-size:14.5px;line-height:1.45;opacity:.88;margin-top:3px}
+.nl2{display:flex;flex-direction:column;gap:8px;margin:10px 0 6px}
+.nl2 .t{display:flex;gap:10px;align-items:center;font-size:14.5px;font-weight:650}.nl2 .t svg{width:30px;height:30px;flex:none;border-radius:9px}.nl2 .t small{display:block;font-weight:500;opacity:.75;font-size:13px}
+.nl2 .t.dn{opacity:.55}.nl2 .t.dn span{text-decoration:line-through}
+.na{display:flex;gap:4px;margin:6px -6px 0;border-top:1px solid rgba(128,160,148,.25);padding-top:2px}
+.na button{flex:1;min-height:46px;font-weight:750;font-size:14.5px;color:#4DF2A6;border-radius:12px}
+:root[data-theme=light] .na button{color:#0B7F54}
+.na button.mut2{color:inherit;opacity:.7;font-weight:600}
+.lock{background:radial-gradient(120% 70% at 80% 0%,#2a7d62 0,transparent 60%),linear-gradient(180deg,#0e2a24,#0a1517);padding:80px 14px 30px;min-height:720px}
+:root[data-theme=light] .lock{background:radial-gradient(120% 70% at 80% 0%,#9fe4c6 0,transparent 60%),linear-gradient(180deg,#d9f1e6,#e7eef6)}
+.lock .nt2{background:rgba(27,39,35,.88);backdrop-filter:blur(14px)}:root[data-theme=light] .lock .nt2{background:rgba(255,255,255,.88)}
+.spec{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:var(--mut);max-width:372px}
+.spec li b{color:var(--ink)}
+.grp{width:372px}
+.note2{max-width:1100px;margin-top:30px;padding:18px 20px;border-radius:22px;background:var(--card);box-shadow:var(--shadow)}
+.note2 h3{margin:0 0 8px;font-size:17px}.note2 ul{margin:0;padding-left:20px;line-height:1.6;font-size:15px;color:var(--mut)}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><linearGradient id="tg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD24A"/><stop offset="1" stop-color="#F59E0B"/></linearGradient><linearGradient id="tg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B9C3DA"/><stop offset="1" stop-color="#7D89A5"/></linearGradient><linearGradient id="tg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EFA871"/><stop offset="1" stop-color="#B5662D"/></linearGradient><linearGradient id="tgn" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9AFC4"/><stop offset="1" stop-color="#767D96"/></linearGradient><linearGradient id="tgc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB22E"/><stop offset="1" stop-color="#F26B3A"/></linearGradient><linearGradient id="tgs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0585F"/><stop offset="1" stop-color="#FF8F5A"/></linearGradient><linearGradient id="tgm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C7DF0"/><stop offset="1" stop-color="#8A5CF0"/></linearGradient><linearGradient id="tgme" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B7F54"/><stop offset="1" stop-color="#3DDC97"/></linearGradient><linearGradient id="tgr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2704A"/><stop offset="1" stop-color="#F7A64A"/></linearGradient><linearGradient id="tgst" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2F7DE1"/><stop offset="1" stop-color="#6CB2FF"/></linearGradient><linearGradient id="tgw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFCB3D"/><stop offset="1" stop-color="#F2891F"/></linearGradient><linearGradient id="tgg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2FB67C"/><stop offset="1" stop-color="#4CC9D4"/></linearGradient><linearGradient id="tgb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C7DF0"/><stop offset="1" stop-color="#4CC9D4"/></linearGradient><linearGradient id="tgo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF9A4D"/><stop offset="1" stop-color="#F2571E"/></linearGradient><linearGradient id="tgk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B6B8C"/><stop offset="1" stop-color="#2E3A57"/></linearGradient></defs></svg>
+<div class="pg">
+<h1>Виджеты и уведомления</h1>
+<p class="sub">Макет: что видно без открытия приложения. Главная идея — на любом экране сразу ответ на вопрос «что мне ещё нужно сделать до дедлайна». Данные те же, что в блоке «Сделай до дедлайна».</p>
+<div class="tg" role="group"><button data-t="dark" class="on">Тёмная</button><button data-t="light">Светлая</button></div>
+
+<h2>1. Виджеты на рабочем столе</h2>
+<p class="sub" style="margin-bottom:14px">Три размера: 2×2 для быстрого взгляда, 4×2 со списком дел, 4×1 для хода тура.</p>
+<div class="row">
+ <div class="grp"><div class="phone"><div class="scr2 wall">
+  <div class="stb"><span>9:41</span><span>5G · 82%</span></div>
+  <div class="clk"><b>9:41</b><span>пятница, 25 октября</span></div>
+  <p class="wcap">4×2 · список дел</p>
+  <div class="w w4 lt" id="w4"></div>
+  <div class="two" style="margin-top:12px;align-items:flex-start">
+   <div><p class="wcap">2×2 · дела</p><div class="w w2 lt" id="w2a"></div></div>
+   <div><p class="wcap">2×2 · всё готово</p><div class="w w2 lt" id="w2b"></div></div>
+  </div>
+  <p class="wcap" style="margin-top:12px">4×1 · тур идёт</p>
+  <div class="w w41 lt" id="w41"></div>
+  <div class="dock"><i></i><i></i><i></i><i></i></div>
+ </div></div>
+ <ul class="spec"><li><b>4×2:</b> обратный отсчёт, три главных дела, банк и трансферы. Тап по делу открывает нужный экран.</li><li><b>2×2:</b> отсчёт и число невыполненных дел. Когда всё сделано, плитка зелёная.</li><li><b>4×1:</b> счёт тура и очки лиги, ваша плашка с зелёной рамкой.</li><li>Цвет сигнала: жёлтый — есть что проверить, красный — меньше 2 часов, зелёный — всё готово.</li></ul></div>
+</div>
+
+<h2>2. Уведомления</h2>
+<p class="sub" style="margin-bottom:14px">Пять сценариев. Каждое уведомление говорит, что не сделано, и даёт действие в один тап.</p>
+<div class="row">
+ <div class="grp"><div class="phone"><div class="scr2 shade">
+  <div class="stb"><span>9:41</span><span>5G · 82%</span></div>
+  <div class="qs"><i class="on"></i><i></i><i></i><i></i></div>
+  <div id="n1"></div><div id="n2"></div><div id="n3"></div>
+ </div></div>
+ <ul class="spec"><li><b>За сутки:</b> раскрытый список дел.</li><li><b>За 2 часа:</b> оранжевая полоса слева, только то, что осталось.</li><li><b>Всё готово:</b> тихое, без звука.</li></ul></div>
+ <div class="grp"><div class="phone"><div class="scr2 shade">
+  <div class="stb"><span>9:41</span><span>5G · 82%</span></div>
+  <div class="qs"><i class="on"></i><i></i><i></i><i></i></div>
+  <div id="n4"></div><div id="n5"></div>
+ </div></div>
+ <ul class="spec"><li><b>Новость по игроку:</b> травма или статус у вашего игрока, с кнопкой «Открыть скамейку».</li><li><b>Тур идёт:</b> счёт и шансы на первое место.</li></ul></div>
+ <div class="grp"><div class="phone"><div class="scr2 lock">
+  <div class="clk"><b>9:41</b><span>пятница, 25 октября</span></div>
+  <div id="n6" style="margin-top:20px"></div><div id="n7"></div>
+ </div></div>
+ <ul class="spec"><li><b>Экран блокировки:</b> короткая версия без кнопок, суть видна сразу.</li></ul></div>
+</div>
+
+<div class="note2"><h3>Правила, чтобы не перегружать</h3><ul>
+<li>Не больше двух уведомлений в сутки в обычные дни: за 24 часа и за 2 часа до дедлайна.</li>
+<li>Если всё сделано, второе уведомление не приходит, вместо него тихое «Всё готово».</li>
+<li>Новости по игроку приходят только про вашу стартовую одиннадцатку и скамейку, а не про весь рынок.</li>
+<li>«Тур идёт»: одно уведомление в начале и итог после последнего матча, без обновлений каждые 5 минут.</li>
+<li>Ночью (23:00–8:00) всё без звука. Это настраивается переключателями в «Настройках».</li>
+</ul></div>
+</div>
+
+<script src="data.js"></script>
+<script>
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const T_OUT = (cls) => tile('tgs', '<circle cx="12" cy="8.4" r="3.5" fill="#fff"/><path d="M5 20c.3-3.9 3.2-6 7-6s6.7 2.1 7 6z" fill="#fff"/><path d="M4.6 4.6l14.8 14.8" stroke="#F4655F" stroke-width="4.2" stroke-linecap="round"/><path d="M4.6 4.6l14.8 14.8" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>', '', cls || 'td-i');
+const T_CHANCE = (pct, cls) => { const L = 2 * Math.PI * 7.4, d = Math.max(.01, pct / 100) * L; return tile(pct <= 50 ? 'tgo' : 'tgw', `<circle cx="12" cy="12" r="7.4" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="2.8"/><circle cx="12" cy="12" r="7.4" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="${d.toFixed(2)} ${L.toFixed(2)}" transform="rotate(-90 12 12)"/><text x="12" y="14.6" text-anchor="middle" font-size="7.4" font-weight="800" fill="#fff" style="font-family:inherit">${pct}</text>`, '', cls || 'td-i'); };
+const T_CARD = (cls) => tile('tgs', '<rect x="7.4" y="4.6" width="9.4" height="13.4" rx="1.9" fill="#fff" transform="rotate(8 12 11.3)"/><rect x="9.6" y="7" width="3.2" height="1.6" rx=".8" fill="#F4655F" transform="rotate(8 12 11.3)" opacity=".0"/>', '', cls || 'td-i');
+const T_LOCK = (k, cls) => tile({ roma: 'tgr', stas: 'tgst', me: 'tgme' }[k] || 'tgk', '<rect x="6.4" y="10.6" width="11.2" height="8.8" rx="2.4" fill="#fff"/><path d="M8.9 10.6V8.4a3.1 3.1 0 0 1 6.2 0v2.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="14.6" r="1.4" fill="#5B6B8C"/><path d="M12 15.2v1.8" stroke="#5B6B8C" stroke-width="1.5" stroke-linecap="round"/>', '', cls || 'td-i');
+const T_SPARK = (cls) => tile('tgme', '<path d="M12 3.4l2 5.5 5.6 1.9-5.6 1.9-2 5.5-2-5.5-5.6-1.9 5.6-1.9z" fill="#fff"/><path d="M18.4 15.6l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" fill="#fff" fill-opacity=".8"/>', '', cls || 'td-i');
+const T_CLOCK = (cls) => tile('tgb', '<circle cx="12" cy="12.6" r="7.6" fill="#fff"/><path d="M12 8v4.8l3.2 1.9" fill="none" stroke="#4C7DF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.6 3.8h4.8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>', '', cls || 'td-i');
+const T_PLUS = (cls) => tile('tgs', '<rect x="9.4" y="4.2" width="5.2" height="15.6" rx="1.8" fill="#fff"/><rect x="4.2" y="9.4" width="15.6" height="5.2" rx="1.8" fill="#fff"/>', '', cls || 'td-i');
+const T_OFF = (cls) => tile('tgw', '<path d="M4.4 9.6a11 11 0 0 1 15.2 0M7.4 12.7a6.6 6.6 0 0 1 9.2 0M10.4 15.8a2.4 2.4 0 0 1 3.2 0" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/><path d="M4.8 4.8l14.4 14.4" stroke="#F5A524" stroke-width="4" stroke-linecap="round"/><path d="M4.8 4.8l14.4 14.4" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>', '', cls || 'td-i');
+const T_TRADE = () => tile('tgg', '<path d="M5 8.4h11.2M13 5l3.4 3.4L13 11.8M19 15.6H7.8M11 12.2l-3.4 3.4L11 19" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>', '', 'td-i');
+const T_WARN = (cls) => tile('tgw', '<path d="M12 4.2 21 19.4H3z" fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 9.6v4.2" stroke="#E57D0F" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1.1" fill="#E57D0F"/>', '', cls || 'td-i');
+const T_PRICE = () => tile('tgb', '<path d="M3.8 12.4V4.8a1 1 0 0 1 1-1h7.6l8 8-8.6 8.6z" fill="#fff"/><circle cx="8.3" cy="8.3" r="1.5" fill="#4C7DF0"/><path d="M13.2 14.6l2.4-2.4 2.4 2.4" fill="none" stroke="#4C7DF0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" transform="translate(-1.4 .8)"/>', '', 'td-i');
+const T_OK = () => tile('tgg', '<path d="m6 12.6 4 4L18.2 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>', '', 'td-i');
+const tile = (g, body, label, cls) => `<svg class="ti ${cls || ''}" viewBox="0 0 24 24"${label ? ` role="img" aria-label="${label}"` : ' aria-hidden="true"'}><rect width="24" height="24" rx="7" fill="url(#${g})"/>${body}</svg>`;
+const T_CAP = () => tile('tgc', `<path d="M12 2.8l1.2 2.5 2.7.3-2 1.9.5 2.7L12 9l-2.4 1.2.5-2.7-2-1.9 2.7-.3z" fill="#fff" fill-opacity=".9" transform="translate(0 -.4) scale(.85) translate(2.1 .6)"/><rect x="3.6" y="10.4" width="16.8" height="9" rx="2.6" fill="#fff"/><rect x="3.6" y="10.4" width="3.2" height="9" rx="1.6" fill="#F26B3A" fill-opacity=".25"/><text x="12.6" y="17.5" text-anchor="middle" font-size="8.4" font-weight="800" fill="#E4601F" style="font-family:inherit">C</text>`, '', 'ins');
+const T_SELL = () => tile('tgs', `<rect x="4.6" y="9.2" width="3.4" height="10.6" rx="1.2" fill="#fff" fill-opacity=".38"/><rect x="10.3" y="12.6" width="3.4" height="7.2" rx="1.2" fill="#fff" fill-opacity=".38"/><rect x="16" y="15.6" width="3.4" height="4.2" rx="1.2" fill="#fff" fill-opacity=".38"/><path d="M4.6 6.4l5 3.4 3.2-2.4 5.8 5.2M18.6 9.2v3.4h-3.5" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>`, '', 'ins');
+const T_MISS = () => tile('tgm', `<g transform="translate(12 12) scale(.82) translate(-12 -12)"><path d="M1.8 12C4.2 7.6 7.8 5.4 12 5.4s7.8 2.2 10.2 6.6c-2.4 4.4-6 6.6-10.2 6.6S4.2 16.4 1.8 12z" fill="#fff"/><circle cx="12" cy="12" r="3.9" fill="#6D5CF0"/><circle cx="12" cy="12" r="1.5" fill="#fff"/><circle cx="13.3" cy="10.7" r="1" fill="#fff" fill-opacity=".9"/></g>`, '', 'ins');
+const F = window.FPL, $ = s => document.querySelector(s);
+const sm = t => t.replace('class="ti td-i"', 'class="ti"');
+const pr = v => '£' + (v / 10).toFixed(1);
+const T = { cap: sm(T_CAP()), warn: sm(T_WARN('')), ok: sm(T_OK()), trade: sm(T_TRADE()), out: sm(T_OUT('')), c50: sm(T_CHANCE(50, '')), c75: sm(T_CHANCE(75, '')), spark: sm(T_SPARK('')), clock: sm(T_CLOCK('')) };
+const dlTxt = 'сб, 31.10 · 13:00';
+const left = () => { let s = Math.floor((new Date(F.meta.deadline) - Date.now()) / 1000); if (s < 0) s = 5 * 86400 + 16 * 3600; return { d: Math.floor(s / 86400), h: Math.floor(s % 86400 / 3600), m: Math.floor(s % 3600 / 60) }; };
+const L = left();
+$('#w4').innerHTML = `<div><span class="tpill">Тур ${F.meta.gw_next}</span><div class="bg2">${L.d}<small>дн</small>${L.h}<small>ч</small></div><div class="dl">${dlTxt}</div><div class="ft2"><span>${pr(F.me.bank)}</span><span>${F.me.ft} трансф.</span></div></div>
+ <div class="todo2"><div class="t dn">${T.ok}<span>Трансфер сделан<small>Foden → Tavernier</small></span></div><div class="t">${T.cap}<span>Капитан Haaland<small>подтвердить</small></span></div><div class="t">${T.c50}<span>Проверить двоих<small>DCL 50% · Thomas 75%</small></span></div></div>`;
+$('#w2a').innerHTML = `<span class="tpill">Тур ${F.meta.gw_next}</span><div class="bg2">${L.d}<small>дн</small>${L.h}<small>ч</small></div><div class="badge2">3 дела</div><div class="dl">до ${dlTxt.slice(4)}</div>`;
+$('#w2b').innerHTML = `<span class="tpill">Тур ${F.meta.gw_next}</span><div class="bg2">${L.d}<small>дн</small>${L.h}<small>ч</small></div><div class="badge2 ok">Всё готово</div><div class="dl">до ${dlTxt.slice(4)}</div>`;
+$('#w41').innerHTML = `<div class="lv"><span class="lp"><i></i>LIVE</span><b style="font-size:15px">Тур 8</b><div class="cols"><div><b>469</b><span>Рома</span></div><div class="me"><b>463</b><span>Женя</span></div><div><b>351</b><span>Стас</span></div></div></div>`;
+const app = '<img src="assets/icon.svg" alt="">';
+const nt = (cls, when, title, body, list, acts) => `<div class="nt2 ${cls || ''}"><div class="nh">${app}<b>FPL Advisor</b><span>${when}</span></div><div class="tt">${title}</div>${body ? `<div class="bd">${body}</div>` : ''}${list ? `<div class="nl2">${list}</div>` : ''}${acts ? `<div class="na">${acts}</div>` : ''}</div>`;
+const li = (ic, t, s, dn) => `<div class="t ${dn ? 'dn' : ''}">${ic}<span>${t}${s ? `<small>${s}</small>` : ''}</span></div>`;
+$('#n1').innerHTML = nt('', 'за сутки', 'До дедлайна 24 часа — осталось 3 дела', '', li(T.cap, 'Подтвердить капитана', 'Haaland, вице Isak') + li(T.c50, 'Calvert-Lewin — 50%', 'решение после пресс-конференции') + li(T.c75, 'Thomas — 75%', 'решение после пресс-конференции'), '<button>Открыть дела</button><button class="mut2">Напомнить в 18:00</button>');
+$('#n2').innerHTML = nt('urg', 'через 2 ч', 'Дедлайн в 13:00. Не сделано: 1', 'Проверь Thomas (75%) — если не играет, замени из скамейки.', '', '<button>Открыть состав</button><button class="mut2">Всё сделано</button>');
+$('#n3').innerHTML = nt('ok2', 'через 2 ч', 'Всё готово', 'Состав и капитан на месте. Дедлайн в 13:00.', '', '');
+$('#n4').innerHTML = nt('urg', 'сейчас', 'Calvert-Lewin: 50% сыграет', 'Травма стопы. Он на вашей скамейке, 3-й в порядке автозамены.', '', '<button>Открыть скамейку</button><button class="mut2">Позже</button>');
+$('#n5').innerHTML = nt('', 'тур 9', 'Тур идёт: ты +12, Рома +9', 'Шанс на первое место сейчас 55%. Осталось сыграть 4 игрока.', '', '<button>Открыть тур</button>');
+$('#n6').innerHTML = nt('urg', 'через 2 ч', 'Дедлайн в 13:00. Не сделано: 1', 'Проверь Thomas (75%).', '', '');
+$('#n7').innerHTML = nt('', 'за сутки', 'Осталось 3 дела до дедлайна', 'Капитан, Calvert-Lewin, Thomas.', '', '');
+document.querySelectorAll('.tg button').forEach(b => b.onclick = () => { document.querySelectorAll('.tg button').forEach(x => x.classList.toggle('on', x === b)); document.documentElement.dataset.theme = b.dataset.t; });
+document.documentElement.dataset.theme = 'dark';
+</script></body></html>
